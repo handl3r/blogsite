@@ -1,4 +1,4 @@
-baseURL = "handl3r.netlify.app"
+baseURL = ""
 title = "Handl3r's Blog"
 languageCode = "en-us"
 theme = "devise"
