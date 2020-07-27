@@ -1,0 +1,6 @@
+[submodule "hugo-theme-codex"]
+	path = hugo-theme-codex
+	url = https://github.com/jakewies/hugo-theme-codex
+[submodule "themes/devise"]
+	path = themes/devise
+	url = https://github.com/austingebauer/devise.git
