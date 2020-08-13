@@ -3,6 +3,18 @@ title: "Introduction"
 date: 2020-07-27T17:44:13Z
 draft: false
 ---
-## I'm Thaibuixuan
-See you next time
+## <strong>Handl3r</strong>
+<strong><em>Bring my code to the real-world</em></strong>
+***
+> <strong>Fullname</strong>: ThaiBuiXuan  
+> <strong>Age</strong>: 22  
+> <strong>Job</strong>: Software Student  
+> <strong>Main Languages</strong>: Golang, Ruby    
+> <strong>Techs</strong>: Golang, Ruby, Rails, Gin, SQL-database(Mysql, Firebird,...), NoSQL-database(mongodb), Virtualization(docker)
+> <strong>Knowledge</strong>: Software development, Cryptography, Cyber Security,... 
+***
+
+
+
+
 

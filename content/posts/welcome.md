@@ -5,7 +5,6 @@ draft: false
 categories: "Stuff"
 ---
 
-## Hello, this's my blog.
-I will write something soon.  
+## Hello, this's my blog.  
 See you later
 
