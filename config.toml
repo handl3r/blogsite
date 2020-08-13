@@ -32,7 +32,7 @@ copyright = "&copy; 2020, ThaiBuiXuan"
 # Configuration Features
 [params]
   header_title = "Handl3r"                 # Your header title
-  header_subtitle = "No Bio" # Your header subtitle
+  header_subtitle = "And in this moment, i swear we are infinite" # Your header subtitle
   home_image = "/images/avatar.jpg"          # Path to header image starting from the static directory
   recent_posts = 5                           # Max amount of recent posts to show
   mainSections = ["posts", "post", "blog"]   # Main sections to include in recent posts
