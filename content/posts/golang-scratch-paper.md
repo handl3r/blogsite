@@ -2,7 +2,7 @@
 title: "Golang Scratch Paper"
 date: 2020-08-13T16:56:03Z
 draft: false
-categories: "Golang-Basic"
+categories: "Golang-Basic Draft"
 ---
 *** <em>Đây là draft nhá</em> :3 ***
 
