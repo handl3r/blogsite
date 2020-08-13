@@ -3,27 +3,29 @@ title: "Golang Scratch Paper"
 date: 2020-08-13T16:56:03Z
 draft: false
 ---
-*** Đây là draft nhá :3 ***
+*** <em>Đây là draft nhá</em> :3 ***
 
-1. <strong>Khai báo biến trong golang</strong>   
+# Khai báo biến trong golang
 
-1.1 Kkai báo chuẩn bằng từ khóa var và có thể kèm theo initializer:  
+## Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer:  
+```golang
 var(
   x int
   y int = 2
   z = "x"
 )
+```
 Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với
-giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì gía trị mặc định là zezo value  
+giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value  
 
-1.2 Khai báo gọn ở trong hàm  
+## Khai báo gọn ở trong hàm  
 Sử dụng toán tử :=
 ```x := 2```
 chú ý khai báo kiểu này chỉ tồn tại trong hàm. Nếu ở ngoài hàm được coi là error syntax  
 Đồng thời cũng có thể gán hàm cho biến:
 ```var x = func test(){}```
 
-2. <strong>Constant</strong>  
+# Constant  
 
 Hằng trong golang chỉ có thể là character, string, boolean, numeric values  
 Không thể khai báo bằng :=  
@@ -35,9 +37,9 @@ const (
   StatusAccepted  =202
 ) 
 ```
-3. <strong>Packages</strong>  
+# <strong>Packages</strong>  
 
-3.1 Import 
+## Import 
 
 Chương trình golang tạo nên bởi các packages  
 có thể import bằng:  
@@ -61,13 +63,13 @@ Trong GOPATH gồm:
 chỉ cần link lại các thư viện này mà không cần compile lại nên rất nhanh  
 -src: Gồm tất cả go source code tổ chức bằng import path  
 
-3.2 Export  
+## Export  
 
 Sau khi ta import package vào file thì có thể gọi đến các names mà gói đó exported gồm có các biến, method, function mà cho phép gọi từ ngoài package.  
 Trong go quy tắc của những name được exported bắt đầu với chữ in hoa.  
 ví dụ math.pi thì ko đc vì nó ko phải tên đc export mà phải là math.Pi  
 
-4. <strong>Function và return value</strong>    
+#Function và return value  
 
 Trong go function có thể khai báo như sau:  
 ```golang
@@ -86,7 +88,7 @@ func test(x string, m, n int) (x string, m int) {
 ```
 Tuy nhiên kiểu khai báo sãn biến trả về này không nên vì thấy khá rối  
 
-5. <strong>Pointer</strong>  
+# Pointer  
 
 Pointer trong go có thể khai báo:
 ```golang
@@ -99,13 +101,13 @@ Nói chung ko có gì đặc biệt
 Nếu muốn truyền tham chiếu thì phải dùng con trỏ hoặc một số cấu trúc dùng tham trị như slices hay maps.
 Đồng thời method thì thường xuyên được defined trên pointer.  
 
-6. <strong>Mutability trong go</strong>    
+# Mutability trong go  
 
 Trong go thì chỉ có constant là immutable  Tuy nhiên bởi vì tham số truyền bằng
 giá trị nên một func có thể thay đổi giá trị đó chứ không thể thay đổi giá trị thật mà biến ta truyền vào.
 
 --------------------------Types----------------------------------
-7. <strong>Basic type</strong>  
+# Basic type  
 
 Kiểu dữ liệu chung :  
 bool string  
@@ -119,7 +121,7 @@ complex 64 hoặc 128
 byte = uint8  
 rune = int32 biểu diễn Unicode point  
 
-8. <strong>Conversion</strong>  
+# Conversion  
 
 T(v) -> kiểu của v được convert sang kiểu T  
 ví dụ:  
@@ -132,11 +134,11 @@ or
 i := 1
 x := float32(i)
 ```
-9. <strong>Type Assertion</strong>  
+# Type Assertion  
 
 Code sample: https://play.golang.org/p/EEOdNgO9Yau  
 
-10. <strong>Struct</strong>  
+# Struct  
 
 Struct tương tự như c, ta có thể khai báo như sau:  
 ```golang
@@ -152,7 +154,7 @@ var d = Person{"Thai", 12}
 d.Name -> getName
 ```
 
-11. <strong>Initializing</strong>  
+# Initializing  
 
 New  expression sẽ cấp phátmột vùng nhớ zezoed value cho biến và trả về con trỏ đến vùng nhớ đó. Zezo value là giá trị mặc định cho kiểu : ví dụ boolean là false, int là 0, string là "", con trỏ, slide,
 ... là nil .
@@ -175,7 +177,7 @@ var x = Person{
   22,
 }
 ```
-12. <strong>Composition vs Inheritance</strong>  
+# Composition vs Inheritance  
 
 Trong Go không có inheritance, thay vào đó ta có composition(embedding)  
 
@@ -206,7 +208,7 @@ Tuy nhiên với cách này thì ta sẽ không thể gọi trực tiếp thành
 ```student.Person.Name```   
 ------------------------------------------------------Collection types------------------------   
 
-13. <strong>Array</strong>
+# Array  
 
 Khai báo  
 ```golang
@@ -220,8 +222,8 @@ ngoài ra cũng có thể dùng ... để khai báo ngầm length:
 phải là [2]string. . Chính vì thế mà length của array là không thể thiếu  và không thể THAY ĐỔI
 các array nhiều chiều thì khai báo [2][3]string chẳng hạn
 
-14. <strong>Slices</strong>
-Slide khai báo  
+# Slice   
+Slice khai báo  
 ```s := []int{1,2,42}```
 or
 ```s := make([]int, 5, 10)```
@@ -256,7 +258,7 @@ Muốn append slice vào slice thì cần phải dử dụng ellipsis(...). Bằ
 
 Zezo value của slice là nil với length và capacity là 0.  
 
-15. <strong>Range trong for loop</strong>
+# Range trong for loop  
 
 range giúp hỡ trợ ta lặp qua slice hoặc map, cả string nữa
 ví dụ
@@ -269,7 +271,7 @@ for i, v := range s {
 ```
 Nếu không muốn lấy value thì chỉ cần bỏ v. Nếu chỉ lấy value thì _, v
 
-16. <strong>Map</strong>  
+# Map
 
 Tương tự như trong các ngôn ngữ khác thì go cũng cung cấp kiểu hash:  
 ```golang
@@ -293,7 +295,7 @@ string, pointer, interface, struct array. Slice và map thì ko thể.
 
 ------------------------------------------Control flow------------------------------------  
 
-16. <strong>If statement</strong>
+# If statement  
 
 Trong go thì if không cần dấu (). Và có thể khai báo biến tại if:
 ```golang
@@ -303,7 +305,7 @@ if v := foo(); v <= 5 {
   // do somethings
 }
 ```
-17. <strong>For loop</strong>
+# For loop  
 
 Trong go chỉ có duy nhất loop là for: cấu trúc cơ bản như sau:
 ```golang
@@ -320,13 +322,13 @@ for ; sum < 1000 {
 }
 ```
 for thay thế cho while:  
-``golang
+```golang
 sum := 1
 for sum < 1000 {
   sum += sum
 }
 ```
-18. <strong>Switch</strong>
+# Switch
 
 Sử dụng:  
 ```golang
@@ -368,7 +370,7 @@ p := Person{
 
 khi đó ta có thể gọi ```p.say("Hello World!")```
 
-19. <strong>Tổ chức code</strong>
+# Tổ chức code  
 ```golang
 package main
 
@@ -421,7 +423,7 @@ func (p Person) say(statement string) string {
 func main() {
 }
 ```
-20. <strong>Type aliasing</strong>
+# Type aliasing  
 
 Ta hoàn toàn có thể định nghĩa các method trên các type có sẵn.
 T có thể alias một kiểu mới từ kiểu cũ:
@@ -434,7 +436,7 @@ func (myStr MyString) Upper() string {
 Note: Chú ý phân biệt derived type và type alias
 Code: https://play.golang.org/p/Ftq3eqsXN9D
 
-21. <strong>Method receiver</strong>
+#  Method receiver
 
 Vấn đề: Một số method ta muốn nó thay đổi giá trị của receiver, một số lại không. Ví dụ như method
 Abs() gọi trên 1 số int thì ta muốn nó trả về giá trị là abs mà không thay đổi receiver, Scale() ví dụ là method muốn tác động giá trị của int receiver thành ngược dấu nếu âm.
@@ -527,7 +529,7 @@ Sau đó ta có thể gọi function này:
 p := &Person("Bui", "Thai")
 c := &Cusmtomer("John", "Smith", "1251")
 ```
-22. <strong>Statisfying  Interface</strong>
+# Statisfying  Interface  
 
 Ta có thể tạo ra 1 interface bằng cachs tổng hợp những interface khác:  
 ```golang
@@ -544,13 +546,13 @@ type ReadWriter interface {
   Writer
 }
 ```
-23. <strong>Returning Errors</strong>
+# Returning Errors  
 
 
 -------------------------------------Concurrency--------------------  
 
 Keep in mind this is Concurrency,-----------------NOT PARALLEL----------  
-1. <strong>Goroutines</strong>  
+# Goroutines  
 Một go routine là một luồng nhẹ được quản lí bởi Go runtime. Cũng tương tự như khái niệm luồng trong các ngôn
 ngữ khác.
 Một ví dụ về goroutine như sau:
@@ -576,7 +578,7 @@ sẽ không có quyền được thực thi cho đến khi main từ bỏ quyề
 Thế là end luôn chương trình. Vì thế mà goroutine ta vừa tạo ra không có cơ hội thực thì thì đã bị end theo main. Kết quả là ta thấy in ra
 toàn this is main goroutine.  
 
-2. <strong>Channel</strong>
+# Channel  
 
 Khái niệm về channel ở đây tương tự như pipple trong linux hoặc chanel trong web socket. Về ý tưởng là tương đương.  
 ************** Chú ý: Trong go thì không giao tiếp để chia sẻ vùng nhớ mà thay vào đó là CHIA SẺ VÙNG NHỚ ĐỂ GIAO TIẾP.
@@ -626,7 +628,7 @@ func main() {
   fmt.Println(firstSum + lastSum)
 }
 ```
-3. <strong>Buffered channel</strong>
+# Buffered channel  
 
 Một buffed channel là 1 channel có cap cố định. Ta có thể coi nó như là 1 vùng buffer.  
 Hành vi gửi data vào 1 buffed channel sẽ bị block nếu như buffered channel đầy(vùng buffer bị đầy).  
@@ -664,7 +666,7 @@ fmt.Println(<- myChannel)
 Với ví dụ này thì goroutine chạy hàm x() sẽ chờ cho đến khi ít nhất 1 giá trị đang ở trong channel được lấy
 ra thì mới đẩy giá trị 3 vào.chính vì vậy mà không bị deadlock. Buffer channel có 2 thông số là len và cap tương tự như slice.  
 
-4. <strong>Range and close</strong>
+#  Range and close
 
 Goroutine sender  có thể close channel để chắc chắn sẽ không có giá trị nào được gửi nữa.  
 Receicer có thể kiểm tra xem channel đã bị đóng hay chưa bằng:  
@@ -680,7 +682,7 @@ for i := range channel sẽ thực hiện lặp đi lặp lại lấy dữ liệ
 
 Code: https://play.golang.org/p/9dFUcVouXon
 
-5. <strong>Select</strong>
+# Select  
 
 Các case trong select nếu match thì sẽ được thực thi
 ví dụ sử dụng:
@@ -730,7 +732,7 @@ counter này tăng lên 1. Khi goroutine làm xong việc thì call wg.Done(). t
 Và ở cuối cùng ta gọi wg.Wait(). Như vậy thì goroutine call Wait() sẽ chờ tất cả các goroutine kia xong. goroutine gọi hàm wait sẽ bị block
 cho đến khi tất cả các goroutine kìa hoàn thành. Khi đó thành phần counter trong wg sẽ = 0.
 
-5, <strong>Channel 1 chiều</strong>
+# Channel 1 chiều  
 Có những trường hợp ta chỉ muốn trong goroutine này chỉ có thể đọc hoặc ghi vào channel. Chính vì vậy mà goroutine cung cấp cho ta cách thức đó:
 ví dụ func receiveOnly(c <-chan int) {} -> channel c ở trong goroutine này chỉ có thể read data.  
 Code: https://play.golang.org/p/eLLmELyqDVJ  
