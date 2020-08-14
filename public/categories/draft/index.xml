@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Draft on Handl3r&#39;s Blog</title>
+    <link>/categories/draft/</link>
+    <description>Recent content in Draft on Handl3r&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
+    <lastBuildDate>Thu, 13 Aug 2020 16:56:03 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/draft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang Scratch Paper</title>
+      <link>/posts/golang-scratch-paper/</link>
+      <pubDate>Thu, 13 Aug 2020 16:56:03 +0000</pubDate>
+      
+      <guid>/posts/golang-scratch-paper/</guid>
+      <description>*** Đây là draft nhá:3 ***
+Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
+    </item>
+    
+  </channel>
+</rss>

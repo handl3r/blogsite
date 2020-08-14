@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/next/</loc>
+    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/next-time/</loc>
+    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/draft/</loc>
+    <lastmod>2020-08-13T16:56:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/golang-scratch-paper/</loc>
+    <lastmod>2020-08-13T16:56:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/golang-basic/</loc>
+    <lastmod>2020-08-13T16:56:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2020-07-27T17:44:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/stuff/</loc>
+    <lastmod>2020-07-27T17:25:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/welcome/</loc>
+    <lastmod>2020-07-27T17:25:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+  </url>
+  
+</urlset>

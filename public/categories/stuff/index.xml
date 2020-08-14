@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stuff on Handl3r&#39;s Blog</title>
+    <link>/categories/stuff/</link>
+    <description>Recent content in Stuff on Handl3r&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
+    <lastBuildDate>Mon, 27 Jul 2020 17:25:38 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/stuff/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome</title>
+      <link>/posts/welcome/</link>
+      <pubDate>Mon, 27 Jul 2020 17:25:38 +0000</pubDate>
+      
+      <guid>/posts/welcome/</guid>
+      <description>Hello, this&amp;rsquo;s my blog. See you later</description>
+    </item>
+    
+  </channel>
+</rss>

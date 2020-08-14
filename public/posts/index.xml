@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Handl3r&#39;s Blog</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Handl3r&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
+    <lastBuildDate>Fri, 14 Aug 2020 03:55:38 +0000</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Next Time</title>
+      <link>/posts/next-time/</link>
+      <pubDate>Fri, 14 Aug 2020 03:55:38 +0000</pubDate>
+      
+      <guid>/posts/next-time/</guid>
+      <description>**Of course, this is draft***
+This is notification for plans:  Maybe next week, i will publish my second draft which i wrote when i learned apart of Ultimate-Go course. And, maybe it will become with english-mystupidenglish. In future, i want to deep into docker, virtualization. It can be building backend for web server, run it in containers and use prometheus for monitoring.  </description>
+    </item>
+    
+    <item>
+      <title>Golang Scratch Paper</title>
+      <link>/posts/golang-scratch-paper/</link>
+      <pubDate>Thu, 13 Aug 2020 16:56:03 +0000</pubDate>
+      
+      <guid>/posts/golang-scratch-paper/</guid>
+      <description>*** Đây là draft nhá:3 ***
+Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>/posts/welcome/</link>
+      <pubDate>Mon, 27 Jul 2020 17:25:38 +0000</pubDate>
+      
+      <guid>/posts/welcome/</guid>
+      <description>Hello, this&amp;rsquo;s my blog. See you later</description>
+    </item>
+    
+  </channel>
+</rss>
