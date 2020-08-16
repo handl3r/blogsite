@@ -17,18 +17,22 @@ var(
 )
 ```
 Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với
-giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value  
+giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value  
 
 ## Khai báo gọn ở trong hàm  
-Sử dụng toán tử :=
-```x := 2```
+Sử dụng toán tử :=  
+```golang
+ x := 2
+ ```  
 chú ý khai báo kiểu này chỉ tồn tại trong hàm. Nếu ở ngoài hàm được coi là error syntax  
 Đồng thời cũng có thể gán hàm cho biến:
-```var x = func test(){}```
+```golang
+var x = func test(){}
+```
 
 # Constant  
 
-Hằng trong golang chỉ có thể là character, string, boolean, numeric values  
+Hằng trong golang chỉ có thể là character, string, boolean, numeric values.  
 Không thể khai báo bằng :=  
 ```golang
 const Pi = 3.14
@@ -53,10 +57,10 @@ import(
 Với những package không nằm trong các package tiêu chuẩn thì thường đc namespaced bằng
 web url.  
 Ví dụ:  
-```import "github.com/mattetti/goRailsYourself/crypto"```
+```import "github.com/mattetti/goRailsYourself/crypto"```  
 Sau khi khai báo thì ta cần phải pull package này về bằng command:  
-go get github...
-command trên sẽ pull thư viện về và đặt trong GOPATH  
+```go get github...```  
+Command trên sẽ pull thư viện về và đặt trong GOPATH  
 
 Trong GOPATH gồm:  
 -bin: Thư mục chứa những file compiled binaries  
@@ -68,9 +72,9 @@ chỉ cần link lại các thư viện này mà không cần compile lại nên
 
 Sau khi ta import package vào file thì có thể gọi đến các names mà gói đó exported gồm có các biến, method, function mà cho phép gọi từ ngoài package.  
 Trong go quy tắc của những name được exported bắt đầu với chữ in hoa.  
-ví dụ math.pi thì ko đc vì nó ko phải tên đc export mà phải là math.Pi  
+Ví dụ math.pi thì ko đc vì nó ko phải tên đc export mà phải là math.Pi  
 
-#Function và return value  
+# Function và return value  
 
 Trong go function có thể khai báo như sau:  
 ```golang
@@ -79,7 +83,7 @@ func test(x string, m, n int) int{
 }
 ```
 Kiểu trả về sẽ được khai báo sau tham số của function   
-- go hỗ trợ trẩ về nhiều giá trị   
+- go hỗ trợ trả về nhiều giá trị   
 - Có thể khai báo luôn các biến trả về ở trên khai báo hàm. Khi đó chỉ cần gọi   
 Return với không tham số truyền vào:   
 ```golang
@@ -87,7 +91,7 @@ func test(x string, m, n int) (x string, m int) {
   return
 }
 ```
-Tuy nhiên kiểu khai báo sãn biến trả về này không nên vì thấy khá rối  
+Tuy nhiên kiểu khai báo sãn biến trả về này không nên vì thấy khá rối.
 
 # Pointer  
 
@@ -96,10 +100,10 @@ Pointer trong go có thể khai báo:
 var x int = 2
 var p *int = &x
 ```
-Giống như trong C p chứa giá trị địa chỉ của giá trị 2. *p là giá trị 2 còn &x là địa chỉ của giá trị 2 được cấp.  
+Giống như trong C, p chứa giá trị địa chỉ của ô nhớ chứa giá trị 2. *p là giá trị 2.
 Nói chung ko có gì đặc biệt  
-******Note trong go thì truyền arguments bằng giá trị chứ ko phải tham chiếu. Tương tự như C
-Nếu muốn truyền tham chiếu thì phải dùng con trỏ hoặc một số cấu trúc dùng tham trị như slices hay maps.
+****** Note trong go thì truyền arguments bằng giá trị chứ ko phải tham chiếu. Tương tự như C
+Nếu muốn truyền tham chiếu thì phải dùng con trỏ hoặc một số cấu trúc dùng tham trị như slice hay map.
 Đồng thời method thì thường xuyên được defined trên pointer.  
 
 # Mutability trong go  
@@ -110,9 +114,9 @@ giá trị nên một func có thể thay đổi giá trị đó chứ không th
 --------------------------Types----------------------------------
 # Basic type  
 
-Kiểu dữ liệu chung :  
+* Kiểu dữ liệu chung :  
 bool string  
-Kiểu số:  
+* Kiểu số:  
 uint(32 or 64 bit(tùy thuộc vào kiến trúc 32 hay 64 bit))  
 int tương tự size uint  
 uintptr  
@@ -136,12 +140,25 @@ i := 1
 x := float32(i)
 ```
 # Type Assertion  
+```golang
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var x interface{} = "hello"
+	s := x.(string)
+	fmt.Println(s)
+}
+```
 
 Code sample: https://play.golang.org/p/EEOdNgO9Yau  
 
 # Struct  
 
-Struct tương tự như c, ta có thể khai báo như sau:  
+Struct tương tự như C, ta có thể khai báo như sau:  
 ```golang
 type Person struct {
   Name string
@@ -149,15 +166,16 @@ type Person struct {
 }
 ```
 
-Có con trỏ struct ví dụ var x = &Person{"Thai", 22} thì có thể truy cập vào các biến ở trong struct. Ví dụ:  
+Có con trỏ struct ví dụ ``` var x = &Person{"Thai", 22}``` thì có thể truy cập vào các biến ở trong struct. Ví dụ:  
 ```golang
 var d = Person{"Thai", 12} 
-d.Name -> getName
 ```
+d.Name -> getName
+
 
 # Initializing  
 
-New  expression sẽ cấp phátmột vùng nhớ zezoed value cho biến và trả về con trỏ đến vùng nhớ đó. Zezo value là giá trị mặc định cho kiểu : ví dụ boolean là false, int là 0, string là "", con trỏ, slide,
+New expression sẽ cấp phát một vùng nhớ zezo value cho biến và trả về con trỏ đến vùng nhớ đó. Zezo value là giá trị mặc định cho kiểu : ví dụ boolean là false, int là 0, string là "", con trỏ, slice,
 ... là nil .
 ví dụ:
 ```golang
@@ -167,8 +185,8 @@ type Person struct {
 }
 x := new(Person)
 y := &Person{}
--> *x = *y
 ```
+-> *x = *y  
 Những cách khởi tạo giá trị: 
 Nếu dùng new thì giá trị khởi tạo mặc định là zezo value. Ta có thể khởi tạo bằng cách:
 ```golang 
@@ -194,10 +212,10 @@ type Student struct {
   ID string
 }
 ```
-Bằng cách bên trên thì những thành phần(thuộc tính )của Person sẽ trở thành thuộc tính của Student
+Bằng cách bên trên thì những thành phần (thuộc tính )của Person sẽ trở thành thuộc tính của Student
 Ta có thể truy cập vào các thành phần bằng cách student.Name  student.ID ,...  
 
-Một kiểu khác bên trên là thay vì chỉ truyền vào kiểu Person thì ta có thể truyền vào 1 con trỏ trỏ
+Một kiểu khác bên trên là thay vì chỉ truyền vào kiểu Person thì ta có thể truyền vào 1 con trỏ
 Ví dụ:  
 ```golang
 type Student struct {
@@ -211,15 +229,15 @@ Tuy nhiên với cách này thì ta sẽ không thể gọi trực tiếp thành
 
 # Array  
 
-Khai báo  
+Khai báo:  
 ```golang
 var a [2]string
 a := [2]string{"thai", "bui"}
 ```
-ngoài ra cũng có thể dùng ... để khai báo ngầm length:
+Ngoài ra cũng có thể dùng ... để khai báo ngầm length:
 ```a:= [...]string{"s", "a", "e", "d"}```
 
-*****CHú ý là trong golang thì length cũng là 1 phần trong type . nghĩa là type []string là ko tồn tại
+***** Chú ý là trong golang thì length cũng là 1 phần trong type . nghĩa là type []string là ko tồn tại
 phải là [2]string. . Chính vì thế mà length của array là không thể thiếu  và không thể THAY ĐỔI
 các array nhiều chiều thì khai báo [2][3]string chẳng hạn
 
@@ -228,16 +246,16 @@ Slice khai báo
 ```s := []int{1,2,42}```
 or
 ```s := make([]int, 5, 10)```
-Với cách thứ hai thì các phần tử của slide sẽ là giá trị zezo value. đồng thời len và cap của slice là
+Với cách thứ hai thì các phần tử của slice sẽ là giá trị zezo value. đồng thời len và cap của slice là
 tham số truyền vào.  
 
-Thực chất slide build on top của array. 1 slide gồm có 3 trường thông tin: con trỏ trỏ đến array, length, cap
+Thực chất slice build on top của array. 1 slice gồm có 3 trường thông tin: con trỏ trỏ đến array, length, cap
 length và cap khác nhau ở chỗ length là số phần tử hiện tại của slice còn cap là số phần tử max mà slice đó có
 thể chứa.  
 Giả sử ta có a := [5]int  s := a[2:4] thì s lúc này có length là 2 và cap là 3. Điều này vì a chỉ có 5 ô nhớ int. s là lát cắt từ phần tử thứ 2 đến hết thứ 3 -> số phần tử max mà slice này có thể mở rộng chỉ có thể kéo đến phần tử index 4 của array. Nếu sang 5 thì sẽ là lỗi truy cập bộ nhớ quá
 của array.
 Điều này quan trọng khi ta xây dựng các hàm tiện dụng trên slice như append, hay copy.
-Nếu số phần tử mà ta thêm vào những hàm append mà cap của slice đó không đủ chứa thì ta phải tạo 1 slice mới có cap to hơnvà thực hiện copy các giá trị của slice cũ vào.  
+Nếu số phần tử mà ta thêm vào những hàm append mà cap của slice đó không đủ chứa thì ta phải tạo 1 slice mới có cap to hơn và thực hiện copy các giá trị của slice cũ vào.  
 
 Nói chung slice build on top của array, cơ bản chỉ là con trỏ trỏ đến array và có trường cap tiện ích giúp tạo nên sự linh động.  
 
@@ -606,7 +624,7 @@ func main() {
 }
 ```
 Như ví dụ,ta đã khỏi tạo channel bằng hàm make. Mỗi channel chỉ vận chuyển một kiểu dữ liệu nhất định nên ta phải chỉ định kiểu khi khởi tạo.
-Một ví dụ khác về tính tổng của 1 slide như sau: 
+Một ví dụ khác về tính tổng của 1 slice như sau: 
 ```golang
 func sum(c chan int, s []int) int {
   sum := 0
