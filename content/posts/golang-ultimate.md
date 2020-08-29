@@ -6,103 +6,164 @@ categories: [Golang-Basic, Draft]
 ---
 *** <em>Đây là draft nhá</em> :3 ***   
 *****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy  
-Lesson 1.
-Mở rộng đầu óc.
-Go có cách riêng của nó.
-Cố gắng suy nghĩ đơn giản.
-Code phải đơn giản và có nghĩa, dễ đọc.
-2 mục tiêu chính:
-- code(kiến trúc) đơn giản, có nghĩa
-- tránh chi phí ẩn trong các mẩu code nhỏ.
-- Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản.
+# Lesson 1.
+* Go có cách riêng của nó.
+* Code phải đơn giản và có nghĩa, dễ đọc.
+* 2 mục tiêu chính:
+    * code(kiến trúc) đơn giản, có nghĩa
+    * tránh chi phí ẩn trong các mẩu code nhỏ.
+    * Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản.
 
-Lesson 2.
+# Lesson 2.
 
-Syntax
+## Syntax
 
 Nắm rõ tại sao và như thế nào syntax, tránh chi phí ẩn.
 
-2.1 Variable
+### Variable
 
--data trong bộ nhớ là bit nên để đọc được nó có nghĩa thì cần có 1 type.
--khai báo với var thì khởi tạo với zezo value còn := thì phải gán giá trị.
--string trong go là 2 word, 1 là con trỏ đến địa chỉ đầu và 2 là số bytes của nó
--casting và conversion: casting thì mở rộng ô nhớ hiện tại ví dụ từ 1byte
-thì thêm 3 bytes liên tiếp vào sau. -> ko an toàn vì có khả năng ghi đè vào
+Data trong bộ nhớ là bit nên để đọc được nó có nghĩa thì cần có 1 type.  
+Khai báo với var thì khởi tạo với zezo value còn := thì phải gán giá trị.  
+String trong go là 2 word, 1 là con trỏ đến địa chỉ đầu và 2 là số bytes của nó.  
+Casting và conversion: casting thì mở rộng ô nhớ hiện tại ví dụ từ 1 byte thì thêm 3 bytes liên tiếp vào sau -> ko an toàn vì có khả năng ghi đè vào
 vùng của struct khác./// conversion thì tạo hẳn 1 vùng nhớ kác rồi copy vào
-đó. castiing: [10] extend -> [10][][][]. conversion: [10] make new-> [][][][] copy -> [][10][][]
+đó. casting: [10] extend -> [10][][][]. conversion: [10] make new-> [][][][] copy -> [][10][][]
 
-2.2 Struct
+### Struct
 
--ví dụ 
+Ví dụ
+```golang 
 type bill {
   flag bool
   id int16
   cost float32
 }
-. Cost của 1 biến struct trên là 8 chứ không phải7 bytes.
-Lí do: ta có các bounary trong bộ nhớ. Yý tưởng là không muốn lưu 1 value mà vượt qua ranh giới đó
--> cần có padding 
-[flag][padding][int16][][float32][][][]
+```
+Cost của 1 biến struct trên là 8 chứ không phải 7 bytes.
+Lí do: ta có các bounary trong bộ nhớ. ý tưởng là không muốn lưu 1 value mà vượt qua ranh giới đó -> cần có padding:
+```[flag][padding][int16][][float32][][][]```
 -> 8 bytes. Nếu id là int32 -> padding là 3 bytes, cost = 12 bytes.
-Để optimize thì ta có thể sắp xếplại thứ tự các biến từ lớn đến bé: cost, id, flag
-Đọc thêm về alignment struct trong golang: https://medium.com/@felipedutratine/how-to-organize-the-go-struct-in-order-to-save-memory-c78afcf59ec2
+Để optimize thì ta có thể sắp xếp lại thứ tự các biến từ lớn đến bé: cost, id, flag
+Đọc thêm về alignment struct trong golang: https://medium.com/@felipedutratine/how-to-organize-the-go-struct-in-order-to-save-memory-c78afcf59ec2  
 
-Tuy nhiên cần cân nhắc optimize vì có thể nó làm khó đọc code. Để dễ đọc code thì ta thường hay nhóm
-các field có liên quan vào gần nhau.
+Tuy nhiên cần cân nhắc optimize vì có thể nó làm khó đọc code. Để dễ đọc code thì ta thường hay nhóm các field có liên quan vào gần nhau.  
 
-- vấn đề về explicit và implicit convertion.
+#### Vấn đề về explicit và implicit convertion.
 ví dụ ta có 2 struct alice va bob y hệt nhau được khai báo. Đây là 2 kiểu named type.
-khi đó nếu ta gán a = b -> lỗi vì a không phải kiểu b nên không gán vậy được. Thay vào đó thì ta cần
-ép kiểu của b thành a rồi mới gán : b = alice(b) a = b   (explicit)
+khi đó nếu ta gán a = b -> lỗi vì a không phải kiểu b nên không gán vậy được. Thay vào đó thì ta cần ép kiểu của b thành a rồi mới gán : b = alice(b) a = b   (explicit)
 tuy nhiên nếu ta khai báo 1 kiểu unamed type mà cấu trúc y hệt alice thì không cần conversion (implicit converion)
 
 Code: https://play.golang.org/p/qH5CgqEQEC1
+```golang
+type user struct {
+	name string
+	age int
+} 
 
+type fakeUser struct {
+	name string
+	age int
+}
 
-2.3 Pointer (pass by value, pointer sematic)
-các vùng nhớ của 1 chường trình gồm segment, stack, heap (?)
--Khi 1 goroutine được thực thi thì nó được cấp 1 frame trong stack của chương trình.và nó chỉ có quyền sửa
-đổi các biến trong vùng đó.
-- Mỗi thời điểm có 1 goroutine chạy nghĩa là chỉ có 1 frame được activate. goroutine sẽ thay đổi các biến
-trên vùng nhớ của nó.
-- Môi trường trong từng frame này có thể coi như 1 sandbox độc lập.
-- Điều này nảy sinh việc passbyvalue trong go. Khi đó khi ta gọi hàm khác trong hàm thì stack của hàm to
-sẽ unactive, cờ active sẽ trỏ vào frame stack của hàm được gọi và goroutine bắt đầu thực thi trên vùng stack
- frame đó. Chính vì vây, biến mà ta truyền vào thực chất được copy giá trị và gán vào 1 biến mới trong vùng
-frame stack của hàm được gọi. Mọi thay đổi của biến này không liên quan đến biến gốc trong hàm to.
--> nhu cầu về sủa đổi biến trong frame khác. -> truyền vào địa chỉ củâ biến trong frame khác. 
+func main() {
+	var u user
+	fakeU := fakeUser{"Thai", 22}
+	u = fakeU // error because fakeUser and user is named type.
+	u = user(fakeU) // must explicit conversion with named type
+	fmt.Println(u)
+	fmt.Println("--------------")
+	unamedType := struct {
+		name string
+		age int
+	}{
+		"Thang",
+		22,
+	}
+	u = unamedType // implicit conversion can use with unnameType
+	fmt.Println(u)
+}
+```
 
-- Pass by value có cái giá là tồn tại nhiều bản ghi copy  của dữ liệu trong chương trình -> memory,... Đôi khi
+### Pointer (pass by value, pointer sematic)
+Các vùng nhớ của 1 chường trình gồm segment, stack, heap (?)
+* Khi 1 goroutine được thực thi thì nó được cấp 1 frame trong stack của chương trình và nó chỉ có quyền sửa đổi các biến trong vùng đó.  
+* Mỗi thời điểm có 1 goroutine chạy nghĩa là chỉ có 1 frame được activate. Goroutine sẽ thay đổi các biến trên vùng nhớ của nó.
+* Môi trường trong từng frame này có thể coi như 1 sandbox độc lập.
+- Điều này nảy sinh việc passbyvalue trong go. Khi đó khi ta gọi hàm khác trong hàm thì stack của hàm to sẽ unactive, cờ active sẽ trỏ vào frame stack của hàm được gọi và goroutine bắt đầu thực thi trên vùng stack frame đó. Chính vì vây, biến mà ta truyền vào thực chất được copy giá trị và gán vào 1 biến mới trong vùng frame stack của hàm được gọi. Mọi thay đổi của biến này không liên quan đến biến gốc trong hàm to.
+
+<strong>---></strong> nhu cầu về sủa đổi biến trong frame khác. -> truyền vào địa chỉ của biến trong frame khác. 
+
+* Pass by value có cái giá là tồn tại nhiều bản ghi copy  của dữ liệu trong chương trình -> memory,... Đôi khi
 rất phức tạp khi update giá trị các biến, balababa
-Nhưng bù lại thì nó cung cấp tính isolation cho các vùng nhớ , tính integrity cho các dữ liệu( thứ mà go
-rất coi trọng và đặt lên hàng đầu)
+Nhưng bù lại thì nó cung cấp tính isolation cho các vùng nhớ , tính integrity cho các dữ liệu( thứ mà go rất coi trọng và đặt lên hàng đầu)
 
----Chính vì vậy mà ta cần cân bằng giữa value sematic và pointer sematic.
+<em>Chính vì vậy mà ta cần cân bằng giữa value sematic và pointer sematic.</em>
 
 Mechanics là cách hoạt động còn sematic là Cachs cư cử (behave)
 
 Code: https://play.golang.org/p/GWLkTqiMLym
+```golang
+// pointer semantic
+func passByPointer(a *int) {
+	fmt.Println("Start checkFrameVars passByPointer")
+	fmt.Printf("Address of a: %p, Value of a: %p, Value a point to: %d\n", &a, a, *a)
+	fmt.Println("End checkFrameVars passByPointer")
+}
 
-2.3 Pointer part 2 sharing data
+func passByValue(a int) {
+	fmt.Println("Start checkFrameVars passByValue")
+	fmt.Printf("Address of a: %p, Value of a: %d\n", &a, a)
+	fmt.Println("End checkFrameVars passByValue")
+}
 
-pointer sematic có chwúc năng để share data over diffrent frame.
-Với pointer, ta có thể đọc ghi các biến nằm ngoài active frame. 
+func main() {
+	var a int = 5
+	var x = &a
+	fmt.Printf("Address of x: %p\n", &x)
+	fmt.Printf("Address of a: %p, Value of a: %d\n", &a, a)
+	passByValue(a)
+	passByPointer(x)
+}
+```
+### Pointer part 2 sharing data
+
+Pointer sematic có  chức năng để "share data over diffrent frame". Với pointer, ta có thể đọc ghi các biến nằm ngoài active frame. 
 Chú ý, các địa chỉ nằm ngoài active frame mà ta có thể thay đổi phải nằm trong frame ở trên nó.
-Nghĩa là ví dụ từ main ta gọi hàm test(p *int) thì địa chỉ mà biến p giữ phải nằm tronf frame của main, không
-thể nằm ở những frame dưới. nó bởi tất cả những frame bên dưới là những frame có tính tạm. và có thể xóa đi 
-để tái sử dụng khi hoàn thành xong chức năng. Điều này cũng xuất phát từ chính cơ chế của stack. 
+Nghĩa là ví dụ từ main ta gọi hàm test(p *int) thì địa chỉ mà biến p giữ phải nằm trong frame của main, không thể nằm ở những frame dưới nó bởi tất cả những frame bên dưới là những frame có tính tạm. và có thể xóa đi để tái sử dụng khi hoàn thành xong chức năng. Điều này cũng xuất phát từ chính cơ chế của stack. 
 Nói chung biến mà nó thay đổi phải nằm trong vùng frame được đặt vào stack trước.
 
-Cost cho pointer sematic: tính integrity của data. pointer giống như là 1  mũi tên xuyên qua lá chắn
-isolation, integrity của GO
+Cost cho pointer sematic: tính integrity của data. pointer giống như là 1  mũi tên xuyên qua lá chắn isolation, integrity của GO
 
 Code: https://play.golang.org/p/I0WIEHkCiTO
+```golang
+type user struct {
+	name string
+	age uint
+}
 
-2.3 Pointer(escape analysis)
+func inspectUser(u user) {
+	fmt.Printf("User Name: %s Value: %d\n", u.name, u.age)
+}
+
+func changeName(u *user, newName string) {
+	// func changeName use pointer semantic to share a value of user type from main framestack 
+	u.name = newName
+}
+
+func main() {
+	u := user{
+		name: "Thai",
+		age: 22,
+	}
+	inspectUser(u)
+	changeName(&u, "Thang")
+	inspectUser(u)
+}
+```
+### Pointer(escape analysis)
 
 Hãy tưởng tượng ta có ví dụ sau:
-
+```golang
 type user struct {
   name string
   age int
@@ -119,19 +180,16 @@ func createUser(name string, age int) *user {
 func main() {
   u := createUser("thai", 2)
 }
-. Như các ví dụ ở trước đã phân tích:
-1, 1 frame được cấp cho main tại đáy stack. Goroutine thực thi trên frame này. Frame này đang được activate 
-2, Khi gọi đến hàm createUser() thì 1 frame mới được thêm vào đỉnh stack, Goroutine chuyển qua thực thi trên frame này, Frame này đang được active
-3. Khi tạo biến u thì sẽ lưu value của nó trên frame đó.
-4. khi return, goroutine chuyển lại thực hiện trên frame đầu tiên của main. Frame đó được activate. biến u tại main sẽ chứa địa chỉtrỏ đến
-value u được khỏi tạo trong stack.
--> Phát sinh vấn đề ở đây: Như ta đã phân tích thì chỉ có thể thực hiện tác động đến giá trị trỏ bởi con trỏ mà giá trị đó nằm ở frame được đẩy
-vào stack trước. Vì stack sau khi quay lại main thì nó còn dọn dẹp để có thể tái sử dụng cho khi gọi hàm khác. Điều đó dẫn đến nhiều vấn đề sai 
-, quá sai.
+```
+Như các ví dụ ở trước đã phân tích:
+* 1 frame được cấp cho main tại đáy stack. Goroutine thực thi trên frame này. Frame này đang được activate 
+* Khi gọi đến hàm createUser() thì 1 frame mới được thêm vào đỉnh stack, Goroutine chuyển qua thực thi trên frame này, Frame này đang được active.
+* Khi tạo biến u thì sẽ lưu value của nó trên frame đó.
+* Khi return, goroutine chuyển lại thực hiện trên frame đầu tiên của main. Frame đó được activate. biến u tại main sẽ chứa địa chỉ trỏ đến
+value u được khởi tạo trong stack.
+<strong>---></strong> Phát sinh vấn đề ở đây: Như ta đã phân tích thì chỉ có thể thực hiện tác động đến giá trị trỏ bởi con trỏ mà giá trị đó nằm ở frame được đẩy vào stack trước. Vì stack sau khi quay lại main thì nó còn dọn dẹp để có thể tái sử dụng cho khi gọi hàm khác. Điều đó dẫn đến nhiều vấn đề sai.  
 
-Điều này đã được Go xử lí thỏa đáng bằng cơ chế escape analysis. Compiler sẽ thực hiện phân tích code và nó sẽ biến nếu thực hiện như trên thì 
-có vấn đề. Khi đó thay vì tạo gía trị của user trong hàm createUser() trên frame stack của hàm này thì Nó sẽ tạo giá trị này TRÊN HEAP.
-biến u trong hàm lúc này trỏ giá trị của nó vào giá trị ở heap. Khi ta trả về cũng là trả về địa chỉ của giá trị ở heap.
+Điều này đã được Go xử lí thỏa đáng bằng cơ chế escape analysis.Khi đó thay vì tạo gía trị của user trong hàm createUser() trên frame stack của hàm này thì compiler sẽ tạo giá trị này TRÊN HEAP. Biến u trong hàm lúc này trỏ giá trị của nó vào giá trị ở heap. Khi ta trả về cũng là trả về địa chỉ của giá trị ở heap.
 
 Nhờ có vậy mà Điều này có thể thực hiện trong GO và là tính năng tuyệt vời của GO.
 
@@ -144,40 +202,50 @@ u := &user{balabala} rồi return u thì dòng return u không đem lại khả 
 Vậy nên ta nên sử dụng value semactic cho constructor. thay vì dùng pointer sematic. Trừ 1 cách viết chấp nhận được là u:= return &user{balalal}
 
 Code: https://play.golang.org/p/RpE2slqMfR-
+```golang
+// in real code, we never make contructor for type because it make hidden cost
+func createUser(name string, age uint) *user {
+	u := user{"Thai", 22}
+	fmt.Printf("Address of u in heap: %p\n", &u)
+	return &u // vaue of u will storage in heap because of escaping analysis
+	// never use below code
+	//u := &user{"Thai", 22}
+	//return u
+	// it make difficult to read code because of pointer semantic for constructor
+}
 
-2.3 part 4 stack growth
--tại lúc compile time thì những biến có kích thước ko cố định sẽ được khởi tạo trong heap
--Bình thường thì 1 goroutine được cấp 2kb dung lượng stack. Với 1 goroutine thông thường thì đủ. NHưng có những trường hợp cần stack nhiều hơn
-thì go có cơ chế để làm điều này. Nó sẽ tạo 1 stack mới, map các giá trị từ stack cũ sang, tuy nhiên với con trỏ thì nó sẽ sửa lại để
-trỏ lại đúng vịtrí trên stack mới. Bằng cách này thì stack sẽ được mở rộng. 
--Các goroutine stack không thể có con trỏ trỏ qua nhau chính bởi vấn đề này. Nếu có điều này thì khi ta growth stack 1 goroutine thì 1 đống 
+func main() {
+	u := createUser("Thai", 22)
+	fmt.Printf("Value of u: %p, Value u point to: ", u)
+	fmt.Println(*u)
+}
+```
+
+### Part 4 stack growth
+* Tại lúc compile time thì những biến có kích thước ko cố định sẽ được khởi tạo trong heap.  
+* Bình thường thì 1 goroutine được cấp 2kb dung lượng stack. Với 1 goroutine thông thường thì đủ. Nhưng có những trường hợp cần stack nhiều hơn thì go có cơ chế để làm điều này. Nó sẽ tạo 1 stack mới, map các giá trị từ stack cũ sang, tuy nhiên với con trỏ thì nó sẽ sửa lại để trỏ lại đúng vị trí trên stack mới. Bằng cách này thì stack sẽ được mở rộng. 
+* Các goroutine stack không thể có con trỏ trỏ qua nhau chính bởi vấn đề này. Nếu có điều này thì khi ta growth stack 1 goroutine thì 1 đống 
 con trỏ trong những stack khác sẽ phải update lại giá trị mới.
 
---------------------------Remember, Go is about integrity first, it's about minimizing resources second-----------
+--------------------------<em>Remember, Go is about integrity first, it's about minimizing resources second</em>-----------
 
 
-2.3 pointer part 5 Garbage collection
+### Pointer part 5 Garbage collection
 
-garbage chạy thuật toán pacing alg để quản lí heap. ví dụ heap 4mb thì mỗi khi mà lượng data trong heap tăng
-lên sát 4 thì ngay lập tức barbage sẽ chiếm lấy cpu để chạy thuật toán, cố gắng giải phóng các vùng nhwó
-ko có tham chiếu đến trong heap để tăng ko gian trống trong heap.
-tri-color: heap giống như 1 đồ thị. Khi mà mỗi node trong đó về cơ bản là 1 value, 1 cờ có 3 màu trắng đen,
-xám. Các con trỏ trỏ từ heap, từ global variable, từ trong stack ra heap. Nếu mà các con trỏ này đc giải phóng or trỏ đi chỗ
-lhác thì cờ được gán thành màu trắng. Garbage collector sẽ giải phóng nó. Nếu màu đen nghĩa là có reference
+* Garbage chạy thuật toán pacing alg để quản lí heap. ví dụ heap 4mb thì mỗi khi mà lượng data trong heap tăng lên sát 4 thì ngay lập tức barbage sẽ chiếm lấy cpu để chạy thuật toán, cố gắng giải phóng các vùng nhớ ko có tham chiếu đến trong heap để tăng ko gian trống trong heap.  
+* Tri-color: heap giống như 1 đồ thị. Khi mà mỗi node trong đó về cơ bản là 1 value, 1 cờ có 3 màu trắng đen, xám. Các con trỏ trỏ từ heap, từ global variable, từ trong stack ra heap. Nếu mà các con trỏ này đc giải phóng hoặc trỏ đi chỗ khác thì cờ được gán thành màu trắng. Garbage collector sẽ giải phóng nó. Nếu màu đen nghĩa là có reference
 trỏ đến -> ko giải phóng.
 
-Phải cân bằng giữa value sematic và pointer sematic khi ta viết code cũng là giúp cho heap đwuọc sử dụng hiệu quả,
+Phải cân bằng giữa value sematic và pointer sematic khi ta viết code cũng là giúp cho heap được sử dụng hiệu quả,
 garbage collector làm ít việc hơn và chương trình nhanh hơn.
 
 
-2.4 Constant(xem lại nếu có thời gian)
-trong go có 2 kiểu constant là:
--kind constant:
+### Constant(xem lại nếu có thời gian)
+Trong go có 2 kiểu constant là:
+* kind constant:
  const x = 1
--> ko có kiểu cụ thể. Tùy vào ngữ cảnh mà n có size khác nhau
-độ chính xác 256 bits
-implicit conversion
--type constant:
+-> ko có kiểu cụ thể. Tùy vào ngữ cảnh mà n có size khác nhau độ chính xác 256 bits, implicit conversion
+* type constant:
 const x int64 = 1
 explicit conversion
 tham khảo thêm tại https://blog.learngoprogramming.com/learn-golang-typed-untyped-constants-70b4df443b61
@@ -185,50 +253,140 @@ tham khảo thêm tại https://blog.learngoprogramming.com/learn-golang-typed-u
 constant chỉ tồn tại lúc compile time, lúc runtime thì ko tồn tại -> ko có địa chỉ
 
 Code: https://play.golang.org/p/qDQi4AXvh5V
+```golang
+const x = 2
 
-Lession 3
-Data struct
+const y int = 3
 
-3.2 Array part 1 
+func main() {
+	fmt.Printf("%p\n", &x) // can not take the address of x 
+}
+```
 
-Mechanical Sympathy
+# Lession 3
+## Data struct
+
+### Array part 1 
+
+* Mechanical Sympathy
 (thỏa thuận với cơ chế phần cứng)
-Tại sao GO chỉ có array, slice, map
+Tại sao GO chỉ có array, slice, map?
 
 Lấy 1 ví dụ : ta cần duyệt qua 1 mảng 2 chiều 1 triệu phần tử bằng 2 cách : row travesal, column travesal
 và duyệt qua 1 linked list. Cách nào nhanh nhất.
-THứ tự nhanh sẽ là row travesal - > column travesal -> linked list.
+Thứ tự nhanh sẽ là row travesal - > column travesal -> linked list.
 
 Các cơ chế về cached L1, L2, L3, main memory, processor. 
 data vận chuyển từ L1 đến processor là cực nhanh, sau đó đến các cache L2, L3 rồi main memory là chậm.
 Để chương trình chạy nhanh hơn thì ta cần các data của mình được nạp vào sẵn trong L1 hoặc L2 trước khi nó 
-được processor lấy. cache chia thành các cache line, có 1 chương trình nhỏ ở processor(?) hay trong chip
-luôn chạy sẵn, nó sẽ quyết định sẽ lấy data nào trong ram vào cache.
+được processor lấy. Cache chia thành các cache line, có 1 chương trình nhỏ ở processor(?) hay trong chip
+luôn chạy sẵn, nó sẽ quyết định sẽ lấy data nào trong ram vào cache.  
 
 Chương trình này sẽ lấy các cache line trong ram vào cache. Nó sẽ ưu tiên các cấu trúc dữ liệu trên RAM mà
-có tính predictable stripe (đại loại là ở liền kề nhau trên RAM). Chính vì vậy mà nếu data của ta
-nằm liền kề nhau trên RAM thì sẽ được ưu tiên nạp vào cache.
+có tính predictable stripe (đại loại là ở liền kề nhau trên RAM). Chính vì vậy mà nếu data của ta nằm liền kề nhau trên RAM thì sẽ được ưu tiên nạp vào cache.  
 
-Mechanical sympathy là các cơ chế mà giúp ta deal với phần cứng, os tốt hơn(?) đại loại là thế.
+Mechanical sympathy là các cơ chế mà giúp ta deal với phần cứng, os tốt hơn(?) đại loại là thế.  
 Trong java thì có JVM nó sẽ giúp chương trình của mình deal với mechanical sysmpathy nên dev không cần lo
 phần này. Nhưng trong go ta không có 1 con máy ảo lo viêc đó như JVM nên dev phải deal với nó.
 
 Array hay slice cơ bản là 1 tạo ra data struct tuân theo predictable access pattern thứ sẽ giúp phù hợp
 với các cơ chế của cache để chương trình của ta nhanh hơn rất nhiều. Chính vì vây mà ta không thích linked
-list hya stack, queue, balabala trong GO.Trong Go, slice ở mọi nơi.
+list hya stack, queue, balabala trong GO.Trong Go, slice ở mọi nơi.  
 
 Một điều nữa khiến cho linked list chậm là TLB(?) đại loại là bảng phân trang của OS thì linked list nó có
 khả năg cao nằm rải rác trong nhiều page -> ko có trong TLB -> truy cập rất chậm vì phải tìm kiếm bala.
 
-Bằng cách tuân thủ predictable access pattern thì peformance sẽ rất tốt.
-Trong GO slice ở mọi nơi
+Bằng cách tuân thủ predictable access pattern thì peformance sẽ rất tốt.  
+Trong GO slice ở mọi nơi.
 
 Cost: Implement thuật toán lằng nhằng, đôi khi làm tính mở rộng thuật toán khó.
 
 Code: https://play.golang.org/p/6FniMaJP2TZ (chạy trên máy chứ ko chạy trên playground vì time = 0s)
+```golang
+type Node struct {
+	value int
+	nextNode *Node
+}
 
-3.2 Array part2 
-Sematics
+func traversalByRow(matrix *[1000][1000]int) int32 {
+	start := time.Now()
+	var count int32 = 0
+	for i := 0; i < 1000; i++ {
+		for j := 0; j< 1000; j++ {
+			if matrix[i][j] == 1 {
+				count++		
+			}
+		}
+	}
+	//end := time.Now()
+	elapsed := time.Since(start)
+	fmt.Printf("travelsalByRow: %d\n", elapsed.Nanoseconds())
+	return count
+}
+
+func traversalByCol(matrix *[1000][1000]int) int32 {
+	start := time.Now()
+	var count int32 = 0
+	for i := 0; i < 1000; i++ {
+		for j := 0; j< 1000; j++ {
+			if matrix[j][i] == 1 {
+				count++		
+			}
+		}
+	}
+	//end := time.Now()
+	elapsed := time.Since(start)
+	fmt.Printf("travelsalByCol: %d\n", elapsed.Nanoseconds())
+	return count
+}
+
+func traversalOnLinkedList(headNode *Node) int32 {
+	start := time.Now()
+	var count int32 = 0
+	var currentNode *Node = headNode
+	for currentNode != nil {
+		if (*currentNode).value == 1 {
+			count++
+		}
+		currentNode = (*currentNode).nextNode
+	}
+	elapsed := time.Since(start)
+	fmt.Printf("travelsalOnLinkedList: %d\n", elapsed.Nanoseconds())
+	return count
+}
+
+func main() {
+	var matrix [1000][1000]int
+	for i := 0; i < 1000; i++ {
+		for j := 0; j< 1000; j++ {
+			if j%2 == 1 {
+				matrix[i][j] =1
+			}
+		}
+	}
+	var preNode = &Node{0, nil}
+	var headNode = preNode
+	for i := 1; i < 1000000; i++ {
+		newNode := Node{0, nil}
+		if i%2 == 1 {
+			newNode.value = 1
+		}
+		preNode.nextNode = &newNode
+		
+		preNode = &newNode
+	}
+	
+	count := traversalByRow(&matrix)
+	fmt.Println(count)
+	count = traversalByCol(&matrix)
+	fmt.Println(count)
+	count = traversalOnLinkedList(headNode)
+	fmt.Println(count)
+}
+```
+
+### Array part2 
+* Sematics
 
 Nói chung là không mix sematics (mix pointer sematic với value sematic) vì nó gây confused
 Ví dụ:
@@ -237,65 +395,121 @@ for i, v := range &friends {
 }
 Nhìn ngáo vcl
 
-3.3 Slice part1
+### Slice part1
 
-empty struct là  1 kiểu mà ko đc cấp phát bộ nhớ. Nghĩa là chả tốn bộ nhớ gì
-var es struct{}
+Empty struct là  1 kiểu mà ko đc cấp phát bộ nhớ. Nghĩa là chả tốn bộ nhớ gì.  
+```var es struct{}```
 
 Không có gì đặc biệt(24 bytes tương tự như giải thích trong tài liệu Note)
 Lưu ý phân biệt giữa nil slice và empty slice
 
-nil slice thì con trỏ có giá trị nil còn empty slice thì con trỏ trỏ vào emty struct (struct{})
+nil slice thì con trỏ có giá trị nil còn empty slice thì con trỏ trỏ vào emty struct (struct{})  
 var data []string -> data la nil slice -> sử dụng khi ta cần error 
 data := []string{} -> data la empty string -> sử dụng khi không có ý định trả về error mà chỉ là nothings
 trong collection
 
 Code: https://play.golang.org/p/kACBS0R3LPH
+```golang
+func main() {
+	// nil slice
+	var data []int
+	fmt.Println(data, len(data), cap(data))
+	fmt.Println(data == nil)
+	
+	// empty slice
+	newData := []int{}
+	fmt.Println(newData, len(newData), cap(newData))
+	fmt.Println(newData == nil)
+	 
+	// slice init with zezo value
+	s := make([]int, 5, 7)
+	fmt.Println(s)
+}
+```
 
-3.3 Slice part 2 Append slice
+### Slice part 2 Append slice
 
-Khi ta gọi data = append(data, something) ,
+Khi ta gọi:
+```data = append(data, something)```
 Tạo 1 bản copy của data(24 bytes).
-Nó sẽ check xem length có bằng cap ko. Nếu không thì đơn giản
-là ta gán giá vào element tiếp theo của slice giá trị something.
-Nếu có thì khởi tạo mới 1 slice mới với cap là gấp đôi cap slice cũ rồi copy giá trị từ slide cũ vào
-Trỏ con trỏ trong slice cũ sang slice vừa tạo.
+Nó sẽ check xem length có bằng cap ko. Nếu không thì đơn giản là ta gán giá vào element tiếp theo của slice giá trị something. Nếu có thì khởi tạo mới 1 slice mới với cap là gấp đôi cap slice cũ rồi copy giá trị từ slide cũ vào. Trỏ con trỏ trong slice cũ sang slice vừa tạo.
 
-3.3 Slice part 2 Append slice
+### Slice part 2 Append slice
 
 Một số ví dụ:
+```golang
 slice1 := []string{"a", "b", "c", "d", "e"}
 slice2 := slice1[0:2]
 slice2 = append(slice2, "f")
+```
 -> slice1[2] = "f"
 -> side effect 
-Ta có thể chỉ định cap cho slice 2 bằng tham số thứ 3 : slice2 := slice1[0:2:4] -> cap = 2
+Ta có thể chỉ định cap cho slice 2 bằng tham số thứ 3 :
+```golang
+slice2 := slice1[0:2:4] -> cap = 2
+```
 
-Code: https://play.golang.org/p/XQF21AZ7FVi
+Code: https://play.golang.org/p/XQF21AZ7FVi  
+```golang
+func inspect(s []int) {
+	fmt.Printf("Len: %d, Cap: %d\n", len(s), cap(s))
+	fmt.Println(s)
+}
 
-code trên cho thấy sự thay đối khi ta append value vào slice. Đồng thời thấy reference khi ta dùng [:] để
-tạo slice
+func main() {
+	s := make([]int, 5, 6)
+	inspect(s)
+	s = append(s, 2)
+	inspect(s)
+	s = append(s, 3)
+	inspect(s)
+	fmt.Println("-------------")
+	s2 := s[7:12]
+	inspect(s2)
+	s = append(s, 4)
+	// because slice is just a pointer build ontop of array -> s2 point to a array is the same with array s point to
+	inspect(s)
+	inspect(s2)
+	fmt.Println("-------------")
+	// s2 now full. Let append more to it
+	s2 = append(s2, 10)
+	inspect(s)
+	inspect(s2)
+	fmt.Println("-------------")
+	// now we append to s and will never see change in s2 because of s2 now in a new address.
+	s = append(s, 5)
+	inspect(s)
+	inspect(s2)
+}
+```
 
-3.4 Slice and references
+Code trên cho thấy sự thay đối khi ta append value vào slice. Đồng thời thấy reference khi ta dùng [:] để
+tạo slice.
+
+### Slice and references
 
 Cẩn thận với memory leak khi dùng append slice. Ví dụ:
+
+```golang
 type user {
   likes int
 }
 
 func main() {
   users := make([]user, 2)
-  shareUser := & users[1]
+  shareUser := &users[1]
   shareuser.likes++
   // -> users[1].likes = 1
   users = append(users, user{})
   shareuser.likes++
   // -> shareUser.likes = 2 but users[1].likes = 1
 }
+```
 
-3.5 Map
+### Map
 
-ví dụ: 
+ví dụ:
+```golang
 func main() {
   users := make(map[string]int)
   users["A"] = 1
@@ -305,10 +519,10 @@ func main() {
     fmt.Printf("users[%s] = %d", k, v)
   }
 }
-
+```
 Mỗi lần lặp vào map thì sẽ có 1 thứ tự random.
 lặp range trong map thì sẽ random. Để không truy cập random như vậy thì có cách:
-
+```golang
 func main() {
   users := make(map[string]int)
   users["A"] = 1
@@ -323,14 +537,14 @@ func main() {
     fmt.Printf("users[%s] = %d", key, users[key])
   }
 }
+```
+# Lesson 4
 
-Lesson 4
+## Decoupling
 
-Decoupling
+### Methods part1 declare & receiver behavior
 
-4.1 Methods part1 dclare & receiver behavior
-
-receiver cũng là 1 tham số, nó cũng tuân theo value sematic. Ví dụ như sau:
+Receiver cũng là 1 tham số, nó cũng tuân theo value sematic. Ví dụ như sau:
 
 type user struct {
 	name string
@@ -362,24 +576,53 @@ func main() {
 }
 
 Ở ví dụ trên ta thấy có 1 convenient khi ta gọi method, method changeName() yêu cầu rêciver là 1 con trỏ user
-nhưng ta lại có thể gọi u.changeName(). tương tự khi ta gọi y.show() trong khi y là 1 con trỏ.
+nhưng ta lại có thể gọi u.changeName(). Tương tự khi ta gọi y.show() trong khi y là 1 con trỏ.  
 Điều này có thể vì trong GO khi gọi method thì ko quan tâm là dạng con trỏ hay value, điều mà 1 method quan
-tâm là rêciver đó có dữ liệu cần từ đâu đó bởi rêciver truyền vào . Như vậy nên ta có thế gọi thế kia.
+tâm là receiver đó có dữ liệu cần từ đâu đó bởi receiver truyền vào . Như vậy nên ta có thế gọi thế kia.
 
 Code: https://play.golang.org/p/9T02TWlWApQ
+```golang
 
-4.1 Methods part2 value and pointer semantic
+type user struct {
+	name string
+	age int
+}
 
-Phần này giúp ta quyết định khi nào dùng value semantic, khi nào dùng pointer semantic với rêciver trong 
-method GO
-TRong GO ta làm việc với 3 kiểu dữ liệu:
+func (u user) showName() {
+	fmt.Printf("Name: %s", u.name)
+}
+
+func (u *user) changeName(s string) {
+	fmt.Printf("Address *u point to: %p\n", u)
+	u.name = s
+}
+
+func inspect(u user) {
+	fmt.Printf("User: Name: %s, Age: %d\n", u.name, u.age)
+}
+
+
+func main() {
+	u := user{"Thai", 22}
+	fmt.Printf("Address of u: %p\n", &u)
+	u.changeName("Thang") // it is the convenient of go = (&u).changeName()
+	inspect(u)
+	(&u).showName() // convenient too.
+}
+```
+
+### Methods part2 value and pointer semantic
+
+Phần này giúp ta quyết định khi nào dùng value semantic, khi nào dùng pointer semantic với receiver trong 
+method GO  
+Trong GO ta làm việc với 3 kiểu dữ liệu:
 1. Built-in type: numeric, string, bool
 2. Reference type: slice, map, channel, interface values, functions
 3. struct type
-//////////////////////////////////////
-Luật đơn giản: built-in type -> value semantic
-               reference type -> value semantic(đơn giản là ko có lí do gì để ta lấy address của address)
- trừ khi với slice và map mà ta muốn share nó thì dùng pointer type(?). Trường hợp ngoại lệ: decode và unmarshal
+//////////////////////////////////////  
+Luật đơn giản: 
+* built-in type -> value semantic  
+* reference type -> value semantic(đơn giản là ko có lí do gì để ta lấy address của address) trừ khi với slice và map mà ta muốn share nó thì dùng pointer type(?). Trường hợp ngoại lệ: decode và unmarshal
 
 Code: https://play.golang.org/p/aoE7CrK7svI
 
@@ -390,16 +633,17 @@ vào 1 value type Time thì nó là cùng 1 thứ hay là 2 thứ khác nhau. T�
 là 2 thời điểm. 2 thằng tồn tại mà không loại trừ nhau. Tương tự như struct user. Tự hỏi nếu ta đối tên của
 user thì đó là 2 người hay vẫn là 1 người. Tất nhiên là 1 người. Ta có thể map thực tế vào.
 
-4.1 part 3
+### Part 3
 
 Func and method
 
--Tronf go thực chất ko có method như trong oop. method đều là func hết và tách riêng vs state. Điều này
- có thể chứng minh:
+-Trong go thực chất ko có method như trong oop. method đều là func hết và tách riêng vs state. Điều này
+ có thể chứng minh:  
 ///////
-1. method khai báo ngoài data. Có nghĩa là nó không phải 1 khối như oop. trong oop. State đi liền với method
+* method khai báo ngoài data. Có nghĩa là nó không phải 1 khối như oop. Trong oop, state đi liền với method
 và được khai báo bên trong class. Nhưng trong go, state và method không đi kèm với nhau như 1 khối. Như
 ví dụ này :
+```golang
 type user struct {
 	name string
 	age int
@@ -426,9 +670,10 @@ func main() {
 	user.displayName(u)
   (*user).setAge(&u, 2)
 }
+```
 . Ta thấy nếu ta mà khai báo thêm 1 type : type bill user thì bill có những method của user ko???
 Câu trả lời là không. Vì data của user type và method của nó không phải 1 cục.
-+ cách gọi thực chất của method.là gọi theo function như trong ví dụ mô tả.Cách gọi method chỉ là 1 sugar 
++ cách gọi thực chất của method là gọi theo function như trong ví dụ mô tả.Cách gọi method chỉ là 1 sugar 
 syntax trong GO. khi xử lí, thay vì gọi như method thì sẽ gọi user.display(u) với u chính là receiver và cũng
 là tham số đầu tiên. Chính vì vậy mà u cũng tuân theo value sematic, được copy giá trị.
 
@@ -438,7 +683,7 @@ Code: https://play.golang.org/p/91lwAqC3aOY
 
 /////////////////
 
-- TRong go thì func cũng chỉ là value. CHứng minh:
+- TRong go thì func cũng chỉ là value. Chứng minh:
 f1 := u.displayName
 f1()
 f2 := u.setAge
@@ -446,24 +691,55 @@ f2(22)
 
 Ta có thể gắn func với 1 biến và gọi func qua biến đó. Lúc đó biến f1, f2 sẽ như thế nào:
 Biến có kích thước 2 word giống string. word đầu trỏ đến vùng code, word thứ 2 trỏ đến value là copy của u.
-Tại sao lại là value copy của u. Đơn giản là value sematic
-f1 : [pointer to code][pointer to a copy of u]
-f2 : [pointer to code][pointer to origin of u] vì nó dùng pointer sematic
+Tại sao lại là value copy của u. Đơn giản là value sematic  
+```f1 : [pointer to code][pointer to a copy of u]```  
+```f2 : [pointer to code][pointer to origin of u]``` vì nó dùng pointer sematic
 
 Code: https://play.golang.org/p/bxzOKi542xs
+```golang
+type user struct {
+	name string
+	age int
+}
 
-4.2 Interface part1
-Polymophism
+func (u user) displayName() {
+	fmt.Printf("Name: %s\n", u.name)
+}
+
+func (u *user) changeAge(age int) {
+	u.age = age
+}
+
+func inspect(u user) {
+	fmt.Printf("User: name: %s, age: %d\n", u.name, u.age)
+}
+
+func main() {
+	u := user{"Thai", 22}
+	// it just be value
+	f1 := u.displayName
+	f2 := u.changeAge
+	f1()
+	f2(2)
+	inspect(u)
+}
+```
+
+### Interface part1
+<strong>Polymophism</strong>  
 Đa hình là có thể viết một chương trình nhất định và nó hành xử khác nhau phụ thuộc vào data mà nó tính toán
 trên đó.
 
-1. interface giúp tạo ra đa hình trong GO. 
+* interface giúp tạo ra đa hình trong GO. 
 ta có thể khai báo interface:
+```golang
 type Reader interface {
   read([]bytes) string
 }
-Điều này có nghĩa là kiểu Reader được tạo ra không phải dựs trên 1 struct mà dựa trên interface
-- Interface là 1 tyoe không có thật, không phải real data như các type khác
+```
+Điều này có nghĩa là kiểu Reader được tạo ra không phải dự trên 1 struct mà dựa trên interface
+* Interface là 1 type không có thật, không phải real data như các type khác  
+```golang
 type pipe struct {
   name string
 }
@@ -471,8 +747,10 @@ func (p pipe) read(slice []byte) (x string) {
   // do something
   return
 }
+```
 bằng cách trên thì pipe đã implement reader interface.
 tương tự vs 
+```golang
 type book interface {
   name string
 }
@@ -480,40 +758,41 @@ func (b book) read(slice []byte) (x string){
   // do something
   return
 }
-
+```
 Bằng cách trên thì book và pipe đã implement interface reader với value semantic
 
+```golang
 func retrieve(r reader) error {
   // do something
   return err
 }
+```
 
-Bên trên ta có thể thấy  fun nhận vào type là 1 interface. Tuy nhiên trên thực tế thì type interface là
+Bên trên ta có thể  thấy func nhận vào type là 1 interface. Tuy nhiên trên thực tế thì type interface là
 valueless -> Có vẻ vô lí. 
--THực chất thì dòng khai báo trên có nghĩa là nhận vào bất cứ kiểu concrete nào
-mà có full set behavior của reader.
+Thực chất thì dòng khai báo trên có nghĩa là nhận vào bất cứ kiểu concrete nào mà có full set behavior của reader.
 
-Sau đó trong main ta tạo 1 biến pipe là x: x := pipe{"Thai"} rồi call
-retrieve(x)
--> Semantic ở đây là value semantic. x lúc này là 1 interface value 
-Như ta đã nói x là valueless vì nó là gía trị của 1 interface . Vậy trong GO thì đã cài đặt nó thế nào.
--Thực tế nó là 2 word con trỏ
-+trong đó word thứ 2 thì trỏ đến 1 bản copy của value type pipe mà ta đã tạo.(Bằng cách này, x vẫn là valueless)
+Sau đó trong main ta tạo 1 biến pipe là x: ```x := pipe{"Thai"}``` rồi call
+```retrieve(x)```
+-> Semantic ở đây là value semantic. x lúc này là 1 interface value.  
+Như ta đã nói x là valueless vì nó là gía trị của 1 interface . Vậy trong GO thì đã cài đặt nó thế nào?  
+Thực tế nó là 2 word con trỏ:
+* Trong đó word thứ 2 thì trỏ đến 1 bản copy của value type pipe mà ta đã tạo.(Bằng cách này, x vẫn là valueless)
 nhưng nó lại trỏ đến 1 vùng concrete data, thứ mà có thể tính toán bên trên đó.
-+ CÒn word thứ nhất thì trỏ đến 1 bảng là itable(tương tự nhwu vtable trong oop)
-Trong bảng itable thì word đầu tiên lưu concrete type của x, phần còn lại thì là con trỏ trỏ đến 
-func implement thực sự của method read mà sử dụng cho conrete type.
-x : [pointer1][pointer2]
-pointer1 -> bản copy of gía trịbiến x (chính là giá trị "Thai")
-pointer2 -> itable
-itable : [pipe][pointer3]
-pointer3 -> [giá trịhàm implement method read cho type pipe]
--Quá trình gọi hàm từ interface type
++ Con word thứ nhất thì trỏ đến 1 bảng là itable(tương tự nhu vtable trong oop)
+Trong bảng itable thì word đầu tiên lưu concrete type của x, phần còn lại thì là con trỏ trỏ đến  func implement thực sự của method read mà sử dụng cho conrete type.  
+```x : [pointer1][pointer2]```  
+pointer1 -> bản copy of gía trị biến x (chính là giá trị "Thai")  
+pointer2 -> itable  
+itable : [pipe][pointer3]  
+pointer3 -> [giá trị hàm implement method read cho type pipe].
+
+Quá trình gọi hàm từ interface type:  
 Khi đó ở trong hàm retrieve mà ta gọi r.read(...) thì nó sẽ tìm từ word thu 2 của biến x trỏ sang iTable.
-Tại đây nó sẽ tra được bẳng iTable TÌm được hàm read được implement cho kiểu pipe thực sự ở đâu và gọi đến
+Tại đây nó sẽ tra được bẳng iTable TÌm được hàm read được implement cho kiểu pipe thực sự ở đâu và gọi đến.  
 
 (nếu x là type book thì bản copy là bản value của book, itable lúc này word đầu lưu "book", còn lại trỏ 
-đến vùng value implement func read của type book(nhớ là func cũng chỉ là 1 value trong go)) 
+đến vùng value implement func read của type book(nhớ là func cũng chỉ là 1 value trong go)).  
 
 ---- Cost: indirection: con trỏ trỏ đến con trỏ từ value interface đến itable đến func implement,..
 và allocation của bản copy concrete data
