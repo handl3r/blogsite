@@ -180,7 +180,7 @@ Dùng tool ngrok nha. Cài xong thì
 ```shell script
 ./ngrok http 8080
 ```
-![alt text](http://url/to/img.png) ngrok1.png
+![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/ngrok1.png) 
 
 Cái subdomain mà thằng ngrok dùng làm webhook nha:
 vào github repo và set webhook cho nó: http://97850f9e1993.ngrok.io/github-webhook/
@@ -196,7 +196,7 @@ Chọn Multibranch Pipeline nha.
 Setup ngon lành rồi thì ấn zo Scan repo now cho nó quét repo của mình và theo dõi hết branch nha. Các chức năng trên ui của nó tự tìm hiểu nhé các bạn. Thế cho kích thích. :v
 Hình thù sau khi nó scan xong thì thế này đây:
 
-Ảnh x1
+![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/x1.png)
 
 Vào Multibrach pipeline events mà xem mấy cái event bắn qua lại giữa jenkins với github nha. Nhìn sướng mắt. 
 
@@ -207,10 +207,10 @@ Oke rồi. Giờ này thằng jenkins truy cập được vào repo của mình 
 ## Test thử
 Đẩy nhánh mới lên github nha. Chú ý xem log của ngrok sẽ thấy thằng git hub bắn event về cho jenkins. Bạn sẽ thấy ttl tăng nha. opn cũng nhảy 1 lúc. Data từ github bắn về  web-hook chính là cái domain mà ngrok mở cho mình. Nó sẽ forward về jenkins local của mình. Thằng jenkins bắt được thì nó sẽ chạy theo pipeline của mình. Chính là công việc định nghĩa trong Jenkinsfile đó.
 Truy cập zo Ocean Blue nha. 
-Ảnh x2.png
+![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/x2.png)
 Nhìn pipeline của nó có kích thích không ạ. Ấn vào từng Stage để  xem kĩ nó thực hiện những instruction của mình trong jenkinsfile nha.  
 Tại sao không deploy vậy? Vì điều kiện when của mình trong jenkinsfile đó. push action không có xảy ra trên master nên đến stage đó thì nó không chạy thôi.
-Ảnh x3.
+![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/x3.png)
 Nhìn này. jenkins cũng bắn data cho github để nó biết là các stage chạy pass ngon lành cành đào.
 
 Jenkins nhiều chức năng lắm . Mình cũng biết có xíu à. Các bạn tự tìm hiểu nhé.
@@ -260,7 +260,7 @@ Trên mình có nói qua rồi.
 * Tạo merge request vào main
 * Lặp lại mấy bước quan sát trên nhìn cho thích mắt.
 * Merge pull request vừa rồi vào master rồi lại quan sát. Lần này sẽ thấy nó chạy stage Build and Deploy nha.
-Ảnh x4.
+![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/x4.png)
 
 Nhìn thú dzi đúng không. vào web browser test thử ngay con app mới vừa deploy.
 
