@@ -196,7 +196,7 @@ Chọn Multibranch Pipeline nha.
 Setup ngon lành rồi thì ấn zo Scan repo now cho nó quét repo của mình và theo dõi hết branch nha. Các chức năng trên ui của nó tự tìm hiểu nhé các bạn. Thế cho kích thích. :v
 Hình thù sau khi nó scan xong thì thế này đây:
 
-![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/x1.png)
+![Boom](https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/rsz_x1.png)
 
 Vào Multibrach pipeline events mà xem mấy cái event bắn qua lại giữa jenkins với github nha. Nhìn sướng mắt. 
 
