@@ -1,3 +1,9 @@
+---
+title: "lab Jenkins"
+date: 2020-09-25T17:30:47Z
+draft: false
+categories: [Jenkins,CICD, Draft]
+---
 *** Dựng lab chơi chơi chạy jenkins nào ***
 Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.
 # Mô tả lab cơ bản như sau:
