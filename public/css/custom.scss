@@ -18,7 +18,7 @@ $fa-font-path: "./webfonts";
 // === Custom Styles ===
 #content {
   width: 100%;
-  max-width: 650px;
+  max-width: 850px !important;
   min-height: calc(100vh - 105px);
 }
 

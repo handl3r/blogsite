@@ -4,12 +4,42 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/draft/</loc>
+    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
+    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/jenkins/</loc>
+    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/lab_jenkins/</loc>
+    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/golang-ultimate/</loc>
+    <lastmod>2020-08-16T17:30:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/golang-basic/</loc>
+    <lastmod>2020-08-16T17:30:47+00:00</lastmod>
   </url>
   
   <url>
@@ -23,22 +53,7 @@
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-08-14T03:55:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/draft/</loc>
-    <lastmod>2020-08-13T16:56:03+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/posts/golang-scratch-paper/</loc>
-    <lastmod>2020-08-13T16:56:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/golang-basic/</loc>
     <lastmod>2020-08-13T16:56:03+00:00</lastmod>
   </url>
   
@@ -55,6 +70,10 @@
   <url>
     <loc>/posts/welcome/</loc>
     <lastmod>2020-07-27T17:25:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ci/cd/</loc>
   </url>
   
   <url>

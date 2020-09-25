@@ -7,10 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Fri, 14 Aug 2020 03:55:38 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2020 13:32:48 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lab Jenkins</title>
+      <link>/posts/lab_jenkins/</link>
+      <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
+      
+      <guid>/posts/lab_jenkins/</guid>
+      <description>*** Dựng lab chơi chơi chạy jenkins nào *** Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.
+Mô tả lab cơ bản như sau:  Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins. SCM là github. Link repo https://github.com/handl3r/multibranches Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox.</description>
+    </item>
+    
+    <item>
+      <title>Golang Ultimate</title>
+      <link>/posts/golang-ultimate/</link>
+      <pubDate>Sun, 16 Aug 2020 17:30:47 +0000</pubDate>
+      
+      <guid>/posts/golang-ultimate/</guid>
+      <description>*** Đây là draft nhá:3 ***
+*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy
+Lesson 1.  Go có cách riêng của nó. Code phải đơn giản và có nghĩa, dễ đọc. 2 mục tiêu chính:  code(kiến trúc) đơn giản, có nghĩa tránh chi phí ẩn trong các mẩu code nhỏ. Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản.    Lesson 2.</description>
+    </item>
     
     <item>
       <title>Next Time</title>
@@ -29,7 +50,7 @@ This is notification for plans:  Maybe next week, i will publish my second draft
       
       <guid>/posts/golang-scratch-paper/</guid>
       <description>*** Đây là draft nhá:3 ***
-Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
+Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
     </item>
     
     <item>
@@ -41,7 +62,8 @@ Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có th
       <description>Handl3r Bring my code to the real-world  Fullname: ThaiBuiXuan
 Age: 22
 Job: Information technology Student
-Main Languages: Golang, Ruby Techs: Golang, Ruby, Rails, Gin, SQL-database(Mysql, Firebird,&amp;hellip;), NoSQL-database(mongodb), Virtualization(docker), CI/CD(CircleCI) Knowledge: Software development, Cryptography, Cyber Security,&amp;hellip;
+Main Languages: Golang, Ruby Techs: Golang, Ruby, Rails, Gin, SQL-database(Mysql, Firebird,&amp;hellip;), NoSQL-database(mongodb), Virtualization(docker), CI/CD(CircleCI)
+Knowledge: Software development, Cryptography, Cyber Security,&amp;hellip;
   </description>
     </item>
     
@@ -51,7 +73,7 @@ Main Languages: Golang, Ruby Techs: Golang, Ruby, Rails, Gin, SQL-database(Mysql
       <pubDate>Mon, 27 Jul 2020 17:25:38 +0000</pubDate>
       
       <guid>/posts/welcome/</guid>
-      <description>Hello, this&amp;rsquo;s my blog. See you later</description>
+      <description>Hello, this’s my blog </description>
     </item>
     
   </channel>

@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Thu, 13 Aug 2020 16:56:03 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2020 17:30:47 +0000</lastBuildDate>
     
 	<atom:link href="/categories/golang-basic/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang Ultimate</title>
+      <link>/posts/golang-ultimate/</link>
+      <pubDate>Sun, 16 Aug 2020 17:30:47 +0000</pubDate>
+      
+      <guid>/posts/golang-ultimate/</guid>
+      <description>*** Đây là draft nhá:3 ***
+*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy
+Lesson 1.  Go có cách riêng của nó. Code phải đơn giản và có nghĩa, dễ đọc. 2 mục tiêu chính:  code(kiến trúc) đơn giản, có nghĩa tránh chi phí ẩn trong các mẩu code nhỏ. Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản.    Lesson 2.</description>
+    </item>
     
     <item>
       <title>Golang Scratch Paper</title>
@@ -19,7 +30,7 @@
       
       <guid>/posts/golang-scratch-paper/</guid>
       <description>*** Đây là draft nhá:3 ***
-Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
+Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
     </item>
     
   </channel>

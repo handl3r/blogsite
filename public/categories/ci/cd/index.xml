@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on Handl3r&#39;s Blog</title>
+    <link>/categories/ci/cd/</link>
+    <description>Recent content in CI/CD on Handl3r&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
+    
+	<atom:link href="/categories/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lab Jenkins</title>
+      <link>/posts/lab_jenkins/</link>
+      <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
+      
+      <guid>/posts/lab_jenkins/</guid>
+      <description>*** Dựng lab chơi chơi chạy jenkins nào *** Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.
+Mô tả lab cơ bản như sau:  Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins. SCM là github. Link repo https://github.com/handl3r/multibranches Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -11341,7 +11341,7 @@ readers do not read off random characters that represent icons */
 
 #content {
   width: 100%;
-  max-width: 650px;
+  max-width: 850px !important;
   min-height: calc(100vh - 105px); }
 
 #home-image {
