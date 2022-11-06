@@ -7,8 +7,8 @@ draft: false
 <strong><em>Bring my code to the real-world</em></strong>
 ***
 > <strong>Fullname</strong>: ThaiBuiXuan  
-> <strong>Age</strong>: 22  
-> <strong>Job</strong>: Information technology Student  
+> <strong>Age</strong>: 24
+> <strong>Job</strong>: Software Engineer
 > <strong>Main Languages</strong>: Golang, Ruby    
 > <strong>Techs</strong>: Golang, Ruby, Rails, Gin, SQL-database(Mysql, Firebird,...), NoSQL-database(mongodb), Virtualization(docker), CI/CD(CircleCI)  
 > <strong>Knowledge</strong>: Software development, Cryptography, Cyber Security,... 

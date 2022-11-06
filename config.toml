@@ -41,7 +41,7 @@ copyright = "&copy; 2020, ThaiBuiXuan"
     href = "http://github.com/handl3r"      # Link to associate with icon (http://, https://, mailto:)
   [[params.social]]
     fa_icon = "fab fa-linkedin-in fa-1x"
-    href = ""
+    href = "https://www.linkedin.com/in/thaibuixuan"
   [[params.social]]
     fa_icon = "fab fa-twitter fa-1x"
     href = "https://twitter.com/buixuanthai"
