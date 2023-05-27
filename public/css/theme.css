@@ -58,6 +58,11 @@ body {
   text-align: left;
   background-color: #f8f9fa; }
 
+#content {
+  width: 100%;
+  max-width: 1200px !important;
+  min-height: calc(100vh - 105px); }
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
