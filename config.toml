@@ -48,3 +48,7 @@ copyright = "&copy; 2020, ThaiBuiXuan"
   [[params.social]]
     fa_icon = "fas fa-at fa-1x"
     href = ""
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -7,6 +7,7 @@ draft: false
 <strong><em>Bring my code to the real-world</em></strong>
 ***
 > <strong>Fullname</strong>: ThaiBuiXuan  
+> <strong>Updating...</strong>  
 > <strong>Age</strong>: 24
 > <strong>Job</strong>: Software Engineer
 > <strong>Main Languages</strong>: Golang, Ruby    

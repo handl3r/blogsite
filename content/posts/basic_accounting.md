@@ -1,7 +1,6 @@
 ---
 title: "Basic_accounting"
 date: 2023-05-19T14:14:20Z
-draft: false
 ---
 
 # Basic accounting topic
@@ -155,10 +154,80 @@ the corporation earns a profit. There will be decrease when the corporation has 
 will automatically increase Stockholder's Equity and expenses will automatically decrease Stockholder's Equity. This
 illustrates the link between balance sheet and income statement.
 
-`(Đại loại là vốn chủ sở hữu sẽ là book value của công ty = assets - nợ phải trả). Tuy nhiên không nên đem vốn chủ sỡ hữu của công ty để liên hệ với giá trị của nó
-trên market vì theo principle bên trên thì các asset sẽ luôn được ghi nhận <= giá trị thực của nó trên market.  
-Lợi nhuận sẽ làm tăng Vốn chủ sỏ hữu còn chi phí thì làm giảm- nếu revenues > expenses thì sẽ có net income chính là asset tăng thêm -> 
-Có mối liên kết giữa Balance Sheet với Income Statement).` 
+`(Đại loại là vốn chủ sở hữu sẽ là book value của công ty = assets - nợ phải trả). Tuy nhiên không nên đem vốn chủ sỡ hữu của công ty để liên hệ với giá trị của nó trên market vì theo principle bên trên thì các asset sẽ luôn được ghi nhận <= giá trị thực của nó trên market.  
+Lợi nhuận sẽ làm tăng Vốn chủ sỏ hữu còn chi phí thì làm giảm- nếu revenues > expenses thì sẽ có net income chính là asset tăng thêm ->
+Có mối liên kết giữa Balance Sheet với Income Statement).`
+
+### Statement Of Cash Flows(Báo cáo lưu chuyển tiền mặt)
+
+*The Statement Of Cash Flows shows how DDI's cash amount has changed during the interval time shown in the heading of
+the statement. Joe will be able to see at a glance the cash generated and used by his company's operating activities,
+its investing activities, and its financing activities. Much of the information on this financial statement will come
+from Direct Delivery's balance sheets and income statements.*  
+The explanation of this statement will be shown later in this post.
+
+### Double-Entry System
+
+*Double entry is a simple yet powerful concept: each one company's transaction will result in an amount recorded into at
+least two of accounts in the accounting system*
+`(Mọi giao dịch của công ty sẽ phải được ghi lại bằng sự biến đổi trong ít nhất 2 accounts)`  
+
+I understand that accounting concepts can be difficult to grasp, but let me try to explain the basic idea behind debit
+and credit. Debit and credit are accounting terms that represent the movement of money into or out of a business
+account. They are used to record financial transactions in a company's financial statements, such as the balance sheet
+and income statement. Debit represents the left-hand side of an accounting entry, while credit represents the right-hand
+side. The fundamental accounting equation is Assets = Liabilities + Equity, and every transaction has to keep this
+equation balanced. Here is a simple example to help illustrate the concept:
+Suppose a company purchases a new computer for $1,000 with cash. The accounting entry to record this transaction would
+be:Debit Computer equipment account for $1,000 (asset account), Credit Cash account for $1,000 (asset account).  
+In this example, the computer equipment account has increased by $1,000, while the cash account has decreased by $1,000.
+The transactions have been recorded in accordance with the accounting equation, because the total assets of the company
+have remained the same. In summary, debit is used to record an increase in assets or a decrease in liabilities or
+equity, while credit is used to record an increase in liabilities or equity or a decrease in assets.  
+
+**A.The chart of accounts(COA)**:
+COA is a list of accounts that will need for report the transaction. So J must found the chart of account that useful to
+him and his business. Some sample accounts that J will probably need to include on this COA:
+
+1. Balance Sheet Accounts:
+    1. Asset Accounts: [Cash](https://www.accountingcoach.com/terms/C/cash)
+       , [Account Receivable](https://www.accountingcoach.com/terms/A/accounts-receivable)
+       , [Supplies](https://www.accountingcoach.com/terms/S/supplies)
+       , [Equipment](https://www.accountingcoach.com/terms/E/equipment)
+    2. Liability accounts: [Notes Payable](https://www.accountingcoach.com/terms/N/notes-payable)
+       , [Account Payable](https://www.accountingcoach.com/terms/A/accounts-payable)
+       , [Wages Payable](https://www.accountingcoach.com/terms/W/wages-payable)
+    3. Stockholder' Equity Accounts: [Common Stock](https://www.accountingcoach.com/terms/C/common-stock)
+       , [Retained Earning](https://www.accountingcoach.com/terms/R/retained-earnings)
+2. Income Statement Accounts:
+    1. Revenue Accounts: [Service Revenues](https://www.accountingcoach.com/terms/S/service-revenues)
+       , [Investment Revenue](https://www.accountingcoach.com/terms/I/investment-revenues)
+    2. Expenses Accounts: [Wages Expenses](https://www.accountingcoach.com/terms/W/wages-expense)
+       , [Rent Expenses](https://www.accountingcoach.com/terms/R/rent-expense)
+       , [Depreciation Expenses](https://www.accountingcoach.com/terms/D/depreciation-expense)
+
+**B.Sample transaction**
+
+1. Transaction 1:
+   So Joe just start his DDI by his investment of $20000 in exchange for 5000 shares of DDI's common stock.
+    1. Balance Sheet:  
+       So the Cash Account will increase $20000 and Stockholder's Equity also increase $20000.
+       <img src="https://www.accountingcoach.com/wp-content/uploads/2013/10/60X-table-01@2x.png"  width="600" height="200">  
+       Check the formula:
+       ```text
+       Assets = Liabilities + Stockholder' Equity
+       $20000 = $0 + $20000
+       ```
+       *The accounting equation (and the balance sheet) should always be in balance.*
+    2. Debit&Credit
+       In this case, The asset Cash is increased -> So it should be Debit on the Cash Account.  
+       The Stockholder's Equity is increased -> So it should be Credit on the Common Stock Account.  
+       <img src="https://www.accountingcoach.com/wp-content/uploads/2013/10/60X-journal-01@2x.png"  width="600" height="110">
+2. Transaction 2
+
+
+
+
 
 
 

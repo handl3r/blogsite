@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5ad7b14-837e-44f5-9ff0-d429626b38ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/content/posts/basic_accounting.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/about.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/posts/basic_accounting.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/posts/basic_accounting.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/devise" beforeDir="false" afterPath="$PROJECT_DIR$/themes/devise" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/devise/static/css/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/themes/devise/static/css/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/devise/static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/themes/devise/static/css/theme.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
