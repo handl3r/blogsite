@@ -2,67 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Handl3r&#39;s Blog</title>
-    <link>/categories/</link>
+    <link>https://handl3r.netlify.app/categories/</link>
     <description>Recent content in Categories on Handl3r&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Fri, 25 Sep 2020 13:32:48 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 01 Oct 2020 15:58:55 +0000</lastBuildDate><atom:link href="https://handl3r.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Draft</title>
-      <link>/categories/draft/</link>
-      <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
+      <link>https://handl3r.netlify.app/categories/draft/</link>
+      <pubDate>Thu, 01 Oct 2020 15:58:55 +0000</pubDate>
       
-      <guid>/categories/draft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jenkins</title>
-      <link>/categories/jenkins/</link>
-      <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
-      
-      <guid>/categories/jenkins/</guid>
+      <guid>https://handl3r.netlify.app/categories/draft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang-Basic</title>
-      <link>/categories/golang-basic/</link>
-      <pubDate>Sun, 16 Aug 2020 17:30:47 +0000</pubDate>
+      <link>https://handl3r.netlify.app/categories/golang-basic/</link>
+      <pubDate>Thu, 01 Oct 2020 15:58:55 +0000</pubDate>
       
-      <guid>/categories/golang-basic/</guid>
+      <guid>https://handl3r.netlify.app/categories/golang-basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>https://handl3r.netlify.app/categories/jenkins/</link>
+      <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
+      
+      <guid>https://handl3r.netlify.app/categories/jenkins/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Next</title>
-      <link>/categories/next/</link>
+      <link>https://handl3r.netlify.app/categories/next/</link>
       <pubDate>Fri, 14 Aug 2020 03:55:38 +0000</pubDate>
       
-      <guid>/categories/next/</guid>
+      <guid>https://handl3r.netlify.app/categories/next/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Stuff</title>
-      <link>/categories/stuff/</link>
+      <link>https://handl3r.netlify.app/categories/stuff/</link>
       <pubDate>Mon, 27 Jul 2020 17:25:38 +0000</pubDate>
       
-      <guid>/categories/stuff/</guid>
+      <guid>https://handl3r.netlify.app/categories/stuff/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CI/CD</title>
-      <link>/categories/ci/cd/</link>
+      <link>https://handl3r.netlify.app/categories/ci/cd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ci/cd/</guid>
+      <guid>https://handl3r.netlify.app/categories/ci/cd/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="en-us"><head>
+    <title>Handl3r&#39;s Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9045708503739442"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/avatar.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+        
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Handl3r
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    And in this moment, i swear we are infinite
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../about" title="About">About</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="http://github.com/handl3r" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/thaibuixuan" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://twitter.com/buixuanthai" target="_blank">
+                            <i class="fab fa-twitter fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-4 ml-sm-5">
+        <p>*** <em>Đây là draft nhá</em> :3 ***<br>
+*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy</p>
+<h1 id="lesson-1">Lesson 1.</h1>
+<ul>
+<li>Go có cách riêng của nó.</li>
+<li>Code phải đơn giản và có nghĩa, dễ đọc.</li>
+<li>2 mục tiêu chính:
+<ul>
+<li>code(kiến trúc) đơn giản, có nghĩa</li>
+<li>tránh chi phí ẩn trong các mẩu code nhỏ.</li>
+<li>Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản.</li>
+</ul>
+</li>
+</ul>
+<h1 id="lesson-2">Lesson 2.</h1>
+<h2 id="syntax">Syntax</h2>
+<p>Nắm rõ tại sao và như thế nào syntax, tránh chi phí ẩn.</p>
+<h3 id="variable">Variable</h3>
+<p>Data trong bộ nhớ là bit nên để đọc được nó có nghĩa thì cần có 1 type.<br>
+Khai báo với var thì khởi tạo với zezo value còn := thì phải gán giá trị.<br>
+String trong go là 2 word, 1 là con trỏ đến địa chỉ đầu và 2 là số bytes của nó.<br>
+Casting và conversion: casting thì mở rộng ô nhớ hiện tại ví dụ từ 1 byte thì thêm 3 bytes liên tiếp vào sau -&gt; ko an toàn vì có khả năng ghi đè vào
+vùng của struct khác./// conversion thì tạo hẳn 1 vùng nhớ kác rồi copy vào
+đó. casting: [10] extend -&gt; [10][][][]. conversion: [10] make new-&gt; [][][][] copy -&gt; [][10][][]</p>
+<h3 id="struct">Struct</h3>
+<p>Ví dụ</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">bill</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">flag</span> <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">id</span> <span style="color:#66d9ef">int16</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cost</span> <span style="color:#66d9ef">float32</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Cost của 1 biến struct trên là 8 chứ không phải 7 bytes.
+Lí do: ta có các bounary trong bộ nhớ. ý tưởng là không muốn lưu 1 value mà vượt qua ranh giới đó -&gt; cần có padding:
+<code>[flag][padding][int16][][float32][][][]</code>
+-&gt; 8 bytes. Nếu id là int32 -&gt; padding là 3 bytes, cost = 12 bytes.
+Để optimize thì ta có thể sắp xếp lại thứ tự các biến từ lớn đến bé: cost, id, flag
+Đọc thêm về alignment struct trong golang: <a href="https://medium.com/@felipedutratine/how-to-organize-the-go-struct-in-order-to-save-memory-c78afcf59ec2">https://medium.com/@felipedutratine/how-to-organize-the-go-struct-in-order-to-save-memory-c78afcf59ec2</a></p>
+<p>Tuy nhiên cần cân nhắc optimize vì có thể nó làm khó đọc code. Để dễ đọc code thì ta thường hay nhóm các field có liên quan vào gần nhau.</p>
+<h4 id="vấn-đề-về-explicit-và-implicit-convertion">Vấn đề về explicit và implicit convertion.</h4>
+<p>ví dụ ta có 2 struct alice va bob y hệt nhau được khai báo. Đây là 2 kiểu named type.
+khi đó nếu ta gán a = b -&gt; lỗi vì a không phải kiểu b nên không gán vậy được. Thay vào đó thì ta cần ép kiểu của b thành a rồi mới gán : b = alice(b) a = b   (explicit)
+tuy nhiên nếu ta khai báo 1 kiểu unamed type mà cấu trúc y hệt alice thì không cần conversion (implicit converion)</p>
+<p>Code: <a href="https://play.golang.org/p/qH5CgqEQEC1">https://play.golang.org/p/qH5CgqEQEC1</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>} 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">fakeUser</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fakeU</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fakeUser</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> = <span style="color:#a6e22e">fakeU</span> <span style="color:#75715e">// error because fakeUser and user is named type.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">u</span> = <span style="color:#a6e22e">user</span>(<span style="color:#a6e22e">fakeU</span>) <span style="color:#75715e">// must explicit conversion with named type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;--------------&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">unamedType</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	}{
+</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;Thang&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">22</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> = <span style="color:#a6e22e">unamedType</span> <span style="color:#75715e">// implicit conversion can use with unnameType
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pointer-pass-by-value-pointer-sematic">Pointer (pass by value, pointer sematic)</h3>
+<p>Các vùng nhớ của 1 chường trình gồm segment, stack, heap (?)</p>
+<ul>
+<li>Khi 1 goroutine được thực thi thì nó được cấp 1 frame trong stack của chương trình và nó chỉ có quyền sửa đổi các biến trong vùng đó.</li>
+<li>Mỗi thời điểm có 1 goroutine chạy nghĩa là chỉ có 1 frame được activate. Goroutine sẽ thay đổi các biến trên vùng nhớ của nó.</li>
+<li>Môi trường trong từng frame này có thể coi như 1 sandbox độc lập.</li>
+</ul>
+<ul>
+<li>Điều này nảy sinh việc passbyvalue trong go. Khi đó khi ta gọi hàm khác trong hàm thì stack của hàm to sẽ unactive, cờ active sẽ trỏ vào frame stack của hàm được gọi và goroutine bắt đầu thực thi trên vùng stack frame đó. Chính vì vây, biến mà ta truyền vào thực chất được copy giá trị và gán vào 1 biến mới trong vùng frame stack của hàm được gọi. Mọi thay đổi của biến này không liên quan đến biến gốc trong hàm to.</li>
+</ul>
+<p><strong>&mdash;&gt;</strong> nhu cầu về sủa đổi biến trong frame khác. -&gt; truyền vào địa chỉ của biến trong frame khác.</p>
+<ul>
+<li>Pass by value có cái giá là tồn tại nhiều bản ghi copy  của dữ liệu trong chương trình -&gt; memory,&hellip; Đôi khi
+rất phức tạp khi update giá trị các biến, balababa
+Nhưng bù lại thì nó cung cấp tính isolation cho các vùng nhớ , tính integrity cho các dữ liệu( thứ mà go rất coi trọng và đặt lên hàng đầu)</li>
+</ul>
+<p><em>Chính vì vậy mà ta cần cân bằng giữa value sematic và pointer sematic.</em></p>
+<p>Mechanics là cách hoạt động còn sematic là Cachs cư cử (behave)</p>
+<p>Code: <a href="https://play.golang.org/p/GWLkTqiMLym">https://play.golang.org/p/GWLkTqiMLym</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// pointer semantic
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">passByPointer</span>(<span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Start checkFrameVars passByPointer&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address of a: %p, Value of a: %p, Value a point to: %d\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">a</span>, <span style="color:#f92672">*</span><span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;End checkFrameVars passByPointer&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">passByValue</span>(<span style="color:#a6e22e">a</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Start checkFrameVars passByValue&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address of a: %p, Value of a: %d\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;End checkFrameVars passByValue&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">a</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address of x: %p\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address of a: %p, Value of a: %d\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">passByValue</span>(<span style="color:#a6e22e">a</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">passByPointer</span>(<span style="color:#a6e22e">x</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pointer-part-2-sharing-data">Pointer part 2 sharing data</h3>
+<p>Pointer sematic có  chức năng để &ldquo;share data over diffrent frame&rdquo;. Với pointer, ta có thể đọc ghi các biến nằm ngoài active frame.
+Chú ý, các địa chỉ nằm ngoài active frame mà ta có thể thay đổi phải nằm trong frame ở trên nó.
+Nghĩa là ví dụ từ main ta gọi hàm test(p *int) thì địa chỉ mà biến p giữ phải nằm trong frame của main, không thể nằm ở những frame dưới nó bởi tất cả những frame bên dưới là những frame có tính tạm. và có thể xóa đi để tái sử dụng khi hoàn thành xong chức năng. Điều này cũng xuất phát từ chính cơ chế của stack.
+Nói chung biến mà nó thay đổi phải nằm trong vùng frame được đặt vào stack trước.</p>
+<p>Cost cho pointer sematic: tính integrity của data. pointer giống như là 1  mũi tên xuyên qua lá chắn isolation, integrity của GO</p>
+<p>Code: <a href="https://play.golang.org/p/I0WIEHkCiTO">https://play.golang.org/p/I0WIEHkCiTO</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">uint</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inspectUser</span>(<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;User Name: %s Value: %d\n&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">changeName</span>(<span style="color:#a6e22e">u</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">user</span>, <span style="color:#a6e22e">newName</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// func changeName use pointer semantic to share a value of user type from main framestack 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span> = <span style="color:#a6e22e">newName</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">user</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">name</span>: <span style="color:#e6db74">&#34;Thai&#34;</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">age</span>: <span style="color:#ae81ff">22</span>,
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspectUser</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">changeName</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>, <span style="color:#e6db74">&#34;Thang&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspectUser</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pointerescape-analysis">Pointer(escape analysis)</h3>
+<p>Hãy tưởng tượng ta có ví dụ sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createUser</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">user</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">user</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name</span>: <span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">age</span>: <span style="color:#a6e22e">age</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">createUser</span>(<span style="color:#e6db74">&#34;thai&#34;</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Như các ví dụ ở trước đã phân tích:</p>
+<ul>
+<li>1 frame được cấp cho main tại đáy stack. Goroutine thực thi trên frame này. Frame này đang được activate</li>
+<li>Khi gọi đến hàm createUser() thì 1 frame mới được thêm vào đỉnh stack, Goroutine chuyển qua thực thi trên frame này, Frame này đang được active.</li>
+<li>Khi tạo biến u thì sẽ lưu value của nó trên frame đó.</li>
+<li>Khi return, goroutine chuyển lại thực hiện trên frame đầu tiên của main. Frame đó được activate. biến u tại main sẽ chứa địa chỉ trỏ đến
+value u được khởi tạo trong stack.
+<strong>&mdash;&gt;</strong> Phát sinh vấn đề ở đây: Như ta đã phân tích thì chỉ có thể thực hiện tác động đến giá trị trỏ bởi con trỏ mà giá trị đó nằm ở frame được đẩy vào stack trước. Vì stack sau khi quay lại main thì nó còn dọn dẹp để có thể tái sử dụng cho khi gọi hàm khác. Điều đó dẫn đến nhiều vấn đề sai.</li>
+</ul>
+<p>Điều này đã được Go xử lí thỏa đáng bằng cơ chế escape analysis.Khi đó thay vì tạo gía trị của user trong hàm createUser() trên frame stack của hàm này thì compiler sẽ tạo giá trị này TRÊN HEAP. Biến u trong hàm lúc này trỏ giá trị của nó vào giá trị ở heap. Khi ta trả về cũng là trả về địa chỉ của giá trị ở heap.</p>
+<p>Nhờ có vậy mà Điều này có thể thực hiện trong GO và là tính năng tuyệt vời của GO.</p>
+<p>Một chú ý ta cần nắm được là :
+-stack thì tự nó có cơ chế dọn dẹp. Đó chính là cơ chế với zezo value.
+-heap được dọn dẹp bởi garbage collector</p>
+<p>Một số lưu ý khi viết code: ví dụ nếu ta return &amp;u như trên thì chỉ cần nhìn dòng return là hiểu được code. Tuy nhiên nếu ta khởi tạo kiểu
+u := &amp;user{balabala} rồi return u thì dòng return u không đem lại khả năng đọc code như cũ.
+Vậy nên ta nên sử dụng value semactic cho constructor. thay vì dùng pointer sematic. Trừ 1 cách viết chấp nhận được là u:= return &amp;user{balalal}</p>
+<p>Code: <a href="https://play.golang.org/p/RpE2slqMfR-">https://play.golang.org/p/RpE2slqMfR-</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#75715e">// in real code, we never make contructor for type because it make hidden cost
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">createUser</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">age</span> <span style="color:#66d9ef">uint</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">user</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">user</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address of u in heap: %p\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span> <span style="color:#75715e">// vaue of u will storage in heap because of escaping analysis
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// never use below code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//u := &amp;user{&#34;Thai&#34;, 22}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">//return u
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// it make difficult to read code because of pointer semantic for constructor
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">createUser</span>(<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Value of u: %p, Value u point to: &#34;</span>, <span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="part-4-stack-growth">Part 4 stack growth</h3>
+<ul>
+<li>Tại lúc compile time thì những biến có kích thước ko cố định sẽ được khởi tạo trong heap.</li>
+<li>Bình thường thì 1 goroutine được cấp 2kb dung lượng stack. Với 1 goroutine thông thường thì đủ. Nhưng có những trường hợp cần stack nhiều hơn thì go có cơ chế để làm điều này. Nó sẽ tạo 1 stack mới, map các giá trị từ stack cũ sang, tuy nhiên với con trỏ thì nó sẽ sửa lại để trỏ lại đúng vị trí trên stack mới. Bằng cách này thì stack sẽ được mở rộng.</li>
+<li>Các goroutine stack không thể có con trỏ trỏ qua nhau chính bởi vấn đề này. Nếu có điều này thì khi ta growth stack 1 goroutine thì 1 đống
+con trỏ trong những stack khác sẽ phải update lại giá trị mới.</li>
+</ul>
+<p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;<em>Remember, Go is about integrity first, it&rsquo;s about minimizing resources second</em>&mdash;&mdash;&mdash;&ndash;</p>
+<h3 id="pointer-part-5-garbage-collection">Pointer part 5 Garbage collection</h3>
+<ul>
+<li>Garbage chạy thuật toán pacing alg để quản lí heap. ví dụ heap 4mb thì mỗi khi mà lượng data trong heap tăng lên sát 4 thì ngay lập tức barbage sẽ chiếm lấy cpu để chạy thuật toán, cố gắng giải phóng các vùng nhớ ko có tham chiếu đến trong heap để tăng ko gian trống trong heap.</li>
+<li>Tri-color: heap giống như 1 đồ thị. Khi mà mỗi node trong đó về cơ bản là 1 value, 1 cờ có 3 màu trắng đen, xám. Các con trỏ trỏ từ heap, từ global variable, từ trong stack ra heap. Nếu mà các con trỏ này đc giải phóng hoặc trỏ đi chỗ khác thì cờ được gán thành màu trắng. Garbage collector sẽ giải phóng nó. Nếu màu đen nghĩa là có reference
+trỏ đến -&gt; ko giải phóng.</li>
+</ul>
+<p>Phải cân bằng giữa value sematic và pointer sematic khi ta viết code cũng là giúp cho heap được sử dụng hiệu quả,
+garbage collector làm ít việc hơn và chương trình nhanh hơn.</p>
+<h3 id="constantxem-lại-nếu-có-thời-gian">Constant(xem lại nếu có thời gian)</h3>
+<p>Trong go có 2 kiểu constant là:</p>
+<ul>
+<li>kind constant:
+const x = 1
+-&gt; ko có kiểu cụ thể. Tùy vào ngữ cảnh mà n có size khác nhau độ chính xác 256 bits, implicit conversion</li>
+<li>type constant:
+const x int64 = 1
+explicit conversion
+tham khảo thêm tại <a href="https://blog.learngoprogramming.com/learn-golang-typed-untyped-constants-70b4df443b61">https://blog.learngoprogramming.com/learn-golang-typed-untyped-constants-70b4df443b61</a></li>
+</ul>
+<p>constant chỉ tồn tại lúc compile time, lúc runtime thì ko tồn tại -&gt; ko có địa chỉ</p>
+<p>Code: <a href="https://play.golang.org/p/qDQi4AXvh5V">https://play.golang.org/p/qDQi4AXvh5V</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">x</span> = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%p\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">x</span>) <span style="color:#75715e">// can not take the address of x 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h1 id="lession-3">Lession 3</h1>
+<h2 id="data-struct">Data struct</h2>
+<h3 id="array-part-1">Array part 1</h3>
+<ul>
+<li>Mechanical Sympathy
+(thỏa thuận với cơ chế phần cứng)
+Tại sao GO chỉ có array, slice, map?</li>
+</ul>
+<p>Lấy 1 ví dụ : ta cần duyệt qua 1 mảng 2 chiều 1 triệu phần tử bằng 2 cách : row travesal, column travesal
+và duyệt qua 1 linked list. Cách nào nhanh nhất.
+Thứ tự nhanh sẽ là row travesal - &gt; column travesal -&gt; linked list.</p>
+<p>Các cơ chế về cached L1, L2, L3, main memory, processor.
+data vận chuyển từ L1 đến processor là cực nhanh, sau đó đến các cache L2, L3 rồi main memory là chậm.
+Để chương trình chạy nhanh hơn thì ta cần các data của mình được nạp vào sẵn trong L1 hoặc L2 trước khi nó
+được processor lấy. Cache chia thành các cache line, có 1 chương trình nhỏ ở processor(?) hay trong chip
+luôn chạy sẵn, nó sẽ quyết định sẽ lấy data nào trong ram vào cache.</p>
+<p>Chương trình này sẽ lấy các cache line trong ram vào cache. Nó sẽ ưu tiên các cấu trúc dữ liệu trên RAM mà
+có tính predictable stripe (đại loại là ở liền kề nhau trên RAM). Chính vì vậy mà nếu data của ta nằm liền kề nhau trên RAM thì sẽ được ưu tiên nạp vào cache.</p>
+<p>Mechanical sympathy là các cơ chế mà giúp ta deal với phần cứng, os tốt hơn(?) đại loại là thế.<br>
+Trong java thì có JVM nó sẽ giúp chương trình của mình deal với mechanical sysmpathy nên dev không cần lo
+phần này. Nhưng trong go ta không có 1 con máy ảo lo viêc đó như JVM nên dev phải deal với nó.</p>
+<p>Array hay slice cơ bản là 1 tạo ra data struct tuân theo predictable access pattern thứ sẽ giúp phù hợp
+với các cơ chế của cache để chương trình của ta nhanh hơn rất nhiều. Chính vì vây mà ta không thích linked
+list hya stack, queue, balabala trong GO.Trong Go, slice ở mọi nơi.</p>
+<p>Một điều nữa khiến cho linked list chậm là TLB(?) đại loại là bảng phân trang của OS thì linked list nó có
+khả năg cao nằm rải rác trong nhiều page -&gt; ko có trong TLB -&gt; truy cập rất chậm vì phải tìm kiếm bala.</p>
+<p>Bằng cách tuân thủ predictable access pattern thì peformance sẽ rất tốt.<br>
+Trong GO slice ở mọi nơi.</p>
+<p>Cost: Implement thuật toán lằng nhằng, đôi khi làm tính mở rộng thuật toán khó.</p>
+<p>Code: <a href="https://play.golang.org/p/6FniMaJP2TZ">https://play.golang.org/p/6FniMaJP2TZ</a> (chạy trên máy chứ ko chạy trên playground vì time = 0s)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nextNode</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">traversalByRow</span>(<span style="color:#a6e22e">matrix</span> <span style="color:#f92672">*</span>[<span style="color:#ae81ff">1000</span>][<span style="color:#ae81ff">1000</span>]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int32</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#66d9ef">int32</span> = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span>&lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>		
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//end := time.Now()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">elapsed</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;travelsalByRow: %d\n&#34;</span>, <span style="color:#a6e22e">elapsed</span>.<span style="color:#a6e22e">Nanoseconds</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">traversalByCol</span>(<span style="color:#a6e22e">matrix</span> <span style="color:#f92672">*</span>[<span style="color:#ae81ff">1000</span>][<span style="color:#ae81ff">1000</span>]<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int32</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#66d9ef">int32</span> = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span>&lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">j</span>][<span style="color:#a6e22e">i</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>		
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//end := time.Now()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">elapsed</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;travelsalByCol: %d\n&#34;</span>, <span style="color:#a6e22e">elapsed</span>.<span style="color:#a6e22e">Nanoseconds</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">traversalOnLinkedList</span>(<span style="color:#a6e22e">headNode</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) <span style="color:#66d9ef">int32</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Now</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#66d9ef">int32</span> = <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currentNode</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> = <span style="color:#a6e22e">headNode</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">currentNode</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span><span style="color:#a6e22e">currentNode</span>).<span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">count</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">currentNode</span> = (<span style="color:#f92672">*</span><span style="color:#a6e22e">currentNode</span>).<span style="color:#a6e22e">nextNode</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elapsed</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Since</span>(<span style="color:#a6e22e">start</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;travelsalOnLinkedList: %d\n&#34;</span>, <span style="color:#a6e22e">elapsed</span>.<span style="color:#a6e22e">Nanoseconds</span>())
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">count</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">matrix</span> [<span style="color:#ae81ff">1000</span>][<span style="color:#ae81ff">1000</span>]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span>&lt; <span style="color:#ae81ff">1000</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">j</span><span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">matrix</span>[<span style="color:#a6e22e">i</span>][<span style="color:#a6e22e">j</span>] =<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">preNode</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">nil</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">headNode</span> = <span style="color:#a6e22e">preNode</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">1000000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">newNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Node</span>{<span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">nil</span>}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">newNode</span>.<span style="color:#a6e22e">value</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">preNode</span>.<span style="color:#a6e22e">nextNode</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">newNode</span>
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">preNode</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">newNode</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">count</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">traversalByRow</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">matrix</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">count</span> = <span style="color:#a6e22e">traversalByCol</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">matrix</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">count</span> = <span style="color:#a6e22e">traversalOnLinkedList</span>(<span style="color:#a6e22e">headNode</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="array-part2">Array part2</h3>
+<ul>
+<li>Sematics</li>
+</ul>
+<p>Nói chung là không mix sematics (mix pointer sematic với value sematic) vì nó gây confused
+Ví dụ:
+for i, v := range &amp;friends {
+// do somethings
+}
+Nhìn ngáo vcl</p>
+<h3 id="slice-part1">Slice part1</h3>
+<p>Empty struct là  1 kiểu mà ko đc cấp phát bộ nhớ. Nghĩa là chả tốn bộ nhớ gì.<br>
+<code>var es struct{}</code></p>
+<p>Không có gì đặc biệt(24 bytes tương tự như giải thích trong tài liệu Note)
+Lưu ý phân biệt giữa nil slice và empty slice</p>
+<p>nil slice thì con trỏ có giá trị nil còn empty slice thì con trỏ trỏ vào emty struct (struct{})<br>
+var data []string -&gt; data la nil slice -&gt; sử dụng khi ta cần error
+data := []string{} -&gt; data la empty string -&gt; sử dụng khi không có ý định trả về error mà chỉ là nothings
+trong collection</p>
+<p>Code: <a href="https://play.golang.org/p/kACBS0R3LPH">https://play.golang.org/p/kACBS0R3LPH</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// nil slice
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">data</span>, len(<span style="color:#a6e22e">data</span>), cap(<span style="color:#a6e22e">data</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">data</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// empty slice
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">newData</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">newData</span>, len(<span style="color:#a6e22e">newData</span>), cap(<span style="color:#a6e22e">newData</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">newData</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>	 
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// slice init with zezo value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="slice-part-2-append-slice">Slice part 2 Append slice</h3>
+<p>Khi ta gọi:
+<code>data = append(data, something)</code>
+Tạo 1 bản copy của data(24 bytes).
+Nó sẽ check xem length có bằng cap ko. Nếu không thì đơn giản là ta gán giá vào element tiếp theo của slice giá trị something. Nếu có thì khởi tạo mới 1 slice mới với cap là gấp đôi cap slice cũ rồi copy giá trị từ slide cũ vào. Trỏ con trỏ trong slice cũ sang slice vừa tạo.</p>
+<h3 id="slice-part-2-append-slice-1">Slice part 2 Append slice</h3>
+<p>Một số ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">slice1</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#e6db74">&#34;e&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">slice2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice1</span>[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">slice2</span> = append(<span style="color:#a6e22e">slice2</span>, <span style="color:#e6db74">&#34;f&#34;</span>)
+</span></span></code></pre></div><p>-&gt; slice1[2] = &ldquo;f&rdquo;
+-&gt; side effect
+Ta có thể chỉ định cap cho slice 2 bằng tham số thứ 3 :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">slice2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">slice1</span>[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">4</span>] <span style="color:#f92672">-</span>&gt; <span style="color:#a6e22e">cap</span> = <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>Code: <a href="https://play.golang.org/p/XQF21AZ7FVi">https://play.golang.org/p/XQF21AZ7FVi</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Len: %d, Cap: %d\n&#34;</span>, len(<span style="color:#a6e22e">s</span>), cap(<span style="color:#a6e22e">s</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;-------------&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">7</span>:<span style="color:#ae81ff">12</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// because slice is just a pointer build ontop of array -&gt; s2 point to a array is the same with array s point to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;-------------&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// s2 now full. Let append more to it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">s2</span> = append(<span style="color:#a6e22e">s2</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;-------------&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// now we append to s and will never see change in s2 because of s2 now in a new address.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">s2</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Code trên cho thấy sự thay đối khi ta append value vào slice. Đồng thời thấy reference khi ta dùng [:] để
+tạo slice.</p>
+<h3 id="slice-and-references">Slice and references</h3>
+<p>Cẩn thận với memory leak khi dùng append slice. Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">likes</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span> <span style="color:#f92672">:=</span> make([]<span style="color:#a6e22e">user</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shareUser</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">users</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shareuser</span>.<span style="color:#a6e22e">likes</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// -&gt; users[1].likes = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">users</span> = append(<span style="color:#a6e22e">users</span>, <span style="color:#a6e22e">user</span>{})
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">shareuser</span>.<span style="color:#a6e22e">likes</span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// -&gt; shareUser.likes = 2 but users[1].likes = 1
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="map">Map</h3>
+<p>ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span>[<span style="color:#e6db74">&#34;A&#34;</span>] = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span>[<span style="color:#e6db74">&#34;B&#34;</span>] = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span>[<span style="color:#e6db74">&#34;C&#34;</span>] = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">users</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;users[%s] = %d&#34;</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mỗi lần lặp vào map thì sẽ có 1 thứ tự random.
+lặp range trong map thì sẽ random. Để không truy cập random như vậy thì có cách:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span>[<span style="color:#e6db74">&#34;A&#34;</span>] = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span>[<span style="color:#e6db74">&#34;B&#34;</span>] = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">users</span>[<span style="color:#e6db74">&#34;C&#34;</span>] = <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">keys</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{}
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">users</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">keys</span> = append(<span style="color:#a6e22e">keys</span>, <span style="color:#a6e22e">key</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sort</span>.<span style="color:#a6e22e">Strings</span>(<span style="color:#a6e22e">keys</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">key</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">keys</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;users[%s] = %d&#34;</span>, <span style="color:#a6e22e">key</span>, <span style="color:#a6e22e">users</span>[<span style="color:#a6e22e">key</span>])
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="lesson-4">Lesson 4</h1>
+<h2 id="decoupling">Decoupling</h2>
+<h3 id="methods-part1-declare--receiver-behavior">Methods part1 declare &amp; receiver behavior</h3>
+<p>Receiver cũng là 1 tham số, nó cũng tuân theo value sematic. Ví dụ như sau:</p>
+<p>type user struct {
+name string
+age int
+}</p>
+<p>func (u user) show() {
+fmt.Printf(&ldquo;Name: %s, Age: %d\n&rdquo;, u.name, u.age)
+}</p>
+<p>func (u *user) changeName(name string) {
+u.name = name
+}</p>
+<p>func main() {
+u := user{
+name : &ldquo;thai&rdquo;,
+age : 22,
+}
+u.changeName(&ldquo;thang&rdquo;)
+fmt.Printf(&ldquo;Name: %s\n\n&rdquo;, u.name)</p>
+<pre><code>y := &amp;user{
+	name : &quot;thai&quot;,
+	age : 22,
+}
+y.show()
+</code></pre>
+<p>}</p>
+<p>Ở ví dụ trên ta thấy có 1 convenient khi ta gọi method, method changeName() yêu cầu rêciver là 1 con trỏ user
+nhưng ta lại có thể gọi u.changeName(). Tương tự khi ta gọi y.show() trong khi y là 1 con trỏ.<br>
+Điều này có thể vì trong GO khi gọi method thì ko quan tâm là dạng con trỏ hay value, điều mà 1 method quan
+tâm là receiver đó có dữ liệu cần từ đâu đó bởi receiver truyền vào . Như vậy nên ta có thế gọi thế kia.</p>
+<p>Code: <a href="https://play.golang.org/p/9T02TWlWApQ">https://play.golang.org/p/9T02TWlWApQ</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) <span style="color:#a6e22e">showName</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Name: %s&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">user</span>) <span style="color:#a6e22e">changeName</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address *u point to: %p\n&#34;</span>, <span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span> = <span style="color:#a6e22e">s</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;User: Name: %s, Age: %d\n&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">user</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Address of u: %p\n&#34;</span>, <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">changeName</span>(<span style="color:#e6db74">&#34;Thang&#34;</span>) <span style="color:#75715e">// it is the convenient of go = (&amp;u).changeName()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>).<span style="color:#a6e22e">showName</span>() <span style="color:#75715e">// convenient too.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h3 id="methods-part2-value-and-pointer-semantic">Methods part2 value and pointer semantic</h3>
+<p>Phần này giúp ta quyết định khi nào dùng value semantic, khi nào dùng pointer semantic với receiver trong
+method GO<br>
+Trong GO ta làm việc với 3 kiểu dữ liệu:</p>
+<ol>
+<li>Built-in type: numeric, string, bool</li>
+<li>Reference type: slice, map, channel, interface values, functions</li>
+<li>struct type
+//////////////////////////////////////<br>
+Luật đơn giản:</li>
+</ol>
+<ul>
+<li>built-in type -&gt; value semantic</li>
+<li>reference type -&gt; value semantic(đơn giản là ko có lí do gì để ta lấy address của address) trừ khi với slice và map mà ta muốn share nó thì dùng pointer type(?). Trường hợp ngoại lệ: decode và unmarshal</li>
+</ul>
+<p>Code: <a href="https://play.golang.org/p/aoE7CrK7svI">https://play.golang.org/p/aoE7CrK7svI</a></p>
+<p>Với struct thì ta phải tự quyết định semantic nào được dùng khi ta xây dựng struct đó.
+Nếu không chắc chắc thì cứ dùng pointer semantic. Còn nếu chắc thì dùng theo ý.
+Một số câu hỏi có thể giúp xác định semantic nào cho struct: Ví dụ như type Time. Nếu ta cộng thêm 5 giây
+vào 1 value type Time thì nó là cùng 1 thứ hay là 2 thứ khác nhau. Tất nhiên là 2 thực thể khác nhau vì nó
+là 2 thời điểm. 2 thằng tồn tại mà không loại trừ nhau. Tương tự như struct user. Tự hỏi nếu ta đối tên của
+user thì đó là 2 người hay vẫn là 1 người. Tất nhiên là 1 người. Ta có thể map thực tế vào.</p>
+<h3 id="part-3">Part 3</h3>
+<p>Func and method</p>
+<p>-Trong go thực chất ko có method như trong oop. method đều là func hết và tách riêng vs state. Điều này
+có thể chứng minh:<br>
+///////</p>
+<ul>
+<li>method khai báo ngoài data. Có nghĩa là nó không phải 1 khối như oop. Trong oop, state đi liền với method
+và được khai báo bên trong class. Nhưng trong go, state và method không đi kèm với nhau như 1 khối. Như
+ví dụ này :</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) <span style="color:#a6e22e">displayName</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Name: %s\n&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">user</span>) <span style="color:#a6e22e">setAge</span>(<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">age</span> = <span style="color:#a6e22e">age</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Name: %s - Age: %d&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">user</span>{<span style="color:#e6db74">&#34;thai&#34;</span>, <span style="color:#ae81ff">22</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">displayName</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">setAge</span>(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;\n---------------\n&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">displayName</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>  (<span style="color:#f92672">*</span><span style="color:#a6e22e">user</span>).<span style="color:#a6e22e">setAge</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>. Ta thấy nếu ta mà khai báo thêm 1 type : type bill user thì bill có những method của user ko???
+Câu trả lời là không. Vì data của user type và method của nó không phải 1 cục.</p>
+<ul>
+<li>cách gọi thực chất của method là gọi theo function như trong ví dụ mô tả.Cách gọi method chỉ là 1 sugar
+syntax trong GO. khi xử lí, thay vì gọi như method thì sẽ gọi user.display(u) với u chính là receiver và cũng
+là tham số đầu tiên. Chính vì vậy mà u cũng tuân theo value sematic, được copy giá trị.</li>
+</ul>
+<p>Chốt lại method chỉ giúp chung ta tin rằng data có behavior nhưng thực chất thì không.</p>
+<p>Code: <a href="https://play.golang.org/p/91lwAqC3aOY">https://play.golang.org/p/91lwAqC3aOY</a></p>
+<p>/////////////////</p>
+<ul>
+<li>TRong go thì func cũng chỉ là value. Chứng minh:
+f1 := u.displayName
+f1()
+f2 := u.setAge
+f2(22)</li>
+</ul>
+<p>Ta có thể gắn func với 1 biến và gọi func qua biến đó. Lúc đó biến f1, f2 sẽ như thế nào:
+Biến có kích thước 2 word giống string. word đầu trỏ đến vùng code, word thứ 2 trỏ đến value là copy của u.
+Tại sao lại là value copy của u. Đơn giản là value sematic<br>
+<code>f1 : [pointer to code][pointer to a copy of u]</code><br>
+<code>f2 : [pointer to code][pointer to origin of u]</code> vì nó dùng pointer sematic</p>
+<p>Code: <a href="https://play.golang.org/p/bxzOKi542xs">https://play.golang.org/p/bxzOKi542xs</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">user</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) <span style="color:#a6e22e">displayName</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Name: %s\n&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">u</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">user</span>) <span style="color:#a6e22e">changeAge</span>(<span style="color:#a6e22e">age</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">age</span> = <span style="color:#a6e22e">age</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">u</span> <span style="color:#a6e22e">user</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;User: name: %s, age: %d\n&#34;</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">age</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">user</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// it just be value
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">f1</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">displayName</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f2</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">changeAge</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f1</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f2</span>(<span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">inspect</span>(<span style="color:#a6e22e">u</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="interface-part1">Interface part1</h3>
+<p><strong>Polymophism</strong><br>
+Đa hình là có thể viết một chương trình nhất định và nó hành xử khác nhau phụ thuộc vào data mà nó tính toán
+trên đó.</p>
+<ul>
+<li>interface giúp tạo ra đa hình trong GO.
+ta có thể khai báo interface:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">read</span>([]<span style="color:#a6e22e">bytes</span>) <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Điều này có nghĩa là kiểu Reader được tạo ra không phải dự trên 1 struct mà dựa trên interface</p>
+<ul>
+<li>Interface là 1 type không có thật, không phải real data như các type khác</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">pipe</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">pipe</span>) <span style="color:#a6e22e">read</span>(<span style="color:#a6e22e">slice</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>bằng cách trên thì pipe đã implement reader interface.
+tương tự vs</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">book</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">b</span> <span style="color:#a6e22e">book</span>) <span style="color:#a6e22e">read</span>(<span style="color:#a6e22e">slice</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Bằng cách trên thì book và pipe đã implement interface reader với value semantic</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">retrieve</span>(<span style="color:#a6e22e">r</span> <span style="color:#a6e22e">reader</span>) <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">err</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Bên trên ta có thể  thấy func nhận vào type là 1 interface. Tuy nhiên trên thực tế thì type interface là
+valueless -&gt; Có vẻ vô lí.
+Thực chất thì dòng khai báo trên có nghĩa là nhận vào bất cứ kiểu concrete nào mà có full set behavior của reader.</p>
+<p>Sau đó trong main ta tạo 1 biến pipe là x: <code>x := pipe{&quot;Thai&quot;}</code> rồi call
+<code>retrieve(x)</code>
+-&gt; Semantic ở đây là value semantic. x lúc này là 1 interface value.<br>
+Như ta đã nói x là valueless vì nó là gía trị của 1 interface . Vậy trong GO thì đã cài đặt nó thế nào?<br>
+Thực tế nó là 2 word con trỏ:</p>
+<ul>
+<li>Trong đó word thứ 2 thì trỏ đến 1 bản copy của value type pipe mà ta đã tạo.(Bằng cách này, x vẫn là valueless)
+nhưng nó lại trỏ đến 1 vùng concrete data, thứ mà có thể tính toán bên trên đó.</li>
+</ul>
+<ul>
+<li>Con word thứ nhất thì trỏ đến 1 bảng là itable(tương tự nhu vtable trong oop)
+Trong bảng itable thì word đầu tiên lưu concrete type của x, phần còn lại thì là con trỏ trỏ đến  func implement thực sự của method read mà sử dụng cho conrete type.<br>
+<code>x : [pointer1][pointer2]</code><br>
+pointer1 -&gt; bản copy of gía trị biến x (chính là giá trị &ldquo;Thai&rdquo;)<br>
+pointer2 -&gt; itable<br>
+itable : [pipe][pointer3]<br>
+pointer3 -&gt; [giá trị hàm implement method read cho type pipe].</li>
+</ul>
+<p>Quá trình gọi hàm từ interface type:<br>
+Khi đó ở trong hàm retrieve mà ta gọi r.read(&hellip;) thì nó sẽ tìm từ word thu 2 của biến x trỏ sang iTable.
+Tại đây nó sẽ tra được bẳng iTable TÌm được hàm read được implement cho kiểu pipe thực sự ở đâu và gọi đến.</p>
+<p>(nếu x là type book thì bản copy là bản value của book, itable lúc này word đầu lưu &ldquo;book&rdquo;, còn lại trỏ
+đến vùng value implement func read của type book(nhớ là func cũng chỉ là 1 value trong go)).</p>
+<p>&mdash;- Cost: indirection: con trỏ trỏ đến con trỏ từ value interface đến itable đến func implement,..
+và allocation của bản copy concrete data</p>
+<p>4.2 Method Set and value</p>
+<p>ví dụ ta implement interface reader cho struct user bằng pointer semantic.
+sau đó ta define polymophism method với arg là type reader.: test(r reader)
+Câu hỏi là u := user{&hellip;} thì có thể call được test(u) không. Câu trả lời là không vì method read() mà *user
+implement không thuộc về method set của u
+Tuy nhiên ta nếu ta truyền vào hàm test &amp;u thì có thể sử dụng đươc cả pointer semantic và value semantic vì
+Khi đó biến u có địa chỉ.
+Với trường hợp trước đó thì chưa chắc biến u đã có địa chỉ nên không thể sử dụng u thay cho con trỏ u được.
+CHính vì thế mà compiler không cho phép để tránh khi ta truyên vào 1 tham số ko thể lấy địa chỉ như
+Chẳng hạn vs hằng số-&gt; ko có địa chỉ vì nó chỉ tồn tại lúc compiler time còn lúc runtime thì ko có trong stack
+hay heap.
+Đại loại là nếu có địa chỉ thì có thể copy giá trị còn có giá trị thì chưa chắc đã có địa chỉ.
+Luật:
+&lt;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+T  _                valuesemantic
+*T Pointersemantic  valuesemantic
+Luật trên có nghĩa là nếu chọn pointer semantic thì chỉ có thể share. nếu chuyển từ pointer semantic sang
+value semantic thì ko nên. &gt; Nói chung ko bao giờ nên chuyển từ pointer semantic sang value semantic.
+Tuy nhiên từ value semantic thì ta có thể share (theo dòng thứ 2) nhưng chỉ nên dùng khi nó thaạt sự quan
+trọng và cần thiết</p>
+<p>4.2 Interface part 3 Storage by value
+ví dụ như sau:
+type user struct {
+name string
+age uint
+}</p>
+<p>type namer interface {
+showName()
+}</p>
+<p>func (u user) showName() {
+fmt.Printf(&ldquo;Name: %s\n&rdquo;, u.name)
+}</p>
+<p>func main() {
+u := user{&ldquo;Thai&rdquo;, 22}
+namers := []namer{
+u,
+&amp;u,
+}
+u.name = &ldquo;Thang&rdquo;
+for _, v := range namers {
+v.showName()
+}
+}
+. Kết quả :
+Name : Thai
+Name: Thang</p>
+<p>Giải thích: literal constructor của user ta dùng value semantic. Khi ta truyền u vào thì nó sẽ tạo ra 1 bản
+copy của u . namers cấu trúc nhwu sau:
+index0: [user][pointer to value copy of u]
+index1: [user][pointer to origin u]
+Chính vì vậy khi ta thay đổi name của u là giá trị mới thì bản copy của nó ko hề thay đổi.
+Tiếp theo range cũng dùng value semantic. và phần tử u mà nó làm việc với index 0 trong namers chỉ là bản
+copy mà ko thay đổi theo  origin u -&gt; kết quả như vậy.</p>
+<p>4.3 Embedding</p>
+<p>Khi ta nhúng 1 type vào trong type khác(chỉ nhúng type, chứ ko phải biến) thì là embedding. Khi đó thì
+các behavior của type con sẽ promo lên trên type chứa nó.
+Ta cần phân biệt:
+type user struct {
+name string
+age uint
+}
+type admin struct {
+u user
+permission string
+}
+trường hợp trên không phải embedding. quan hệ này là quan hệ subtype</p>
+<p>Tuy nhiên nếu ta thay đổi:
+type user struct {
+name string
+age uint
+}
+type admin struct {
+user
+permission string
+}
+Thì đây mới chính là embedding. quan hệ là inner type và outter type
+Để hiểu về promotion khi embedding, Đầu tiên ta xét ví dụ về subtype:
+type user struct {
+name string
+age uint
+}</p>
+<p>type admin struct {
+u user
+permission string
+}</p>
+<p>func (u *user) displayName() {
+fmt.Printf(&ldquo;User Name : %s\n&rdquo;, u.name)
+}</p>
+<p>func main() {
+ad := admin{
+u: user{&ldquo;Thai&rdquo;, 22},
+permission: &ldquo;super&rdquo;,
+}
+ad.u.displayName()
+ad.displayName() // error vì đây ko phải embedding.
+}
+Với trương hợp trên thì method của user không promo lên admin vì quan hệ ở đây là subtype, u chỉ là subfield
+trong admin. Nên nếu muốn gọi method displayName() thì phải gọi trực tiếp qua ad.u.displayName().</p>
+<p>Tuy nhiên nếu ta thay đổi thành embedding:
+type user struct {
+name string
+age uint
+}</p>
+<p>type admin struct {
+user
+permission string
+}</p>
+<p>func (u *user) displayName() {
+fmt.Printf(&ldquo;User Name : %s\n&rdquo;, u.name)
+}</p>
+<p>func main() {
+ad := admin{
+user: user{&ldquo;Thai&rdquo;, 22},
+permission: &ldquo;super&rdquo;,
+}
+ad.user.displayName()
+ad.displayName()
+}
+Thì lúc này không phải  là quan hệ subtype mà là innter type và outter type. Lúc này các methods của user
+sẽ promo lên admin nên có thể gọi trực tiếp ad.displayName() hoặc gọi ad.user.displayName()</p>
+<p>Embedding nảy sinh vấn đề về override method.Nếu trong trường hợp ad cũng có method là displayName() thì sao?
+Trong trường hợp này thì nó sẽ override method của innertype:type user struct {
+name string
+age uint
+}</p>
+<p>type admin struct {
+user
+permission string
+}</p>
+<p>func (u *user) displayName() {
+fmt.Printf(&ldquo;User Name : %s\n&rdquo;, u.name)
+}</p>
+<p>func (ad *admin) displayName() {
+fmt.Printf(&ldquo;Admin Name : %s\n&rdquo;, ad.name)
+}</p>
+<p>func main() {
+ad := admin{
+user: user{&ldquo;Thai&rdquo;, 22},
+permission: &ldquo;super&rdquo;,
+}
+ad.displayName()
+ad.user.displayName()
+}
+ad.displayName() sẽ gọi đến method của ad. Ta vẫn có thể sử dụng method của user bằng cách chỉ định trực
+tiếp: ad.user.displayName()</p>
+<p>4.4 Exporting
+balabala. Ko có gì đặc biệt.</p>
+<p>Lesson 5. Composition</p>
+<p>5.1 Grouping type</p>
+<ul>
+<li>Nhóm các đối tượng theo hành vi của nó chứ ko phải trạng thái(interface nhóm theo methods set).</li>
+<li>Chỉ định nghĩa kiểu mới nếu nó là mới và ko trùng lặp.</li>
+<li>Embedding là để promo beahvior chứ ko phải để tận dụng state của inner type</li>
+<li>Alias để chia sẻ các state chứ ko chia sẻ behavior
+Phân tích
+Một số tư duy từ OOP có thể dẫn đến những đoạn code sau:</li>
+</ul>
+<p>type Animal struct {
+Name string
+isMammal bool
+}
+func (a *Animal) Speak() {
+fmt.Printf(&ldquo;UGHm My name is %s, it is %t I am a mammal\n&rdquo;, a.Name, a.isMammal)
+}
+type Dog struct {
+Animal
+PackFactor int
+}
+func (d *Dog) Speak() {
+fmt.Printf(&ldquo;Gru gru, balabala&rdquo;)
+}
+type Cat struct {
+Animal
+ClimbFactor int
+}
+func (c *Cat) Speak() {
+fmt.Printf(&ldquo;Meow Meow, balabalaban&rdquo;)
+}</p>
+<p>func main() {
+animals := []Animal{ Dog{balabal}, Cat{balabal}, DOg{balbsda}}
+}</p>
+<p>Phân tích đoạn code trên cho thấy. người viết cố tình áp tư duy của oop vào GO:</p>
+<ol>
+<li>Tạo ra lớp abstract là Animal với các thuộc tính, hành vi. Sau đó tạo 2 lớp con là Dog và Cat
+cố gắng tạo ra kế thừa bằng embedding lớp  Animal vào.
+Về cơ bản thì Dog và Cat lúc này thừ kế state của Animal và thừa kê vả behavior Speak() của nó, được phép
+override method Speak() theo cách riêng.</li>
+</ol>
+<p>Vấn đề: trong hàm main tạo slice []Animal với các element là Dog và Cat là sai. Trong Go không có kế thừa
+như trong các ngôn ngữ OOP. Ở đây Animal là Animal, Dog là Dog, Cat là Cat, Dog hay Cat không phải là 1 Animal
+. Chính vì vậy tư suy OOP áp dụng vào GO là sai.</p>
+<p>Trong GO ta chia nhóm của các đôi tượng theo hành vi của nó, không phải trạng thái của nó. Ví dụ với 1 nhóm
+20 người, nếu chia theo trạng thái(who we are), ví dụ như anh em hoawc chiều cao,&hellip; Nhóm sẽ rất hạn chế số lượng.
+Vì gần như ko có ai là anh em. Tuy nhiên nếu ta chia theo hành vi(what we do) thì có thể chia cực kì đa dạng: nhóm người
+có thể thở(tất cả), nhóm người có thể code, balabal -&gt; Sự đa dạng khi chia nhóm theo hành vi. Điều đó phát
+sinh ra interface trong go giúp chia nhóm theo hành vi.</p>
+<p>Một số điểm xấu trong thiết kế trên:
+1.Animal type được tạo ra cung cấp 1 lớp trừu tượng để tái sử dụng state
+2. Chương trình gần như chẳng bao giờ cần tạo ra và sử dụng giá trị của kiểu Animal
+3. Speak() của Animal được tạo ra là function tổng quát và gần như chẳng bao giờ được gọi.</p>
+<p>Vậy ta có thể thay đổi thiết kế trên như thế nào:</p>
+<p>type Speaker interface {
+Speak()
+}
+type Dog struct {
+Name string
+IsMammal bool
+PackFactor int
+}</p>
+<p>func (d * Dog) Speak() {
+// fmt.Printf(&ldquo;Gru guru abbababalala&rdquo;)
+}
+type Cat struct {
+Name string
+IsMammal bool
+ClimbFactor int
+}
+func (c *Cat) Speak() {
+// fmt.Printf(&ldquo;Meow babbalablablbal&rdquo;)
+}</p>
+<p>Bằng cách trên ta có thể tạo nhóm qua interface là tạo speakers := []Speaker{Dog{&hellip;}, Cat{&hellip;}}
+Tuy nhiên đoạn code trên ta thấy có vấn đề về DRY khi mà ta lặp lạo=i các dòng code, thuộc tính Name,
+Ismammal. Tuy nhiên việc này đem lại nhiều lợi ích hơn cho GO : dễ debug, dế test.</p>
+<h2 id="thì-kiểu-handler-ko-có-các-behavior-có-sẵn-của-int">&mdash;&mdash;&mdash;&mdash;&mdash;Guideline khi khai báo type:
+Khai báo 1 type mà biểu diễn thứ gì đó mới hoặc ko trùng lặp
+Chắc chắn rằng chúng sẽ đc tạo vào sử dụng chứ ko phải để reuse state như trên.
+embed type để tái sử dụng behaviors mà mình cần.
+Không abstract hay alias thứ mà data thực sự chính là nó.(trong ví dụ dưới đây, handler thực chất là int
+nên ko có lí do gì phải alias nó cả. khi dử dụng thì chỉ cần testMethod(handler int))
+alias chỉ nhằm mục đích chia sẻ state, không liên quan đến behavior. chính vì vậy mà trong go khi ta alias:
+type handler int
+thì kiểu handler ko có các behavior có sẵn của int.</h2>
+<p>5.2 Decoupling part1</p>
+<p>3 layer api:
+unit test cho primitive layer -&gt; primitive layer (làm việc với toàn concrete data)
+-&gt; unit test cho lower level -&gt; lower layer
+-&gt; unit test cho high level -&gt; high level</p>
+<p>decoupling(tạo các interface, balabala) ở bứơc refactor code</p>
+<p>5.2 Decoupling part 2.
+Solve problem in concrete data first then do: What can be decoupled</p>
+<p>Bài toán: Giả sử ta có 2 hệ thống Xenia và Pillar có database khác nhau.
+Pillar có db mà có api sẵn dùng để thêm,&hellip; dữ liệu.
+Vấn đề: cần chuyển data từ db của Xenia sang Pillar ví dụ mỗi 5 phút.(dùng cron job)</p>
+<p>Các task cần giải quyết ko phải vấn đề về performent trước mà là về concreate problem trước.
+Cần phải chuyển data từ Xenia sang Pillar trước. Các vấn đề về decoupling, system change, babalâla ở
+mãi sau đó mà ta chưa cần giải quyết.</p>
+<ol>
+<li>
+<p>how to connect to database</p>
+</li>
+<li>
+<p>What data want to move from last 5 minutes
+3.khả năng connect của pillar</p>
+</li>
+<li>
+<p>làm sao d dể lưu trữ data nhận được vào trong db của pillar.
+. Ta sẽ xử lí theo từng layer của API:</p>
+</li>
+<li>
+<p>Primite layer
+1.1 Define Xenia struct gồm host,.. -&gt; giải quyết đc vấn vấn đề 1,
+2.2 pull từng mảnh data nhỏ bằng method Pull(*d Data)-&gt; vấn đề về hiệu năng Nhưng ở primite layer, ta chưa
+quan tâm về  hiệu năng. Trên thực tế thì ta chưa biết về hiệu năng, tốc độ mãi đến khi nó chạy. Nếu khi
+chạy mà hiệu năng nó đã đáp ứng tốt thì việc ta quan tâm vào hiệu năng từ bây giờ là thừa.
+Ở primite layer, mọi thứ quan tâm là chương trình chạy được và có test.
+-&gt; giải quyết đc vấn đề 2.
+Ta xây dựng method Stỏe nhận vào từng data -&gt; giải quuyết đc cả 4 vấn đề.
+-&gt; hoàn thành primite layer với unit test</p>
+</li>
+<li>
+<p>Lower layer
+Ở layer này ta quan tâm đến làm sao để move 1 tá data thay vì từng data như ở primite
+ý tưởng Ta define struct System và sử dụng compositing hoặc embeđing cả 2 struct Xenia và Pillar
+-&gt; hệ thống biết cách để pull và store data(nhắc lại embedding, compositing vì behaviors chứ ko phải state)
+Tiếp theo ta tạo ra 1 function pull như trong code và tài sử dụng method Pull() cho từng mảnh data trong 1
+tá data mà pull nhận vào.
+****Tại sao lại là function mà ko phải là method. Vì khi struct thay đổi thì có vấn đề. và nếu dùng method thì
+thừa thông tin, ví dụ để gửi email, func cần email, tên người gửi, chứ ko phải toàn bộ thông tin trong
+struct user, -&gt; dùng func</p>
+</li>
+<li>
+<p>High layer
+Cần nhóm các thứ vừa xậy dựng lại với nhau -&gt; func Copy, nhận vào  System và batch(số lượng data 1 lần)
+Func này làm tất cả các việc mà ta đã định nghĩa ở trên</p>
+</li>
+</ol>
+<h2 id="code-httpsplaygolangorgpinhvxesl2so">Code: <a href="https://play.golang.org/p/inHvXESl2So">https://play.golang.org/p/inHvXESl2So</a></h2>
+<p>Các vấn đề tiếp theo: Hệ thống thay đổi.Nếu có thêm1 hệ thống Bob muốn move data vào trong pillar và có
+hệ thống alice muốn xenia hoặc bob move data vào.</p>
+<p>5.2 Decoupling part 3</p>
+<p>Từ phần trước ta đã có concrete api. Với các vấn đề tiếp theo đã nêu ra, ta cần phải decouple hệ thống:Thêm
+interface.</p>
+<p>Ta thêm các interface Puller và Storer.Từ đó có thể giúp thỏa mãn vấn đề có thêm các hệ thống như alice,&hellip;
+Code: <a href="https://play.golang.org/p/-wqle1kL3U2">https://play.golang.org/p/-wqle1kL3U2</a></p>
+<p>Thay thế system với PullStorer interface
+Code: <a href="https://play.golang.org/p/gVtI5YQgT0a">https://play.golang.org/p/gVtI5YQgT0a</a></p>
+<p>Sự hạn chế của code trên là ta vẫn chưa thực sựmở rộng được các loại puller và storer tham gia vào system.
+Ta cần thay đổi thành phần của System thành Puller và Storer
+Code: <a href="https://play.golang.org/p/1Mtaq85FeAI">https://play.golang.org/p/1Mtaq85FeAI</a></p>
+<p>Note: Khi ta truyền interface vào hàm ví dụ như Copy trong code thì nó không truyền interface value bởi
+như đã thảo luận ở trước thì interface là valueless. Thực tế, nó sẽ truyền data mà nó giữa như trong cài
+đặt đã bàn ở phần trước.</p>
+<p>Tiếp theo ta review lại code:
+-Sự tồn tại của PullStorer là ko cần thiết
+Code: <a href="https://play.golang.org/p/FTxnVih1xUj">https://play.golang.org/p/FTxnVih1xUj</a></p>
+<ul>
+<li>Sự tồn tại củâ system cũng ko cần thiết vì nó làm giảm khả năng đọc của code.
+Thay vào đó, ta có thể thiết kế high level : Copy(p Puller, s Storer, batch int)
+Thiết kế này dễ đọc hơn.
+Code: &hellip;</li>
+</ul>
+<p>Thứ tự khi ta code:</p>
+<ol>
+<li>Layering</li>
+<li>Testing through data</li>
+<li>building ontop of each other</li>
+<li>implement a concrete solution first</li>
+<li>Decoupling</li>
+<li>Read ability code review to find where can make faud or misuse</li>
+</ol>
+<p>5.3 COnversion Assertions</p>
+<p>Sự khác nhau giữa conversion và assertion:</p>
+<ul>
+<li>Conversion: để convert từ concrete type sang con conrete type.</li>
+<li>Assertion: convert từ interface sang 1 concrete type.
+Code: <a href="https://play.golang.org/p/Kf4qgMpZ2Nw">https://play.golang.org/p/Kf4qgMpZ2Nw</a>
+Code thêm: <a href="https://play.golang.org/p/-TY6ZhpiKIH">https://play.golang.org/p/-TY6ZhpiKIH</a></li>
+</ul>
+<p>Nếu ta biết concrete data mà 1 biến interface thực sự giữa là loại concrete data type nào. Ta có thể
+sử dụng type assertion để convert từ interface sang đích xác type đó.</p>
+<p>trong déign API ta có thể tạo ra default behavior và sau đó overide nó như sau:
+Code: <a href="https://play.golang.org/p/zi5BmkGron-">https://play.golang.org/p/zi5BmkGron-</a></p>
+<p>5.4 Interface Pollution
+Code: <a href="https://play.golang.org/p/K3w2eX7V1j2">https://play.golang.org/p/K3w2eX7V1j2</a></p>
+<p>Lesson 6: Error handling</p>
+<p>6.1 Default Error value</p>
+<p>Code: <a href="https://play.golang.org/p/KkXbec2MzOF">https://play.golang.org/p/KkXbec2MzOF</a></p>
+<p>6.2 Variable error</p>
+<p>Code: <a href="https://play.golang.org/p/JQUJbS20MrE">https://play.golang.org/p/JQUJbS20MrE</a></p>
+<p>6.3 Find the bug</p>
+<p>Chú ý khi ta so sánh 2 variable interface
+Vì var interface là valueless nên khi ta so sánh 2 biến này thì thực chất là so sánh concrete data mà nó
+giữ. Ta có ví dụ như trong code sau:
+Code: <a href="https://play.golang.org/p/tSf0yAxPaFj">https://play.golang.org/p/tSf0yAxPaFj</a>
+Biến x lúc này là 2 word. Word 1 trỏ tới itable nơi giữ concrete data và các methò set mà nó implement
+Word 2 trỏ tới địa chỉ của các value mà nó giữ(bởi vì ta sử dụng pointer semantic khi implement ShowName())
+. Kết quả là 2 biến x, y có địa chỉ khác nhau.
+Khi so sánh 2 biến n1, n2 thì là so sánh 2 địa chỉ với nhau -&gt; khác.
+Tuy nhiên nếu ta implement method ShowName() cho user bằng value semantic thì word thứ 2 của biến interface
+trỏ đến value của biến user mà ta tạo. Khi so sánh thì sẽ là so sánh 2 value này chứ ko phải địa chỉ
+-&gt; giống nhau vì đều là {&ldquo;thai&rdquo;, 22}</p>
+
+    </div>
+
+    
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; 2020, ThaiBuiXuan
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en-us"><head>
+    <title>Handl3r&#39;s Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+
+    
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9045708503739442"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+    <div class="row">
+        
+        <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+            <a href="../../" class="text-decoration-none">
+                <img id="home-image" class="rounded-circle"
+                    
+                        
+                            src="../../images/avatar.jpg"
+                        
+                    
+                />
+            </a>
+        </div>
+        <div class="col-sm-8 col-12 text-sm-left text-center">
+        
+            <h2 class="m-0 mb-2 mt-4">
+                <a href="../../" class="text-decoration-none">
+                    
+                        Handl3r
+                    
+                </a>
+            </h2>
+            <p class="text-muted mb-1">
+                
+                    And in this moment, i swear we are infinite
+                
+            </p>
+            <ul id="nav-links" class="list-inline mb-2">
+                
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../about" title="About">About</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../posts/" title="Posts">Posts</a>
+                    </li>
+                
+                    <li class="list-inline-item">
+                        <a class="badge badge-white " href="../../categories/" title="Categories">Categories</a>
+                    </li>
+                
+            </ul>
+            <ul id="nav-social" class="list-inline">
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="http://github.com/handl3r" target="_blank">
+                            <i class="fab fa-github fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://www.linkedin.com/in/thaibuixuan" target="_blank">
+                            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="https://twitter.com/buixuanthai" target="_blank">
+                            <i class="fab fa-twitter fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+                    <li class="list-inline-item mr-3">
+                        <a href="" target="_blank">
+                            <i class="fas fa-at fa-1x text-muted"></i>
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+    <hr />
+</header>
+<div class="container">
+    <div class="pl-sm-4 ml-sm-5">
+        <p>*** Dựng lab chơi chơi chạy jenkins nào ***
+Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.</p>
+<h1 id="mô-tả-lab-cơ-bản-như-sau">Mô tả lab cơ bản như sau:</h1>
+<ul>
+<li>Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins.</li>
+<li>SCM là github. Link repo <a href="https://github.com/handl3r/multibranches">https://github.com/handl3r/multibranches</a></li>
+<li>Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox. Chú ý setup card mạng với set static ip cho nó nha.</li>
+<li>Server chạy jenkins thì mình chạy bằng docker. Jenkins cần nhận data từ github gửi về qua web-hook nên phải có public ip. Cái này thì mình dùng ngrok tạo tunnel nha.</li>
+</ul>
+<h1 id="cụ-thể-">Cụ thể :</h1>
+<h2 id="0-mô-tả-luồng-">0. Mô tả luồng :</h2>
+<p>Cứ có code mới là thằng jenkins lấy về chạy test thôi. Nếu mà là code mới cho nhánh master, develop (push event kiểu như push thẳng tay hoặc merged) thì nó chạy cả deploy nữa.
+Luồng phát triển thông thường nên làm thế này:</p>
+<ul>
+<li>Các tính năng mới hay fix-bug, balabala thì push lên nhánh mới rôi tạo pull request vào develop</li>
+<li>Người chịu trách nhiệm project duyệt code xem ok không. Nếu ok thì merge nhánh mới zo nhánh develop. Nhánh này tương ứng với môi trường dev nha. Có code mới phát là thằng jenkins lấy code về rồi chạy test, balabala rồi deploy lên server dev.</li>
+<li>1 thời gian thấy oke thì merge zo master tương ứng với môi trường product. Jenkins lại lấy code về chạy test balabala rồi deploy lên server product.
+Bằng cách này thì code nào cũng được test cẩn thận, không pass phát là báo về github ngay. Hoặc có thể setup cho nó gửi mail cũng được. Hoặc lên thằng jenkins xem luôn.</li>
+</ul>
+<h2 id="1-project-golang">1. Project Golang</h2>
+<ul>
+<li>main.go</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;net/http&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, this is multibranches app v3&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Result of call Min(2, 3) is: %d\n&#34;</span>, <span style="color:#a6e22e">Min</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Start web server&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">HandleFunc</span>(<span style="color:#e6db74">&#34;/ping&#34;</span>, <span style="color:#a6e22e">Ping</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;:8000&#34;</span>, <span style="color:#66d9ef">nil</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Ping</span>(<span style="color:#a6e22e">w</span> <span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ResponseWriter</span>, <span style="color:#a6e22e">r</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">Request</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Fprintf</span>(<span style="color:#a6e22e">w</span>, <span style="color:#e6db74">&#34;%s\n&#34;</span>, <span style="color:#e6db74">&#34;Pong v3&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Min</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">a</span> &lt; <span style="color:#a6e22e">b</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">b</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>1 con http server đơn giản pingpong thoiiii. func Min() để chạy test tượng trưng.</p>
+<ul>
+<li>main_test.go</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;testing&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">TestMin</span>(<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">testing</span>.<span style="color:#a6e22e">T</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">expected</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">result</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Min</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">expected</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Expected %d, but got %d\n&#34;</span>, <span style="color:#a6e22e">expected</span>, <span style="color:#a6e22e">result</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Test hàm Min thôi. Để chạy test thì:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    go test -v
+</span></span></code></pre></div><ul>
+<li>go.mod, go.sum để thằng go module quản lí package thôi. Ko care</li>
+<li>Jenkinsfile Khai báo các stages lát thằng jenkins nó làm theo thôi. Lát mình cụ thể hơn.</li>
+</ul>
+<hr>
+<h2 id="2-scm-github">2. SCM Github</h2>
+<p>Github đóng vai trò gửi các event khi mà có thay đổi trong source code của repo về thằng jenkins thông qua webhook thôi.
+Nó cũng nhận data trả ngược lại để thông báo test hay deploy có thành công không nữa.</p>
+<h2 id="3-jenkins">3. Jenkins</h2>
+<p>Vai trò jenkins là gì. Nó là 1 người công nhân cần mẫn của mình thôi. Ngày xưa không có công nhân thì mình lấy code mới về này. setup các thứ này. Chạy test này. thấy oke thì lên github merge zo này. Xong muốn deploy thì phải ssh zo server này. Down service đi này, lấy code mới về build trên server rồi chạy này. Mệt ghia.
+Bây giờ mệt quá, thuê 1 anh công nhân tên jenkins. Làm hết mọi thứ lằng nhằng bên trên. Lương thì không phải trả, chỉ tốn chi phí setup thôi. Hơi giống slave dog nhỉ :v. Mà slave dog thì có khi còn tự setup hộ ý. Ông nào viết được cái tool Slave-Dog thì đỉnh vch.
+Thằng jenkins không đủ thông minh để biết làm gì cụ thể thế nào đâu. Mình phải đưa cho nó bản công việc (jenkinsfile), cho nó lệnh bài để truy cập vào server (credential)
+Nói chung thằng jenkin thực hiện những công việc thủ công để mình đỡ phải làm đi làm lại.
+Làm việc với thằng jenkins này thế nào. Mình phải chạy nó lên rồi đăng nhập vô. Tạo 1 project cho nó rồi setup link repo, setup plugin, trigger, credentials, balalalal. Làm sao để nó biết sẽ phải làm gì khi có code mới và có đủ thẩm quyển là điều đó
+Bây giờ thì xem thằng jenkinsfile nào. Đây là bản công việc nhé:</p>
+<pre tabindex="0"><code class="language-textmate" data-lang="textmate">pipeline {
+    agent any
+    tools {
+        go &#39;Golang1.15&#39;
+    }
+    environment {
+        GO114MODULE = &#39;on&#39;
+        CGO_ENABLED = 0
+        GOPATH = &#34;${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}&#34;
+    }
+
+    stages {
+
+        stage(&#39;Pre Test&#39;) {
+            steps {
+                echo &#39;Installing dependencies&#39;
+                sh &#39;go version&#39;
+                sh &#39;go get -u golang.org/x/lint/golint&#39;
+                sh &#39;go get&#39;
+
+            }
+        }
+
+        stage(&#39;Test&#39;) {
+            steps {
+                sh &#39;go vet .&#39;
+                echo &#39;Running linting&#39;
+                sh &#39;golint .&#39;
+                echo &#39;Running test&#39;
+                sh &#39;go test -v&#39;
+            }
+        }
+
+        stage(&#39;Build And Deploy&#39;) {
+            when {
+                branch &#39;master&#39;
+            }
+            steps {
+                echo &#39;Compiling and building&#39;
+                sh &#39;go build -o main main.go&#39;
+                sshagent([&#39;my-ssh-key&#39;]) {
+                    sh &#39;ssh thai@192.168.1.10 pkill main&#39;
+                    sh &#39;scp ./main thai@192.168.1.10:~/app/&#39;
+                    sh &#39;&#39;&#39;
+                       ssh thai@192.168.1.10 &#39;~/app/main &gt; ~/app/start.log &amp;&#39;
+                    &#39;&#39;&#39;
+                }
+            }
+        }
+
+    }
+}
+</code></pre><p>Phân tích nào. Thằng jenkins nhận được bản công việc này ở trên github repo. Thực hiện từ trên xuống:</p>
+<ul>
+<li>Tool dùng là go &lsquo;Golang1.15&rsquo; cái này lát phải define trong config nha. Mình không xem rõ cái tool này làm gì, chắc là pull docker golang về rồi chạy hoặc là cài golang lên node rồi chạy trực tiếp.</li>
+<li>Cài vài biến môi trường environment{}</li>
+<li>Các bước thực hiện stages{} gồm nhiều stage nhỏ:
+<ul>
+<li>Pre Test: xem version của go này, pull package golint về này. Cái này để lát check syntax code. Go get là để pull tất cả package cần cho việc build và chạy project golang nha.</li>
+<li>Test: Chạy test nào. Đầu tiên là chạy go vet để xem có error nào trong code không. Sau thì chạy golint . kiểm tra syntax . Chạy testgo test -v</li>
+<li>Test thành công thì deploy thôi: Chỉ thực hiện khi target branch là master nha.
+when { branch &lsquo;msater&rsquo; }. go build -o main main.go Để build ra file binary main.
+Dùng plugin ssh agent nó cung cấp cho cái khai báo sshagent. Mục đích là để ssh vào server bằng cái credential my-ssh-key mà mình setup trong cài đặt của jenkins (lênh bài đó). Chạy ssh vào server và kill thằng process main. Sau đó dùng scp gửi file mình vừa build được lên server. Rồi chạy nó thôi. Mình phải đẩy log vào file để tránh trường hợp nó bị treo ssh làm jenkins không end task này được.</li>
+</ul>
+</li>
+<li>Đó là bản công việc đó. Còn phải setup nhiều.Lát mình đi chi tiết hơn</li>
+</ul>
+<h2 id="4-server-deploy">4. Server deploy</h2>
+<p>Mình chơi mỗi product thôi. Chạy 1 con ubuntu server trên virtualbox làm server. Gen key ssh ra rồi dùng nó là credential cho jenkins truy cập zo.</p>
+<hr>
+<p>4 Yếu tố đủ rồi. Bắt đầu đi chi tiết nào.</p>
+<h1 id="thực-hành">Thực hành</h1>
+<p>Yêu cầu: docker, ngrok,&hellip;</p>
+<h2 id="1-project">1. Project.</h2>
+<p>Các bạn tự viết hoặc lấy trên repo của mình về test nha. Đẩy lên repo của bạn.
+Chú ý là phải có thằng Jenkinsfile trong project để thằng jenkins có bản công việc nha.</p>
+<h2 id="2-cài-jenkins">2. Cài jenkins</h2>
+<p>Tham khảo trên trang chủ nha. Mình thì chạy bằng docker. Muốn đơn giản thì dùng compose nữa nhá.<br>
+Đầu tiên phải tạo 1 volume cho thằng container mỗi khi run lên có dữ liệu đã</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker volume create jenkins-data
+</span></span></code></pre></div><p>Tạo cái file bash chạy cho tiện
+jenkins.sh</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>docker run -p 50000:50000 \
+</span></span><span style="display:flex;"><span>           -p 8080:8080 \
+</span></span><span style="display:flex;"><span>           -v jenkins-data:/var/jenkins_home \
+</span></span><span style="display:flex;"><span>           jenkins/jenkins:latest
+</span></span></code></pre></div><p>Nhớ cấp quyền cho nó nha.
+Chạy lên. Lần đầu chạy thì nó phải pull cả đống về nên lâu phết.
+chạy ngon lành rồi thì chú ý log để  lấy access-key gì đó mà login vào jenkins nha. Xong có tạo tài khoản gì đó.
+balabala&hellip; Thôi mấy cái râu ria các bạn tự search làm nha. Mình cũng chả nhớ cụ thể :v.
+Kết quả là mình có 1 con jenkins chạy ngon lành trên docker</p>
+<h2 id="3-setup-jenkins">3. Setup jenkins</h2>
+<p>Mình nhớ vài cái plugin có dùng : Golang plugin, ssh agent, blablabla, chả nhớ. Cứ làm rồi thấy thiếu thiếu gì thì m.n tự search rồi cài nha.</p>
+<h2 id="4-publish-jenkins-lên-làm-webhook">4. Publish jenkins lên làm webhook.</h2>
+<p>Dùng tool ngrok nha. Cài xong thì</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>./ngrok http <span style="color:#ae81ff">8080</span>
+</span></span></code></pre></div><p><img src="https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/ngrok1.png" alt="Boom"></p>
+<p>Cái subdomain mà thằng ngrok dùng làm webhook nha:
+vào github repo và set webhook cho nó: <a href="http://97850f9e1993.ngrok.io/github-webhook/">http://97850f9e1993.ngrok.io/github-webhook/</a>
+Thằng github và jenkins sẽ giao tiếp qua thằng này nha.</p>
+<h2 id="5-tạo-project-trên-jenkins-và-setup">5. Tạo project trên jenkins và setup.</h2>
+<p>Chọn Multibranch Pipeline nha.</p>
+<ul>
+<li>Branch Sources dùng github, điền đẩy đủ thông tin về repo vào nhé
+<ul>
+<li>Credential thì các bạn điền zo. Dùng token hoặc username, password đều được. Miễn sao giúp cho jenkins đủ thẩm quyền nhảy vào repo của bạn là oke.</li>
+<li>Behaviours discovery all branch nha. Cho thằng jenkins biết tất luôn.</li>
+<li>Discover pull requests from origin để merge pull request with target branch nha. Đại loại là nó sẽ phát hiện ra khi có pull request để merge vào 1 nhánh nào đó.</li>
+</ul>
+</li>
+<li>Build Config thì để by Jenkinsfile nha. Nghĩa là nó dùng jenkinsfile trên repo của mình ý.</li>
+<li>Orphaned Item Strategy : Day to keep để 365, Max # để 15. Mình xem trên mạng chứ cũng chả đọc chỗ  này.
+Setup ngon lành rồi thì ấn zo Scan repo now cho nó quét repo của mình và theo dõi hết branch nha. Các chức năng trên ui của nó tự tìm hiểu nhé các bạn. Thế cho kích thích. :v
+Hình thù sau khi nó scan xong thì thế này đây:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/rsz_x1.png" alt="Boom"></p>
+<p>Vào Multibrach pipeline events mà xem mấy cái event bắn qua lại giữa jenkins với github nha. Nhìn sướng mắt.</p>
+<p>Quên mất. Nhớ cài plugin Blue Ocean tí dễ nhìn nha.</p>
+<p>Oke rồi. Giờ này thằng jenkins truy cập được vào repo của mình rồi. Quét oke rồi. Giờ test thử.</p>
+<h2 id="test-thử">Test thử</h2>
+<p>Đẩy nhánh mới lên github nha. Chú ý xem log của ngrok sẽ thấy thằng git hub bắn event về cho jenkins. Bạn sẽ thấy ttl tăng nha. opn cũng nhảy 1 lúc. Data từ github bắn về  web-hook chính là cái domain mà ngrok mở cho mình. Nó sẽ forward về jenkins local của mình. Thằng jenkins bắt được thì nó sẽ chạy theo pipeline của mình. Chính là công việc định nghĩa trong Jenkinsfile đó.
+Truy cập zo Ocean Blue nha.
+<img src="https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/rsz_x2.png" alt="Boom">
+Nhìn pipeline của nó có kích thích không ạ. Ấn vào từng Stage để  xem kĩ nó thực hiện những instruction của mình trong jenkinsfile nha.<br>
+Tại sao không deploy vậy? Vì điều kiện when của mình trong jenkinsfile đó. push action không có xảy ra trên master nên đến stage đó thì nó không chạy thôi.
+<img src="https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/rsz_x3.png" alt="Boom">
+Nhìn này. jenkins cũng bắn data cho github để nó biết là các stage chạy pass ngon lành cành đào.</p>
+<p>Jenkins nhiều chức năng lắm . Mình cũng biết có xíu à. Các bạn tự tìm hiểu nhé.
+Các bạn thử  tạo pull request rồi merge linh tinh xem. Rồi quay sang jenkins web view mà xem chi tiết.
+Nhớ chý ý cả ngrok là biết thằng github nó bắn data qua lại cho jenkins ý mà.
+Mà quên mất lúc set webhook cho repo github nhớ chọn send me everything nha.<br>
+Xem như là chạy ngon rồi. Có lỗi gì tự search sửa nha.</p>
+<h2 id="5-setup-auto-deploy-cho-jenkins-và-server-nha">5. Setup auto deploy cho jenkins và server nha.</h2>
+<p>Có ubuntu server rồi. Có jenkins rồi. Bây giờ làm sao đây?<br>
+Chỉ dẫn công việc thì có rồi. Trong stage build và deploy ý.
+Nhưng mà vô ích vì có lệnh khám nhà đâu mà thằng ubuntu cho jenkins zo.
+Cùng tạo credential nào:</p>
+<ul>
+<li>Sinh ssh key ra nha. Đẩỷ public key cho thằng ubuntu server, nhớ thêm vào authorized gì đó.</li>
+<li>Vào manager credentials trên jenkins Add credentials thôi. Rồi điền các thức, private key zo. Có lệnh bài rồi. Quay lại jenkins file mà sửa key của mình thành tên key của bạn nha. Sửa luôn cả username và ip của con server của bạn nữa nhé. Cứ làm sao cho con jenkins truy cập vào trong ubuntu server là được. Đoạn này chắc sẽ làm lỗi nhiều ý. Cứ tự search nha :))
+Có thánh chỉ rồi. Có workflow rồi thì test thử  thôi.</li>
+</ul>
+<p>Mà chưa trước tiên build cái project rồi đẩy file binary vào ubuntu server chạy lên. Chạy rồi test thử trên web browser nha. 192.168.1.10/ping sẽ thấy message là là Pong nhé.</p>
+<p>Nhìn lại build and deploy stage nào:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>stage(&#39;Build And Deploy&#39;) {
+</span></span><span style="display:flex;"><span>            when {
+</span></span><span style="display:flex;"><span>                branch &#39;master&#39;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            steps {
+</span></span><span style="display:flex;"><span>                echo &#39;Compiling and building&#39;
+</span></span><span style="display:flex;"><span>                sh &#39;go build -o main main.go&#39;
+</span></span><span style="display:flex;"><span>                sshagent([&#39;my-ssh-key&#39;]) {
+</span></span><span style="display:flex;"><span>                    sh &#39;ssh thai@192.168.1.10 pkill main&#39;
+</span></span><span style="display:flex;"><span>                    sh &#39;scp ./main thai@192.168.1.10:~/app/&#39;
+</span></span><span style="display:flex;"><span>                    sh &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>                       ssh thai@192.168.1.10 &#39;~/app/main &gt; ~/app/start.log &amp;&#39;
+</span></span><span style="display:flex;"><span>                    &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p>Thằng jenkins sẽ build project ra file binary main. Nó ssh vào server với credential my-ssh-key. rồi kill process main trên server nhá. Lúc này thằng http server của mình down cái app ping đi rồi. Tiếp theo dùng scp để truyền file main vừa mới build được trên jenkins( file main này build từ version mới của code nha) lên server. Rồi sau đó là chạy nó thôi. vào web browser để trải nghiệm nhá. Nhớ là push code mới lên thì đổi thành Pong 3 hay gì gì đó để  lúc xem lại thành quả cho dễ.</p>
+<h2 id="test-quy-trình-deploy-nào">Test quy trình deploy nào.</h2>
+<p>Trên mình có nói qua rồi.</p>
+<ul>
+<li>Các bạn tạo nhánh mới đổi code đi, ví dụ như thay message Pong chẳng hạn.</li>
+<li>Push code lên nhánh mới. Chú ý ngrok sẽ thấy github bắn data về cho jenkins.</li>
+<li>Vào jenkins để ý Build Queue rồi zo Ocean blue nhìn cho dễ quá trình nó chạy pipeline. thấy nó test.</li>
+<li>Tạo merge request vào main</li>
+<li>Lặp lại mấy bước quan sát trên nhìn cho thích mắt.</li>
+<li>Merge pull request vừa rồi vào master rồi lại quan sát. Lần này sẽ thấy nó chạy stage Build and Deploy nha.
+<img src="https://raw.githubusercontent.com/handl3r/blogsite/master/public/images/lab_jenkins/rsz_x4.png" alt="Boom"></li>
+</ul>
+<p>Nhìn thú dzi đúng không. vào web browser test thử ngay con app mới vừa deploy.</p>
+<p>Đấy. Từ nay có project nào chơi chơi. Thử làm xem. Merge code cái là boommmmmm. Tự nhiên 1 lúc sau thấy con app mới đã chạy ngon lành trên server. Slave dog hiệu quả vclLz :v.</p>
+<p>Tạm đến đây đã. Nao có hứng chi tiết thêm tí cho ae. Chứ với từng kia hướng dẫn thì với mấy ông mới mới chắc ngồi search lỗi chán chê. Thật ra mình cũng mới tìm tòi đc có 1 tuần với lí do là không may. Cơ mà biết thêm 1 cái cũng thú dzi.<br>
+Tạm thế.</p>
+
+    </div>
+
+    
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; 2020, ThaiBuiXuan
+        
+        <br>
+        Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a>
+        and <a href="https://github.com/austingebauer/devise" target="_blank">Devise</a>
+    </small>
+</footer>
+</body>
+</html>

@@ -1,14 +1,28 @@
 <!doctype html>
-<html lang="en"><head>
-    <title>Golang Scratch Paper</title>
+<html lang="en-us"><head>
+    <title>Handl3r&#39;s Blog</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../../css/theme.css"/>
+    <meta name="description" content="" />
+
     
+    
+    
+    <link rel="stylesheet" href="../../css/theme.min.css">
+
+    
+    
+    
+
+    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9045708503739442"
+     crossorigin="anonymous"></script>
 </head>
 <body>
         <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
     <div class="row">
+        
         <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
             <a href="../../" class="text-decoration-none">
                 <img id="home-image" class="rounded-circle"
@@ -21,6 +35,7 @@
             </a>
         </div>
         <div class="col-sm-8 col-12 text-sm-left text-center">
+        
             <h2 class="m-0 mb-2 mt-4">
                 <a href="../../" class="text-decoration-none">
                     
@@ -58,7 +73,7 @@
                     </li>
                 
                     <li class="list-inline-item mr-3">
-                        <a href="" target="_blank">
+                        <a href="https://www.linkedin.com/in/thaibuixuan" target="_blank">
                             <i class="fab fa-linkedin-in fa-1x text-muted"></i>
                         </a>
                     </li>
@@ -82,46 +97,46 @@
 </header>
 <div class="container">
     <div class="pl-sm-4 ml-sm-5">
-        <p>*** <!-- raw HTML omitted -->Đây là draft nhá<!-- raw HTML omitted --> :3 ***</p>
+        <p>*** <em>Đây là draft nhá</em> :3 ***</p>
 <h1 id="khai-báo-biến-trong-golang">Khai báo biến trong golang</h1>
 <h2 id="khai-báo-chuẩn-bằng-từ-khóa-var-và-có-thể-kèm-theo-initializer">Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer:</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span>(
-  <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>
-  <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">2</span>
-  <span style="color:#a6e22e">z</span> = <span style="color:#e6db74">&#34;x&#34;</span>
-)
-</code></pre></div><p>Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với
-giá trị truyền vào hàm khởi tạo cho nó(=), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">z</span> = <span style="color:#e6db74">&#34;x&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với
+giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</p>
 <h2 id="khai-báo-gọn-ở-trong-hàm">Khai báo gọn ở trong hàm</h2>
-<p>Sử dụng toán tử :=
-<code>x := 2</code>
-chú ý khai báo kiểu này chỉ tồn tại trong hàm. Nếu ở ngoài hàm được coi là error syntax<br>
-Đồng thời cũng có thể gán hàm cho biến:
-<code>var x = func test(){}</code></p>
-<h1 id="constant">Constant</h1>
-<p>Hằng trong golang chỉ có thể là character, string, boolean, numeric values<br>
+<p>Sử dụng toán tử :=</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>chú ý khai báo kiểu này chỉ tồn tại trong hàm. Nếu ở ngoài hàm được coi là error syntax<br>
+Đồng thời cũng có thể gán hàm cho biến:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> = <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>(){}
+</span></span></code></pre></div><h1 id="constant">Constant</h1>
+<p>Hằng trong golang chỉ có thể là character, string, boolean, numeric values.<br>
 Không thể khai báo bằng :=</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi</span> = <span style="color:#ae81ff">3.14</span>
-<span style="color:#66d9ef">const</span> (
-  <span style="color:#a6e22e">StatusOke</span>       = <span style="color:#ae81ff">200</span>
-  <span style="color:#a6e22e">StatusCreated</span>   = <span style="color:#ae81ff">201</span>
-  <span style="color:#a6e22e">StatusAccepted</span>  =<span style="color:#ae81ff">202</span>
-) 
-</code></pre></div><h1 id="strongpackagesstrong"><!-- raw HTML omitted -->Packages<!-- raw HTML omitted --></h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi</span> = <span style="color:#ae81ff">3.14</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">StatusOke</span>       = <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">StatusCreated</span>   = <span style="color:#ae81ff">201</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">StatusAccepted</span>  =<span style="color:#ae81ff">202</span>
+</span></span><span style="display:flex;"><span>) 
+</span></span></code></pre></div><h1 id="strongpackagesstrong"><strong>Packages</strong></h1>
 <h2 id="import">Import</h2>
 <p>Chương trình golang tạo nên bởi các packages<br>
 có thể import bằng:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">import</span>(
-  <span style="color:#e6db74">&#34;fmt&#34;</span>
-  <span style="color:#e6db74">&#34;math/rand&#34;</span>
-) 
-</code></pre></div><p>Với những package không nằm trong các package tiêu chuẩn thì thường đc namespaced bằng
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">import</span>(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>) 
+</span></span></code></pre></div><p>Với những package không nằm trong các package tiêu chuẩn thì thường đc namespaced bằng
 web url.<br>
 Ví dụ:<br>
-<code>import &quot;github.com/mattetti/goRailsYourself/crypto&quot;</code>
+<code>import &quot;github.com/mattetti/goRailsYourself/crypto&quot;</code><br>
 Sau khi khai báo thì ta cần phải pull package này về bằng command:<br>
-go get github&hellip;
-command trên sẽ pull thư viện về và đặt trong GOPATH</p>
+<code>go get github...</code><br>
+Command trên sẽ pull thư viện về và đặt trong GOPATH</p>
 <p>Trong GOPATH gồm:<br>
 -bin: Thư mục chứa những file compiled binaries<br>
 -pkg: thư mục chứa các thư viện có sãn đã được biên dịch. Compiler sẽ<br>
@@ -130,39 +145,40 @@ chỉ cần link lại các thư viện này mà không cần compile lại nên
 <h2 id="export">Export</h2>
 <p>Sau khi ta import package vào file thì có thể gọi đến các names mà gói đó exported gồm có các biến, method, function mà cho phép gọi từ ngoài package.<br>
 Trong go quy tắc của những name được exported bắt đầu với chữ in hoa.<br>
-ví dụ math.pi thì ko đc vì nó ko phải tên đc export mà phải là math.Pi</p>
-<p>#Function và return value</p>
+Ví dụ math.pi thì ko đc vì nó ko phải tên đc export mà phải là math.Pi</p>
+<h1 id="function-và-return-value">Function và return value</h1>
 <p>Trong go function có thể khai báo như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>{
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">m</span>
-}
-</code></pre></div><p>Kiểu trả về sẽ được khai báo sau tham số của function</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">m</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Kiểu trả về sẽ được khai báo sau tham số của function</p>
 <ul>
-<li>go hỗ trợ trẩ về nhiều giá trị</li>
+<li>go hỗ trợ trả về nhiều giá trị</li>
 <li>Có thể khai báo luôn các biến trả về ở trên khai báo hàm. Khi đó chỉ cần gọi<br>
 Return với không tham số truyền vào:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>) {
-  <span style="color:#66d9ef">return</span>
-}
-</code></pre></div><p>Tuy nhiên kiểu khai báo sãn biến trả về này không nên vì thấy khá rối</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tuy nhiên kiểu khai báo sãn biến trả về này không nên vì thấy khá rối.</p>
 <h1 id="pointer">Pointer</h1>
 <p>Pointer trong go có thể khai báo:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">2</span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">x</span>
-</code></pre></div><p>Giống như trong C p chứa giá trị địa chỉ của giá trị 2. *p là giá trị 2 còn &amp;x là địa chỉ của giá trị 2 được cấp.<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">x</span>
+</span></span></code></pre></div><p>Giống như trong C, p chứa giá trị địa chỉ của ô nhớ chứa giá trị 2. *p là giá trị 2.
 Nói chung ko có gì đặc biệt<br>
-******Note trong go thì truyền arguments bằng giá trị chứ ko phải tham chiếu. Tương tự như C
-Nếu muốn truyền tham chiếu thì phải dùng con trỏ hoặc một số cấu trúc dùng tham trị như slices hay maps.
+****** Note trong go thì truyền arguments bằng giá trị chứ ko phải tham chiếu. Tương tự như C
+Nếu muốn truyền tham chiếu thì phải dùng con trỏ hoặc một số cấu trúc dùng tham trị như slice hay map.
 Đồng thời method thì thường xuyên được defined trên pointer.</p>
 <h1 id="mutability-trong-go">Mutability trong go</h1>
 <p>Trong go thì chỉ có constant là immutable  Tuy nhiên bởi vì tham số truyền bằng
 giá trị nên một func có thể thay đổi giá trị đó chứ không thể thay đổi giá trị thật mà biến ta truyền vào.</p>
 <p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;Types&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
 <h1 id="basic-type">Basic type</h1>
-<p>Kiểu dữ liệu chung :<br>
-bool string<br>
-Kiểu số:<br>
+<ul>
+<li>Kiểu dữ liệu chung :<br>
+bool string</li>
+<li>Kiểu số:<br>
 uint(32 or 64 bit(tùy thuộc vào kiến trúc 32 hay 64 bit))<br>
 int tương tự size uint<br>
 uintptr<br>
@@ -170,74 +186,86 @@ int uint 8 hoặc 16 hoặc 32 hoặc 64<br>
 float 32 hoặc 64<br>
 complex 64 hoặc 128<br>
 byte = uint8<br>
-rune = int32 biểu diễn Unicode point</p>
+rune = int32 biểu diễn Unicode point</li>
+</ul>
 <h1 id="conversion">Conversion</h1>
 <p>T(v) -&gt; kiểu của v được convert sang kiểu T<br>
 ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>  <span style="color:#66d9ef">float32</span> = float32(<span style="color:#a6e22e">i</span>)
-</code></pre></div><p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> float32(<span style="color:#a6e22e">i</span>)
-</code></pre></div><h1 id="type-assertion">Type Assertion</h1>
-<p>Code sample: <a href="https://play.golang.org/p/EEOdNgO9Yau">https://play.golang.org/p/EEOdNgO9Yau</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span>  <span style="color:#66d9ef">float32</span> = float32(<span style="color:#a6e22e">i</span>)
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> float32(<span style="color:#a6e22e">i</span>)
+</span></span></code></pre></div><h1 id="type-assertion">Type Assertion</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#66d9ef">interface</span>{} = <span style="color:#e6db74">&#34;hello&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">x</span>.(<span style="color:#66d9ef">string</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Code sample: <a href="https://play.golang.org/p/EEOdNgO9Yau">https://play.golang.org/p/EEOdNgO9Yau</a></p>
 <h1 id="struct">Struct</h1>
-<p>Struct tương tự như c, ta có thể khai báo như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">int</span>
-}
-</code></pre></div><p>Có con trỏ struct ví dụ var x = &amp;Person{&ldquo;Thai&rdquo;, 22} thì có thể truy cập vào các biến ở trong struct. Ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> = <span style="color:#a6e22e">Person</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">12</span>} 
-<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">Name</span> <span style="color:#f92672">-</span>&gt; <span style="color:#a6e22e">getName</span>
-</code></pre></div><h1 id="initializing">Initializing</h1>
-<p>New  expression sẽ cấp phátmột vùng nhớ zezoed value cho biến và trả về con trỏ đến vùng nhớ đó. Zezo value là giá trị mặc định cho kiểu : ví dụ boolean là false, int là 0, string là &ldquo;&rdquo;, con trỏ, slide,
+<p>Struct tương tự như C, ta có thể khai báo như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Có con trỏ struct ví dụ <code> var x = &amp;Person{&quot;Thai&quot;, 22}</code> thì có thể truy cập vào các biến ở trong struct. Ví dụ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> = <span style="color:#a6e22e">Person</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">12</span>} 
+</span></span></code></pre></div><p>d.Name -&gt; getName</p>
+<h1 id="initializing">Initializing</h1>
+<p>New expression sẽ cấp phát một vùng nhớ zezo value cho biến và trả về con trỏ đến vùng nhớ đó. Zezo value là giá trị mặc định cho kiểu : ví dụ boolean là false, int là 0, string là &ldquo;&rdquo;, con trỏ, slice,
 &hellip; là nil .
 ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>
-}
-<span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">Person</span>)
-<span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{}
-<span style="color:#f92672">-</span>&gt; <span style="color:#f92672">*</span><span style="color:#a6e22e">x</span> = <span style="color:#f92672">*</span><span style="color:#a6e22e">y</span>
-</code></pre></div><p>Những cách khởi tạo giá trị:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">Person</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{}
+</span></span></code></pre></div><p>-&gt; *x = *y<br>
+Những cách khởi tạo giá trị:
 Nếu dùng new thì giá trị khởi tạo mặc định là zezo value. Ta có thể khởi tạo bằng cách:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">Person</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">Person</span>{
-  <span style="color:#e6db74">&#34;Thai&#34;</span>,
-  <span style="color:#ae81ff">22</span>,
-}
-</code></pre></div><h1 id="composition-vs-inheritance">Composition vs Inheritance</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">Person</span>{<span style="color:#e6db74">&#34;Thai&#34;</span>, <span style="color:#ae81ff">22</span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">Person</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Thai&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">22</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="composition-vs-inheritance">Composition vs Inheritance</h1>
 <p>Trong Go không có inheritance, thay vào đó ta có composition(embedding)</p>
 <p>Ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Student</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">Person</span>
-  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span>
-}
-</code></pre></div><p>Bằng cách bên trên thì những thành phần(thuộc tính )của Person sẽ trở thành thuộc tính của Student
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Student</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Person</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Bằng cách bên trên thì những thành phần (thuộc tính )của Person sẽ trở thành thuộc tính của Student
 Ta có thể truy cập vào các thành phần bằng cách student.Name  student.ID ,&hellip;</p>
-<p>Một kiểu khác bên trên là thay vì chỉ truyền vào kiểu Person thì ta có thể truyền vào 1 con trỏ trỏ
+<p>Một kiểu khác bên trên là thay vì chỉ truyền vào kiểu Person thì ta có thể truyền vào 1 con trỏ
 Ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Student</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">Person</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>
-  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span>
-}
-</code></pre></div><p>Tuy nhiên với cách này thì ta sẽ không thể gọi trực tiếp thành phần của Person mà phải gọi:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Student</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Person</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Tuy nhiên với cách này thì ta sẽ không thể gọi trực tiếp thành phần của Person mà phải gọi:
 <code>student.Person.Name</code><br>
 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;Collection types&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
 <h1 id="array">Array</h1>
-<p>Khai báo</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">string</span>
-<span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;thai&#34;</span>, <span style="color:#e6db74">&#34;bui&#34;</span>}
-</code></pre></div><p>ngoài ra cũng có thể dùng &hellip; để khai báo ngầm length:
+<p>Khai báo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;thai&#34;</span>, <span style="color:#e6db74">&#34;bui&#34;</span>}
+</span></span></code></pre></div><p>Ngoài ra cũng có thể dùng &hellip; để khai báo ngầm length:
 <code>a:= [...]string{&quot;s&quot;, &quot;a&quot;, &quot;e&quot;, &quot;d&quot;}</code></p>
-<p>*****CHú ý là trong golang thì length cũng là 1 phần trong type . nghĩa là type []string là ko tồn tại
+<p>***** Chú ý là trong golang thì length cũng là 1 phần trong type . nghĩa là type []string là ko tồn tại
 phải là [2]string. . Chính vì thế mà length của array là không thể thiếu  và không thể THAY ĐỔI
 các array nhiều chiều thì khai báo [2][3]string chẳng hạn</p>
 <h1 id="slice">Slice</h1>
@@ -245,46 +273,46 @@ các array nhiều chiều thì khai báo [2][3]string chẳng hạn</p>
 <code>s := []int{1,2,42}</code>
 or
 <code>s := make([]int, 5, 10)</code>
-Với cách thứ hai thì các phần tử của slide sẽ là giá trị zezo value. đồng thời len và cap của slice là
+Với cách thứ hai thì các phần tử của slice sẽ là giá trị zezo value. đồng thời len và cap của slice là
 tham số truyền vào.</p>
-<p>Thực chất slide build on top của array. 1 slide gồm có 3 trường thông tin: con trỏ trỏ đến array, length, cap
+<p>Thực chất slice build on top của array. 1 slice gồm có 3 trường thông tin: con trỏ trỏ đến array, length, cap
 length và cap khác nhau ở chỗ length là số phần tử hiện tại của slice còn cap là số phần tử max mà slice đó có
 thể chứa.<br>
 Giả sử ta có a := [5]int  s := a[2:4] thì s lúc này có length là 2 và cap là 3. Điều này vì a chỉ có 5 ô nhớ int. s là lát cắt từ phần tử thứ 2 đến hết thứ 3 -&gt; số phần tử max mà slice này có thể mở rộng chỉ có thể kéo đến phần tử index 4 của array. Nếu sang 5 thì sẽ là lỗi truy cập bộ nhớ quá
 của array.
 Điều này quan trọng khi ta xây dựng các hàm tiện dụng trên slice như append, hay copy.
-Nếu số phần tử mà ta thêm vào những hàm append mà cap của slice đó không đủ chứa thì ta phải tạo 1 slice mới có cap to hơnvà thực hiện copy các giá trị của slice cũ vào.</p>
+Nếu số phần tử mà ta thêm vào những hàm append mà cap của slice đó không đủ chứa thì ta phải tạo 1 slice mới có cap to hơn và thực hiện copy các giá trị của slice cũ vào.</p>
 <p>Nói chung slice build on top của array, cơ bản chỉ là con trỏ trỏ đến array và có trường cap tiện ích giúp tạo nên sự linh động.</p>
 <p>Ví dụ nhẹ cho giải thích trên:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>)
-<span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">0</span>: cap(<span style="color:#a6e22e">s</span>)]
-</code></pre></div><p>len(s)-&gt; 6. Tuy nhiên nếu thay cap(s) mà là 7 thì error slice bound ngay.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s</span> = <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">0</span>: cap(<span style="color:#a6e22e">s</span>)]
+</span></span></code></pre></div><p>len(s)-&gt; 6. Tuy nhiên nếu thay cap(s) mà là 7 thì error slice bound ngay.</p>
 <p>Hàm append hữu dụng khi ta muốn thêm phần tử cũng như slice khác vào slice.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">cities</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Hanoi&#34;</span>, <span style="color:#e6db74">&#34;HCM&#34;</span>}
-<span style="color:#a6e22e">cities</span> = append(<span style="color:#a6e22e">cities</span>, <span style="color:#e6db74">&#34;HD&#34;</span>, <span style="color:#e6db74">&#34;HP&#34;</span>)
-<span style="color:#a6e22e">otherCities</span> = []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Hue&#34;</span>, <span style="color:#a6e22e">DN</span>}
-<span style="color:#a6e22e">cities</span> = append(<span style="color:#a6e22e">cities</span>, <span style="color:#a6e22e">otherCities</span><span style="color:#f92672">...</span>)
-</code></pre></div><p>Muốn append slice vào slice thì cần phải dử dụng ellipsis(&hellip;). Bằng cách đó bộ biên dịch có thể hiểu và thực hiện lấy từng giá trị của otherCities thêm vào cities.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">cities</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Hanoi&#34;</span>, <span style="color:#e6db74">&#34;HCM&#34;</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cities</span> = append(<span style="color:#a6e22e">cities</span>, <span style="color:#e6db74">&#34;HD&#34;</span>, <span style="color:#e6db74">&#34;HP&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">otherCities</span> = []<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;Hue&#34;</span>, <span style="color:#a6e22e">DN</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">cities</span> = append(<span style="color:#a6e22e">cities</span>, <span style="color:#a6e22e">otherCities</span><span style="color:#f92672">...</span>)
+</span></span></code></pre></div><p>Muốn append slice vào slice thì cần phải dử dụng ellipsis(&hellip;). Bằng cách đó bộ biên dịch có thể hiểu và thực hiện lấy từng giá trị của otherCities thêm vào cities.</p>
 <p>Zezo value của slice là nil với length và capacity là 0.</p>
 <h1 id="range-trong-for-loop">Range trong for loop</h1>
 <p>range giúp hỡ trợ ta lặp qua slice hoặc map, cả string nữa
 ví dụ</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">43</span>,<span style="color:#ae81ff">52</span>,<span style="color:#ae81ff">4</span>}
-
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-  <span style="color:#75715e">// do somethings
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>Nếu không muốn lấy value thì chỉ cần bỏ v. Nếu chỉ lấy value thì _, v</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">43</span>,<span style="color:#ae81ff">52</span>,<span style="color:#ae81ff">4</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Nếu không muốn lấy value thì chỉ cần bỏ v. Nếu chỉ lấy value thì _, v</p>
 <h1 id="map">Map</h1>
 <p>Tương tự như trong các ngôn ngữ khác thì go cũng cung cấp kiểu hash:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">student_ID</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{
-  <span style="color:#e6db74">&#34;Bui Xuan Thai&#34;</span>: <span style="color:#ae81ff">3671</span>
-  <span style="color:#e6db74">&#34;X&#34;</span>:             <span style="color:#ae81ff">3672</span>
-}
-</code></pre></div><p>or</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
-<span style="color:#a6e22e">x</span>[<span style="color:#e6db74">&#34;Bui Xuan Thai&#34;</span>] = <span style="color:#ae81ff">3671</span>
-</code></pre></div><p>Xóa <code>delete(x, &quot;Bui Xuan Thai&quot;)</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">student_ID</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Bui Xuan Thai&#34;</span>: <span style="color:#ae81ff">3671</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;X&#34;</span>:             <span style="color:#ae81ff">3672</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span>[<span style="color:#e6db74">&#34;Bui Xuan Thai&#34;</span>] = <span style="color:#ae81ff">3671</span>
+</span></span></code></pre></div><p>Xóa <code>delete(x, &quot;Bui Xuan Thai&quot;)</code>
 Để kiểm tra sự tồn tai của 1 key trong map thì có 2 cách dựa trên vỉệc khi ta gọi x[&ldquo;key&rdquo;] mà không tồn tại thì sẽ trả lại zezo value. Tuy nhiên cách này không phải lúc nào cũng áp dụng được vì nếu value thật của nó trùng với zezo value thì ko đc.<br>
 Thay vào đó ta có:  <code>elem, ok := x[key]</code>
 nếu có tồn tại thì oke = true elem là giá trị trả về. còn ko thì ok = false và eleme là zezo value.</p>
@@ -293,117 +321,117 @@ string, pointer, interface, struct array. Slice và map thì ko thể.</p>
 <p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;Control flow&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
 <h1 id="if-statement">If statement</h1>
 <p>Trong go thì if không cần dấu (). Và có thể khai báo biến tại if:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">foo</span>(); <span style="color:#a6e22e">v</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span> {
-  <span style="color:#75715e">// do somethings
-</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
-  <span style="color:#75715e">// do somethings
-</span><span style="color:#75715e"></span>}
-</code></pre></div><h1 id="for-loop">For loop</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">foo</span>(); <span style="color:#a6e22e">v</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">5</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h1 id="for-loop">For loop</h1>
 <p>Trong go chỉ có duy nhất loop là for: cấu trúc cơ bản như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-  <span style="color:#75715e">// do somethings
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>Trong đó thì {} là bắt buộc<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Trong đó thì {} là bắt buộc<br>
 for loop có thể không cần pre/post statêmnt như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span> {
-  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><p>for thay thế cho while:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span> {
-  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
-}
-</code></pre></div><h1 id="switch">Switch</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>for thay thế cho while:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="switch">Switch</h1>
 <p>Sử dụng:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">x</span> {
-  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>:
-    <span style="color:#75715e">//do somethings
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>:
-    <span style="color:#75715e">//do somethings
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">default</span> :
-    <span style="color:#75715e">//do somethings
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>Từ  khóa fallthrough có thể sử đụng để thực thi tất cả các case từ vị trí case hợp lệ.. Khi sử dụng
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">6</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">default</span> :
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//do somethings
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Từ  khóa fallthrough có thể sử đụng để thực thi tất cả các case từ vị trí case hợp lệ.. Khi sử dụng
 fallthrough thì thường cần đi kèm với break để ngắt khi cần. Còn khi không định dùng fallthrough thì ko
 cần dùng break trong go vì switch case trong go auto dùng break cuối mỗi case.</p>
 <p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-Method&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-</p>
 <p>Quan hệ giữa method và function là method thì có một receiver xác định.
 Đó cũng là ý tưởng method trong go. ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">statement</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span>{
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprints</span>(<span style="color:#e6db74">&#34;%s say: %s&#34;</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">statement</span>)
-}
-</code></pre></div><p>Khi đó ta có thể gọi method với 1 receiver cụ thể dạng Person</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Person</span>{
-  <span style="color:#e6db74">&#34;Thai&#34;</span>,
-  <span style="color:#ae81ff">22</span>,
-}
-</code></pre></div><p>khi đó ta có thể gọi <code>p.say(&quot;Hello World!&quot;)</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">statement</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprints</span>(<span style="color:#e6db74">&#34;%s say: %s&#34;</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">statement</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Khi đó ta có thể gọi method với 1 receiver cụ thể dạng Person</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Person</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Thai&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">22</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>khi đó ta có thể gọi <code>p.say(&quot;Hello World!&quot;)</code></p>
 <h1 id="tổ-chức-code">Tổ chức code</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#75715e">// list of package to import
-</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> {
-  <span style="color:#e6db74">&#34;fmt&#34;</span>
-}
-
-<span style="color:#75715e">// list of constants
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> (
-  <span style="color:#a6e22e">ConstExample</span> = <span style="color:#e6db74">&#34;This is const&#34;</span>
-)
-
-<span style="color:#75715e">// list of variables
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> (
-  <span style="color:#a6e22e">Exportedvar</span> = <span style="color:#ae81ff">24</span>
-  <span style="color:#a6e22e">nonExportedVar</span> = <span style="color:#e6db74">&#34;No&#34;</span>
-)
-
-<span style="color:#75715e">//Main type of file, try to keep lowest amount of structs per file when possible
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span>{
-  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">Age</span> <span style="color:#a6e22e">unit</span>
-  <span style="color:#a6e22e">Location</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">UserLocation</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UserLocation</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">Country</span> <span style="color:#66d9ef">string</span>
-}
-
-<span style="color:#75715e">// list of functions
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newPerson</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{
-    <span style="color:#a6e22e">Name</span>: <span style="color:#a6e22e">name</span>,
-    <span style="color:#a6e22e">Age</span>: <span style="color:#a6e22e">age</span>,
-    <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">UserLocation</span>{
-      <span style="color:#a6e22e">City</span>: <span style="color:#e6db74">&#34;HN&#34;</span>,
-      <span style="color:#a6e22e">Country</span>: <span style="color:#e6db74">&#34;VN&#34;</span>,
-    },
-  }
-}
-
-<span style="color:#75715e">// list of methods
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">statement</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s say %s&#34;</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">statement</span>)
-}
-
-<span style="color:#75715e">//func main if main package
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-}
-</code></pre></div><h1 id="type-aliasing">Type aliasing</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// list of package to import
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">import</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// list of constants
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ConstExample</span> = <span style="color:#e6db74">&#34;This is const&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// list of variables
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Exportedvar</span> = <span style="color:#ae81ff">24</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">nonExportedVar</span> = <span style="color:#e6db74">&#34;No&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//Main type of file, try to keep lowest amount of structs per file when possible
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Age</span> <span style="color:#a6e22e">unit</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Location</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">UserLocation</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">UserLocation</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">City</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Country</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// list of functions
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">newPerson</span>(<span style="color:#a6e22e">name</span> <span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">Age</span> <span style="color:#66d9ef">uint</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span>: <span style="color:#a6e22e">name</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Age</span>: <span style="color:#a6e22e">age</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">UserLocation</span>{
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">City</span>: <span style="color:#e6db74">&#34;HN&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">Country</span>: <span style="color:#e6db74">&#34;VN&#34;</span>,
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// list of methods
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">statement</span> <span style="color:#66d9ef">string</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%s say %s&#34;</span>, <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">Name</span>, <span style="color:#a6e22e">statement</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//func main if main package
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="type-aliasing">Type aliasing</h1>
 <p>Ta hoàn toàn có thể định nghĩa các method trên các type có sẵn.
 T có thể alias một kiểu mới từ kiểu cũ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyString</span> <span style="color:#66d9ef">string</span>
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">myStr</span> <span style="color:#a6e22e">MyString</span>) <span style="color:#a6e22e">Upper</span>() <span style="color:#66d9ef">string</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ToUpper</span>(string(<span style="color:#a6e22e">myStr</span>))
-}
-</code></pre></div><p>Note: Chú ý phân biệt derived type và type alias
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyString</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">myStr</span> <span style="color:#a6e22e">MyString</span>) <span style="color:#a6e22e">Upper</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">ToUpper</span>(string(<span style="color:#a6e22e">myStr</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Note: Chú ý phân biệt derived type và type alias
 Code: <a href="https://play.golang.org/p/Ftq3eqsXN9D">https://play.golang.org/p/Ftq3eqsXN9D</a></p>
 <h1 id="method-receiver">Method receiver</h1>
 <p>Vấn đề: Một số method ta muốn nó thay đổi giá trị của receiver, một số lại không. Ví dụ như method
@@ -412,22 +440,22 @@ Abs() gọi trên 1 số int thì ta muốn nó trả về giá trị là abs m�
 Nếu ta truyền receiver là dạng pointer thì method có thể thay đổi giá trị của receiver.<br>
 Nếu ta truyền theo giá tri thường thì tương tự như argumentsđược truyền vào sẽ copy giá trị và thay đổi trên nó trong khi receiver mà ta gọi thì không thay đổi gì.<br>
 ví dụ:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyFloat</span> <span style="color:#66d9ef">float64</span>
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">mf</span> <span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">uint</span> {
-  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">mf</span> &lt; <span style="color:#ae81ff">0</span> {
-    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">mf</span>
-  }
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mf</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">mf</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Scale</span>() <span style="color:#66d9ef">uint</span> {
-  <span style="color:#66d9ef">if</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">mf</span> &lt; <span style="color:#ae81ff">0</span> {
-    <span style="color:#f92672">*</span><span style="color:#a6e22e">mf</span> = <span style="color:#f92672">-*</span><span style="color:#a6e22e">mf</span>
-  }
-  <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">mf</span>
-}
-</code></pre></div><p>************** Chú ý go thì luôn pass mọi thứ bằng giá trị kể cả receiver. Kể cả khi ta truyền vào con trỏ
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">MyFloat</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">mf</span> <span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Abs</span>() <span style="color:#66d9ef">uint</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">mf</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">mf</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">mf</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">mf</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">MyFloat</span>) <span style="color:#a6e22e">Scale</span>() <span style="color:#66d9ef">uint</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">mf</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span><span style="color:#a6e22e">mf</span> = <span style="color:#f92672">-*</span><span style="color:#a6e22e">mf</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">mf</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>************** Chú ý go thì luôn pass mọi thứ bằng giá trị kể cả receiver. Kể cả khi ta truyền vào con trỏ
 thì nó vẫn copy con trỏ nhưng chính bởi đặc tính lưu trữ địa chỉ của con trỏ mà nó có thể tương tác đến
 origin value. Copy con trỏ là rất rẻ nên tốt. Nếu ko có cơ chế này thì ta sẽ phải thực hiện gán biến origin
 cho giá trị trả về của hàm. Khi đó copy value lúc gọi hàm với những struct mà to thì sẽ rất tốn tài nguyên.</p>
@@ -452,71 +480,71 @@ các đối tượng có những hành vi đó vào 1 nhóm.Từ đó có thể 
 </ul>
 <p>************** Ta có thể tưởng tượng như sau: tất cả các type là 1 tập hợp. interfaces là các tập hợp con</p>
 <p>Như ví dụ về Reader và Writer ở dưới đây thì ReadWriter là giao của 2 tập hợp đó.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">ví</span> <span style="color:#a6e22e">dụ</span>:
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">FirstName</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">LastName</span> <span style="color:#66d9ef">string</span>
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">struct</span> {
-  <span style="color:#a6e22e">FirstName</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">LastName</span> <span style="color:#66d9ef">string</span>
-  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">FirtName</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">LastName</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Customer</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">FirstName</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">LastName</span>
-}
-</code></pre></div><p>Trên kia ta đã khai báo 2 struct có method Name(). Bây giờ ta muốn lnhóm 2 struct này vào 1 nhóm để có thể
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">v</span><span style="color:#960050;background-color:#1e0010">í</span> <span style="color:#a6e22e">d</span><span style="color:#960050;background-color:#1e0010">ụ</span>:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Person</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">FirstName</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">LastName</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Customer</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">FirstName</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">LastName</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Person</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">FirtName</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">LastName</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Customer</span>) <span style="color:#a6e22e">Name</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">FirstName</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">LastName</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Trên kia ta đã khai báo 2 struct có method Name(). Bây giờ ta muốn lnhóm 2 struct này vào 1 nhóm để có thể
 define 1 function mà in ra câu chào dựa trên kết quả của method Name().Ta sẽ gom 2 struct này vào 1 nhóm gọi là
 interface Namer như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Namer</span> <span style="color:#66d9ef">interface</span> {
-  <span style="color:#a6e22e">Name</span>()
-}
-</code></pre></div><p>Định nghĩa function sử dụng interface này:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Greet</span>(<span style="color:#a6e22e">n</span> <span style="color:#a6e22e">Namer</span>) <span style="color:#66d9ef">string</span> {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">SPrintf</span>(<span style="color:#e6db74">&#34;Dear %s&#34;</span>, <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">Name</span>())
-}
-</code></pre></div><p>Sau đó ta có thể gọi function này:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;Bui&#34;</span>, <span style="color:#e6db74">&#34;Thai&#34;</span>)
-<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Cusmtomer</span>(<span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#e6db74">&#34;Smith&#34;</span>, <span style="color:#e6db74">&#34;1251&#34;</span>)
-</code></pre></div><h1 id="statisfying--interface">Statisfying  Interface</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Namer</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Name</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Định nghĩa function sử dụng interface này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">Greet</span>(<span style="color:#a6e22e">n</span> <span style="color:#a6e22e">Namer</span>) <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">SPrintf</span>(<span style="color:#e6db74">&#34;Dear %s&#34;</span>, <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">Name</span>())
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Sau đó ta có thể gọi function này:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Person</span>(<span style="color:#e6db74">&#34;Bui&#34;</span>, <span style="color:#e6db74">&#34;Thai&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Cusmtomer</span>(<span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#e6db74">&#34;Smith&#34;</span>, <span style="color:#e6db74">&#34;1251&#34;</span>)
+</span></span></code></pre></div><h1 id="statisfying--interface">Statisfying  Interface</h1>
 <p>Ta có thể tạo ra 1 interface bằng cachs tổng hợp những interface khác:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
-  <span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Writer</span>  <span style="color:#66d9ef">interface</span> {
-  <span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReadWriter</span> <span style="color:#66d9ef">interface</span> {
-  <span style="color:#a6e22e">Reader</span>
-  <span style="color:#a6e22e">Writer</span>
-}
-</code></pre></div><h1 id="returning-errors">Returning Errors</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Reader</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Read</span>(<span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Writer</span>  <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">b</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">ReadWriter</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Reader</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">Writer</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="returning-errors">Returning Errors</h1>
 <p>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-Concurrency&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
 <p>Keep in mind this is Concurrency,&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;NOT PARALLEL&mdash;&mdash;&mdash;-</p>
 <h1 id="goroutines">Goroutines</h1>
 <p>Một go routine là một luồng nhẹ được quản lí bởi Go runtime. Cũng tương tự như khái niệm luồng trong các ngôn
 ngữ khác.
 Một ví dụ về goroutine như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
-   <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
-    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
-  }
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;This is inside goroutine&#34;</span>)
-  <span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;This is in main goroutine&#34;</span>)
-}
-</code></pre></div><p>Với ví dụ trên, Để tạo một go routine thì ta dùng từ khóa go ở trước hàm thực thi trong goroutine. Không có gì khó khăn.<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">say</span>(<span style="color:#a6e22e">s</span> <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">5</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">100</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;This is inside goroutine&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">say</span>(<span style="color:#e6db74">&#34;This is in main goroutine&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Với ví dụ trên, Để tạo một go routine thì ta dùng từ khóa go ở trước hàm thực thi trong goroutine. Không có gì khó khăn.<br>
 Vì đây là conccurency nên tại 1 thời điểm chỉ có một goroutine được hoạt động. Tất cả các luồng khác phải bị block. Tương tự như trong hệ điều hành
 Chính vì vậy để hiểu tại sao cần time.Sleep() thì ta phân tích. hàm sleep này sẽ đưa goroutine hiện tại vào trạng thái block. Nghĩa là nó từ
 bỏ quyền tiếp tục thực thi.Phải làm như thế thì mới có thể nhường cpu cho goroutine khác thực thi. Lịch khi đó sẽ  đến lượt goroutine khác chạy.
@@ -534,39 +562,39 @@ Về ý tưởng là như vậy.</p>
 <p>******Chú ý quan trọng với unbuffered channel: Khi 1 goroutine cố đọc data từ một channel nhưng channel không có giá trị nào cho nó. Nó sẽ block goroutine hiện tại và unblock goroutine khác với hi vọng một số goroutine khác sẽ đặt value vào trong channel. Bởi vậy thao tác đọc này sẽ bị chặn. Giống như hành vi
 gửi data vào một channel thì goroutine hiện tại cũng bị block và unblock goroutine khác với hi vọng có một goroutine khác đọc giá trị từ channel.</p>
 <p>Ví dụ về sử dụng channel:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">work</span>(<span style="color:#a6e22e">myChannel</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
-  <span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span>
-  <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
-  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">work</span>(<span style="color:#a6e22e">myChannel</span>)
-  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
-}
-</code></pre></div><p>Như ví dụ,ta đã khỏi tạo channel bằng hàm make. Mỗi channel chỉ vận chuyển một kiểu dữ liệu nhất định nên ta phải chỉ định kiểu khi khởi tạo.
-Một ví dụ khác về tính tổng của 1 slide như sau:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">c</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
-    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">v</span>
-  }
-  <span style="color:#a6e22e">c</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sum</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>)
-  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">100000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-    <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">i</span>
-  }
-  <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
-  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">myChannel</span>, <span style="color:#a6e22e">s</span>[:len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>])
-  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">myChannel</span>, <span style="color:#a6e22e">s</span>[len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>]:)
-
-  <span style="color:#a6e22e">firstSum</span>, <span style="color:#a6e22e">lastSum</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>, <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>
-  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">firstSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lastSum</span>)
-}
-</code></pre></div><h1 id="buffered-channel">Buffered channel</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">work</span>(<span style="color:#a6e22e">myChannel</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">data</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">work</span>(<span style="color:#a6e22e">myChannel</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Như ví dụ,ta đã khỏi tạo channel bằng hàm make. Mỗi channel chỉ vận chuyển một kiểu dữ liệu nhất định nên ta phải chỉ định kiểu khi khởi tạo.
+Một ví dụ khác về tính tổng của 1 slice như sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">c</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">s</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">c</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">100000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">s</span>[<span style="color:#a6e22e">i</span>] = <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">myChannel</span>, <span style="color:#a6e22e">s</span>[:len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">myChannel</span>, <span style="color:#a6e22e">s</span>[len(<span style="color:#a6e22e">s</span>)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>]:)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">firstSum</span>, <span style="color:#a6e22e">lastSum</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>, <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">firstSum</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">lastSum</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h1 id="buffered-channel">Buffered channel</h1>
 <p>Một buffed channel là 1 channel có cap cố định. Ta có thể coi nó như là 1 vùng buffer.<br>
 Hành vi gửi data vào 1 buffed channel sẽ bị block nếu như buffered channel đầy(vùng buffer bị đầy).<br>
 Hành vi nhận data sẽ bị block nếu buffered channel đang rỗng.</p>
@@ -574,27 +602,27 @@ Hành vi nhận data sẽ bị block nếu buffered channel đang rỗng.</p>
 <code>myChannel := make(chan int, 100)</code>
 -&gt; Channel được tạo có thể chứa 100 số int.
 Ví dụ sử dung :</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">2</span>)
-<span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
-<span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">3</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
-</code></pre></div><p>-&gt; Kết quả sẽ in ra 2 3<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
+</span></span></code></pre></div><p>-&gt; Kết quả sẽ in ra 2 3<br>
 Như đã nói ở trên thì channel vừa tạo chỉ có thể chứa max là 2 số int. Nếu ta tiếp tục gửi 1 giá trị nữa
 vào channel khi nó đang chứa max 2 giá trị mà chưa được làm mới hay xóa 1 giá trị thì sẽ gặp deadlock
 Ví dụ như ở bên trên ta tiếp tục đẩy thêm giá trị 4 vào ngay sau giá trị 3 được đẩy vào channel thì sẽ
 gặp deadlock. Điều này xảy ra vì khi đó chính main channel sẽ bị block(vào trạng thái sleep). Go scheduler
 sẽ tìm kiếm một goroutine khác để chạy nhưng vì chỉ có main goroutine nên ctrình rơi vào deadlock.</p>
 <p>Tuy vậy nếu trong trường hợp trên mà ta đẩy thêm giá trị trong 1 goroutine khác thì sẽ không sao:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">2</span>)
-<span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span>
-<span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
-<span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">3</span>  }
-<span style="color:#66d9ef">go</span> <span style="color:#a6e22e">x</span>()
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
-</code></pre></div><p>Với ví dụ này thì goroutine chạy hàm x() sẽ chờ cho đến khi ít nhất 1 giá trị đang ở trong channel được lấy
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">x</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>() { <span style="color:#a6e22e">myChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">3</span>  }
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">go</span> <span style="color:#a6e22e">x</span>()
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">myChannel</span>)
+</span></span></code></pre></div><p>Với ví dụ này thì goroutine chạy hàm x() sẽ chờ cho đến khi ít nhất 1 giá trị đang ở trong channel được lấy
 ra thì mới đẩy giá trị 3 vào.chính vì vậy mà không bị deadlock. Buffer channel có 2 thông số là len và cap tương tự như slice.</p>
 <h1 id="range-and-close">Range and close</h1>
 <p>Goroutine sender  có thể close channel để chắc chắn sẽ không có giá trị nào được gửi nữa.<br>
@@ -610,34 +638,34 @@ Chưa thì v là value đwuọc lấy ra và ok = true</p>
 <h1 id="select">Select</h1>
 <p>Các case trong select nếu match thì sẽ được thực thi
 ví dụ sử dụng:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">fibonacci</span>(<span style="color:#a6e22e">outputChannel</span>, <span style="color:#a6e22e">quitChannel</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
-  <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
-  <span style="color:#66d9ef">for</span> {
-    <span style="color:#66d9ef">select</span> {
-    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">outputChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">x</span>:
-      <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
-    <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">quitChannel</span>:
-      <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;quit&#34;</span>)
-      <span style="color:#66d9ef">return</span>
-    }
-  }
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-  <span style="color:#a6e22e">outputChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
-  <span style="color:#a6e22e">quitChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
-  <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
-    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">outputChannel</span> {
-      <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">val</span>)
-    }
-  }()
-  <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
-    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">10</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
-    <span style="color:#a6e22e">quitChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
-  }
-  <span style="color:#a6e22e">fibonacci</span>(<span style="color:#a6e22e">outputChannel</span>, <span style="color:#a6e22e">quitChannel</span>)
-}
-</code></pre></div><p>Hàm hữu dụng: <code>time.Tick()</code> <code>time.After()</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-golang" data-lang="golang"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">fibonacci</span>(<span style="color:#a6e22e">outputChannel</span>, <span style="color:#a6e22e">quitChannel</span> <span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">select</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">outputChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">x</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">case</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">quitChannel</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;quit&#34;</span>)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">outputChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">quitChannel</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">val</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">outputChannel</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">val</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }()
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">10</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Millisecond</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">quitChannel</span> <span style="color:#f92672">&lt;-</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fibonacci</span>(<span style="color:#a6e22e">outputChannel</span>, <span style="color:#a6e22e">quitChannel</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Hàm hữu dụng: <code>time.Tick()</code> <code>time.After()</code>
 2 hàm này trả về 1 channel sau số thời gian ta truyền vào.</p>
 <p>Code time.After: <a href="https://play.golang.org/p/mda2t2IQK__X">https://play.golang.org/p/mda2t2IQK__X</a></p>
 <p>Nếu select không có case dèault thì nó sẽ block cho đến khi có 1 case thỏa mãn.<br>
@@ -654,7 +682,7 @@ cho đến khi tất cả các goroutine kìa hoàn thành. Khi đó thành ph�
 <p>Có những trường hợp ta chỉ muốn trong goroutine này chỉ có thể đọc hoặc ghi vào channel. Chính vì vậy mà goroutine cung cấp cho ta cách thức đó:
 ví dụ func receiveOnly(c &lt;-chan int) {} -&gt; channel c ở trong goroutine này chỉ có thể read data.<br>
 Code: <a href="https://play.golang.org/p/eLLmELyqDVJ">https://play.golang.org/p/eLLmELyqDVJ</a><br>
-6. <!-- raw HTML omitted -->Mutex trong go<!-- raw HTML omitted -->
+6. <strong>Mutex trong go</strong>
 Các goroutine dùng stack khác nhau, Tuy nhiên với biến heap thì hoàn toàn có thể xảy ra race condition nếu như nhiều goroutine muốn sử dụng nó.
 Để tránh race condition thì ta có thể sử dụng mutex được cung cấp trong package sync. Tương tự như mutex trong các ngôn ngữ khác.
 Code: <a href="https://play.golang.org/p/KJ7NL3yQhuS">https://play.golang.org/p/KJ7NL3yQhuS</a></p>
@@ -662,6 +690,8 @@ Code: <a href="https://play.golang.org/p/KJ7NL3yQhuS">https://play.golang.org/p/
 <p>Tại sao lại phải sửa lại cho draft đẹp đẽ chứ :3</p>
 
     </div>
+
+    
 
             </div>
         </div><footer class="text-center pb-1">

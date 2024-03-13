@@ -1,83 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/categories/</loc>
+    <loc>https://handl3r.netlify.app/posts/basic_accounting/</loc>
+    <lastmod>2023-05-19T14:14:20+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/</loc>
+    <lastmod>2023-05-19T14:14:20+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/</loc>
+    <lastmod>2023-05-19T14:14:20+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/</loc>
+    <lastmod>2020-10-01T15:58:55+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/draft/</loc>
+    <lastmod>2020-10-01T15:58:55+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/golang-basic/</loc>
+    <lastmod>2020-10-01T15:58:55+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/note_concurrency_golang/</loc>
+    <lastmod>2020-10-01T15:58:55+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/jenkins/</loc>
     <lastmod>2020-09-25T13:32:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/draft/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/lab_jenkins/</loc>
     <lastmod>2020-09-25T13:32:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/jenkins/</loc>
-    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/lab_jenkins/</loc>
-    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2020-09-25T13:32:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/golang-ultimate/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/golang-ultimate/</loc>
     <lastmod>2020-08-16T17:30:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/golang-basic/</loc>
-    <lastmod>2020-08-16T17:30:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/next/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/next/</loc>
     <lastmod>2020-08-14T03:55:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/next-time/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/next-time/</loc>
     <lastmod>2020-08-14T03:55:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/golang-scratch-paper/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/golang-scratch-paper/</loc>
     <lastmod>2020-08-13T16:56:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/about/</loc>
     <lastmod>2020-07-27T17:44:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/stuff/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/stuff/</loc>
     <lastmod>2020-07-27T17:25:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/welcome/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/posts/welcome/</loc>
     <lastmod>2020-07-27T17:25:38+00:00</lastmod>
+  </url><url>
+    <loc>https://handl3r.netlify.app/categories/ci/cd/</loc>
+  </url><url>
+    <loc>https://handl3r.netlify.app/tags/</loc>
   </url>
-  
-  <url>
-    <loc>/categories/ci/cd/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-  </url>
-  
 </urlset>
