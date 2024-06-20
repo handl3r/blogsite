@@ -2,20 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stuff on Handl3r&#39;s Blog</title>
-    <link>https://handl3r.netlify.app/categories/stuff/</link>
+    <link>http://localhost:1313/categories/stuff/</link>
     <description>Recent content in Stuff on Handl3r&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Mon, 27 Jul 2020 17:25:38 +0000</lastBuildDate><atom:link href="https://handl3r.netlify.app/categories/stuff/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jul 2020 17:25:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/stuff/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
-      <link>https://handl3r.netlify.app/posts/welcome/</link>
+      <link>http://localhost:1313/posts/welcome/</link>
       <pubDate>Mon, 27 Jul 2020 17:25:38 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/welcome/</guid>
+      <guid>http://localhost:1313/posts/welcome/</guid>
       <description>Hello, this’s my blog </description>
     </item>
-    
   </channel>
 </rss>

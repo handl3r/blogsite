@@ -2,43 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang-Basic on Handl3r&#39;s Blog</title>
-    <link>https://handl3r.netlify.app/categories/golang-basic/</link>
+    <link>http://localhost:1313/categories/golang-basic/</link>
     <description>Recent content in Golang-Basic on Handl3r&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Thu, 01 Oct 2020 15:58:55 +0000</lastBuildDate><atom:link href="https://handl3r.netlify.app/categories/golang-basic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Oct 2020 15:58:55 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/golang-basic/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Note_concurrency_golang</title>
-      <link>https://handl3r.netlify.app/posts/note_concurrency_golang/</link>
+      <link>http://localhost:1313/posts/note_concurrency_golang/</link>
       <pubDate>Thu, 01 Oct 2020 15:58:55 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/note_concurrency_golang/</guid>
-      <description>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-Noteeeeeeeee&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;
-Os schedualer mechanics
-các process tương tự như container, chứa các context cần thiết cho chương trình chạy.các process chạy thực chất chính là các pe của nó chạy. path execution là 1 đơn vị thực thi. Ví dụ như 1 instruction mã máy chẳng hạn. Điều này còn phụ thuộc vào mức độ trừu tượng mà ta muốn. Os schedualer quan tâm đến các path execution này. Ví dụ 1 core cần chạy 10000 path execution thì nó sẽ phải tính toán cho mỗi path execution 1 slice of time trên core đó.</description>
+      <guid>http://localhost:1313/posts/note_concurrency_golang/</guid>
+      <description>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-Noteeeeeeeee&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;&#xA;Os schedualer mechanics&#xA;các process tương tự như container, chứa các context cần thiết cho chương trình chạy.các process chạy thực chất chính là các pe của nó chạy. path execution là 1 đơn vị thực thi. Ví dụ như 1 instruction mã máy chẳng hạn. Điều này còn phụ thuộc vào mức độ trừu tượng mà ta muốn. Os schedualer quan tâm đến các path execution này. Ví dụ 1 core cần chạy 10000 path execution thì nó sẽ phải tính toán cho mỗi path execution 1 slice of time trên core đó.</description>
     </item>
-    
     <item>
       <title>Golang Ultimate</title>
-      <link>https://handl3r.netlify.app/posts/golang-ultimate/</link>
+      <link>http://localhost:1313/posts/golang-ultimate/</link>
       <pubDate>Sun, 16 Aug 2020 17:30:47 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/golang-ultimate/</guid>
-      <description>*** Đây là draft nhá :3 ***
-*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy
-Lesson 1. Go có cách riêng của nó. Code phải đơn giản và có nghĩa, dễ đọc. 2 mục tiêu chính: code(kiến trúc) đơn giản, có nghĩa tránh chi phí ẩn trong các mẩu code nhỏ. Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản. Lesson 2.</description>
+      <guid>http://localhost:1313/posts/golang-ultimate/</guid>
+      <description>*** Đây là draft nhá :3 ***&#xA;*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy&#xA;Lesson 1. Go có cách riêng của nó. Code phải đơn giản và có nghĩa, dễ đọc. 2 mục tiêu chính: code(kiến trúc) đơn giản, có nghĩa tránh chi phí ẩn trong các mẩu code nhỏ. Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản. Lesson 2.</description>
     </item>
-    
     <item>
       <title>Golang Scratch Paper</title>
-      <link>https://handl3r.netlify.app/posts/golang-scratch-paper/</link>
+      <link>http://localhost:1313/posts/golang-scratch-paper/</link>
       <pubDate>Thu, 13 Aug 2020 16:56:03 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/golang-scratch-paper/</guid>
-      <description>*** Đây là draft nhá :3 ***
-Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
+      <guid>http://localhost:1313/posts/golang-scratch-paper/</guid>
+      <description>*** Đây là draft nhá :3 ***&#xA;Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
     </item>
-    
   </channel>
 </rss>

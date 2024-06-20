@@ -2,20 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CI/CD on Handl3r&#39;s Blog</title>
-    <link>https://handl3r.netlify.app/categories/ci/cd/</link>
+    <link>http://localhost:1313/categories/ci/cd/</link>
     <description>Recent content in CI/CD on Handl3r&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright><atom:link href="https://handl3r.netlify.app/categories/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
+    <lastBuildDate>Fri, 25 Sep 2020 13:32:48 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/ci/cd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lab Jenkins</title>
-      <link>https://handl3r.netlify.app/posts/lab_jenkins/</link>
+      <link>http://localhost:1313/posts/lab_jenkins/</link>
       <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/lab_jenkins/</guid>
-      <description>*** Dựng lab chơi chơi chạy jenkins nào *** Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.
-Mô tả lab cơ bản như sau: Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins. SCM là github. Link repo https://github.com/handl3r/multibranches Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox.</description>
+      <guid>http://localhost:1313/posts/lab_jenkins/</guid>
+      <description>*** Dựng lab chơi chơi chạy jenkins nào *** Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.&#xA;Mô tả lab cơ bản như sau: Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins. SCM là github. Link repo https://github.com/handl3r/multibranches Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox.</description>
     </item>
-    
   </channel>
 </rss>
