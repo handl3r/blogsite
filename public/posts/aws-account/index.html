@@ -96,24 +96,42 @@
     <hr />
 </header>
 <div class="container">
-<div class="pl-sm-4 ml-sm-5">
-    <h4> Category - Stuff </h4>
+    <div class="pl-sm-4 ml-sm-5">
+        <h1 id="overview">Overview</h1>
+<ul>
+<li>AWS Account is not user</li>
+<li>AWS Account is a container for aws resources</li>
+<li>AWS Account need <strong><em>unique email</em></strong>, account name, credit card</li>
+<li>AWS Account have a account root user</li>
+<li>AWS account root user have <strong><em>all permissions</em></strong> in AWS account</li>
+</ul>
+<h1 id="mfa">MFA</h1>
+<h2 id="why-need-mfa">Why need MFA?</h2>
+<ul>
+<li>Username and password. If it&rsquo;s leaked, anyone can login to your account</li>
+<li>That why we need more <code>factors</code>. It&rsquo;s diffrent pieces of envidence which prove identity. <code>factor</code> appear in some term like: single-factor authentication, multi-factor authentication
+<ul>
+<li>Knowledge: one type of factor: something you know. Username and password is example of this factor type.</li>
+<li>Possession: Something you have. Example is: bank card, MFA device. For example, in multi-factor authentication we need username and password and also a code from MFA device.</li>
+<li>Ingerent: Something you are: fingersprint, face, voice,etc</li>
+<li>Location: a localtion, can be physically or network</li>
+<li>More factors: something else</li>
+</ul>
+</li>
+<li>Overall more factors means more security and harder to fake</li>
+</ul>
+<h2 id="setup-mfa">Setup MFA</h2>
+<p>Setup MFA Follow:
+<img src="aws-account.follow-mfa.png" alt="aws-account-follow"></p>
+<ul>
+<li>When you login to you account by username and password, AWS will generate a secret key and also get some additional information</li>
+<li>AWS generates a QR code from these information.</li>
+<li>User MFA authentication application to scan this QR code. It wil extract information from the QR code. and have a algorithm to generate a onetime code based on the received information.</li>
+</ul>
+
+    </div>
+
     
-    <ul class="list-unstyled">
-        
-        <li>
-            
-                <time datetime="2020-07-27T17:25:38Z">
-                Jul 27 2020
-                </time>
-            
-            <a href="../../posts/welcome/">
-                Welcome
-            </a>
-        </li>
-        
-    </ul>
-</div>
 
             </div>
         </div><footer class="text-center pb-1">

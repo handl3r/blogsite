@@ -2,83 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Handl3r&#39;s Blog</title>
-    <link>https://handl3r.netlify.app/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Handl3r&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Fri, 19 May 2023 14:14:20 +0000</lastBuildDate><atom:link href="https://handl3r.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jun 2024 03:34:25 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aws Account</title>
+      <link>http://localhost:1313/posts/aws-account/</link>
+      <pubDate>Thu, 20 Jun 2024 03:34:25 +0000</pubDate>
+      <guid>http://localhost:1313/posts/aws-account/</guid>
+      <description>Overview AWS Account is not user AWS Account is a container for aws resources AWS Account need unique email, account name, credit card AWS Account have a account root user AWS account root user have all permissions in AWS account MFA Why need MFA? Username and password. If it&amp;rsquo;s leaked, anyone can login to your account That why we need more factors. It&amp;rsquo;s diffrent pieces of envidence which prove identity. factor appear in some term like: single-factor authentication, multi-factor authentication Knowledge: one type of factor: something you know.</description>
+    </item>
     <item>
       <title>Basic_accounting</title>
-      <link>https://handl3r.netlify.app/posts/basic_accounting/</link>
+      <link>http://localhost:1313/posts/basic_accounting/</link>
       <pubDate>Fri, 19 May 2023 14:14:20 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/basic_accounting/</guid>
-      <description>Basic accounting topic A story that related to accounting basic Joe Perez(JP) start a business: a parcel delivery service in his community. He start by run a company Direct Delivery, Inc.(DDI) JP is not have knowledge about accounting so he have advisor Marilyn(M). So M thinks DDI can have thousands of transaction each year -&amp;gt; Accounting software is needed.
-Some transactions like:
-Joe will no doubt start his business by putting some of his own personal money into it.</description>
+      <guid>http://localhost:1313/posts/basic_accounting/</guid>
+      <description>Basic accounting topic A story that related to accounting basic Joe Perez(JP) start a business: a parcel delivery service in his community. He start by run a company Direct Delivery, Inc.(DDI) JP is not have knowledge about accounting so he have advisor Marilyn(M). So M thinks DDI can have thousands of transaction each year -&amp;gt; Accounting software is needed.&#xA;Some transactions like:&#xA;Joe will no doubt start his business by putting some of his own personal money into it.</description>
     </item>
-    
     <item>
       <title>Note_concurrency_golang</title>
-      <link>https://handl3r.netlify.app/posts/note_concurrency_golang/</link>
+      <link>http://localhost:1313/posts/note_concurrency_golang/</link>
       <pubDate>Thu, 01 Oct 2020 15:58:55 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/note_concurrency_golang/</guid>
-      <description>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-Noteeeeeeeee&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;
-Os schedualer mechanics
-các process tương tự như container, chứa các context cần thiết cho chương trình chạy.các process chạy thực chất chính là các pe của nó chạy. path execution là 1 đơn vị thực thi. Ví dụ như 1 instruction mã máy chẳng hạn. Điều này còn phụ thuộc vào mức độ trừu tượng mà ta muốn. Os schedualer quan tâm đến các path execution này. Ví dụ 1 core cần chạy 10000 path execution thì nó sẽ phải tính toán cho mỗi path execution 1 slice of time trên core đó.</description>
+      <guid>http://localhost:1313/posts/note_concurrency_golang/</guid>
+      <description>&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-Noteeeeeeeee&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;&#xA;Os schedualer mechanics&#xA;các process tương tự như container, chứa các context cần thiết cho chương trình chạy.các process chạy thực chất chính là các pe của nó chạy. path execution là 1 đơn vị thực thi. Ví dụ như 1 instruction mã máy chẳng hạn. Điều này còn phụ thuộc vào mức độ trừu tượng mà ta muốn. Os schedualer quan tâm đến các path execution này. Ví dụ 1 core cần chạy 10000 path execution thì nó sẽ phải tính toán cho mỗi path execution 1 slice of time trên core đó.</description>
     </item>
-    
     <item>
       <title>Lab Jenkins</title>
-      <link>https://handl3r.netlify.app/posts/lab_jenkins/</link>
+      <link>http://localhost:1313/posts/lab_jenkins/</link>
       <pubDate>Fri, 25 Sep 2020 13:32:48 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/lab_jenkins/</guid>
-      <description>*** Dựng lab chơi chơi chạy jenkins nào *** Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.
-Mô tả lab cơ bản như sau: Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins. SCM là github. Link repo https://github.com/handl3r/multibranches Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox.</description>
+      <guid>http://localhost:1313/posts/lab_jenkins/</guid>
+      <description>*** Dựng lab chơi chơi chạy jenkins nào *** Ai chưa biết về CI/CD thì tìm hiểu trước đi nhé.&#xA;Mô tả lab cơ bản như sau: Project là 1 con web cơ bản viết bằng golang cần được test và deploy liên tục lên server thông qua jenkins. SCM là github. Link repo https://github.com/handl3r/multibranches Server deploy dùng docker hay máy ảo cũng được. Mình dùng ubuntu server chạy bằng virtualbox.</description>
     </item>
-    
     <item>
       <title>Golang Ultimate</title>
-      <link>https://handl3r.netlify.app/posts/golang-ultimate/</link>
+      <link>http://localhost:1313/posts/golang-ultimate/</link>
       <pubDate>Sun, 16 Aug 2020 17:30:47 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/golang-ultimate/</guid>
-      <description>*** Đây là draft nhá :3 ***
-*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy
-Lesson 1. Go có cách riêng của nó. Code phải đơn giản và có nghĩa, dễ đọc. 2 mục tiêu chính: code(kiến trúc) đơn giản, có nghĩa tránh chi phí ẩn trong các mẩu code nhỏ. Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản. Lesson 2.</description>
+      <guid>http://localhost:1313/posts/golang-ultimate/</guid>
+      <description>*** Đây là draft nhá :3 ***&#xA;*****Đây là những thứ mình note lại khi học khóa ultimateGo của William Kennedy&#xA;Lesson 1. Go có cách riêng của nó. Code phải đơn giản và có nghĩa, dễ đọc. 2 mục tiêu chính: code(kiến trúc) đơn giản, có nghĩa tránh chi phí ẩn trong các mẩu code nhỏ. Luôn giữ trong đầu sự tổng quan của hệ thống đơn giản. Lesson 2.</description>
     </item>
-    
     <item>
       <title>Next Time</title>
-      <link>https://handl3r.netlify.app/posts/next-time/</link>
+      <link>http://localhost:1313/posts/next-time/</link>
       <pubDate>Fri, 14 Aug 2020 03:55:38 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/next-time/</guid>
-      <description>**Of course, this is draft ***
-This is notification for plans: Maybe next week, i will publish my second draft which i wrote when i learned apart of Ultimate-Go course. And, maybe it will become with english-mystupidenglish. In future, i want to deep into docker, virtualization. It can be building backend for web server, run it in containers and use prometheus for monitoring. </description>
+      <guid>http://localhost:1313/posts/next-time/</guid>
+      <description>**Of course, this is draft ***&#xA;This is notification for plans: Maybe next week, i will publish my second draft which i wrote when i learned apart of Ultimate-Go course. And, maybe it will become with english-mystupidenglish. In future, i want to deep into docker, virtualization. It can be building backend for web server, run it in containers and use prometheus for monitoring. </description>
     </item>
-    
     <item>
       <title>Golang Scratch Paper</title>
-      <link>https://handl3r.netlify.app/posts/golang-scratch-paper/</link>
+      <link>http://localhost:1313/posts/golang-scratch-paper/</link>
       <pubDate>Thu, 13 Aug 2020 16:56:03 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/golang-scratch-paper/</guid>
-      <description>*** Đây là draft nhá :3 ***
-Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
+      <guid>http://localhost:1313/posts/golang-scratch-paper/</guid>
+      <description>*** Đây là draft nhá :3 ***&#xA;Khai báo biến trong golang Khai báo chuẩn bằng từ khóa var và có thể kèm theo initializer: var( x int y int = 2 z = &amp;#34;x&amp;#34; ) Biến có thể định kiểu cụ thể. Nếu không thì nó sẽ được định kiểu với giá trị truyền vào hàm khởi tạo cho nó( = ), nếu không có giá trị khởi tạo thì giá trị mặc định là zezo value</description>
     </item>
-    
     <item>
       <title>Welcome</title>
-      <link>https://handl3r.netlify.app/posts/welcome/</link>
+      <link>http://localhost:1313/posts/welcome/</link>
       <pubDate>Mon, 27 Jul 2020 17:25:38 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/welcome/</guid>
+      <guid>http://localhost:1313/posts/welcome/</guid>
       <description>Hello, this’s my blog </description>
     </item>
-    
   </channel>
 </rss>

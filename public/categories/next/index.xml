@@ -2,21 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Next on Handl3r&#39;s Blog</title>
-    <link>https://handl3r.netlify.app/categories/next/</link>
+    <link>http://localhost:1313/categories/next/</link>
     <description>Recent content in Next on Handl3r&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2020, ThaiBuiXuan</copyright>
-    <lastBuildDate>Fri, 14 Aug 2020 03:55:38 +0000</lastBuildDate><atom:link href="https://handl3r.netlify.app/categories/next/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Aug 2020 03:55:38 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/next/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Next Time</title>
-      <link>https://handl3r.netlify.app/posts/next-time/</link>
+      <link>http://localhost:1313/posts/next-time/</link>
       <pubDate>Fri, 14 Aug 2020 03:55:38 +0000</pubDate>
-      
-      <guid>https://handl3r.netlify.app/posts/next-time/</guid>
-      <description>**Of course, this is draft ***
-This is notification for plans: Maybe next week, i will publish my second draft which i wrote when i learned apart of Ultimate-Go course. And, maybe it will become with english-mystupidenglish. In future, i want to deep into docker, virtualization. It can be building backend for web server, run it in containers and use prometheus for monitoring. </description>
+      <guid>http://localhost:1313/posts/next-time/</guid>
+      <description>**Of course, this is draft ***&#xA;This is notification for plans: Maybe next week, i will publish my second draft which i wrote when i learned apart of Ultimate-Go course. And, maybe it will become with english-mystupidenglish. In future, i want to deep into docker, virtualization. It can be building backend for web server, run it in containers and use prometheus for monitoring. </description>
     </item>
-    
   </channel>
 </rss>
