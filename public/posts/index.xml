@@ -10,11 +10,11 @@
     <lastBuildDate>Thu, 20 Jun 2024 03:34:25 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Aws Account</title>
-      <link>http://localhost:1313/posts/aws-account/</link>
+      <title>Aws Account and Organization</title>
+      <link>http://localhost:1313/posts/aws-account-and-organization/</link>
       <pubDate>Thu, 20 Jun 2024 03:34:25 +0000</pubDate>
-      <guid>http://localhost:1313/posts/aws-account/</guid>
-      <description>Overview AWS Account is not user AWS Account is a container for aws resources AWS Account need unique email, account name, credit card AWS Account have a account root user AWS account root user have all permissions in AWS account MFA Why need MFA? Username and password. If it&amp;rsquo;s leaked, anyone can login to your account That why we need more factors. It&amp;rsquo;s diffrent pieces of envidence which prove identity. factor appear in some term like: single-factor authentication, multi-factor authentication Knowledge: one type of factor: something you know.</description>
+      <guid>http://localhost:1313/posts/aws-account-and-organization/</guid>
+      <description>AWS Account and AWS Organization What inside of this post? Explain about AWS Account and setup a account with MFA setup. Explain about AWS Organization and setup an Organization with a general account and a prod and fly(development) account. It will be like a real AWS Organization in a company. Explain about SCP and make an example demonstrates about it. Understand how an administrator managements permission of each AWS account in in a company.</description>
     </item>
     <item>
       <title>Basic_accounting</title>

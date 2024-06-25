@@ -128,14 +128,14 @@
 <li>Overall more factors means more security and harder to fake</li>
 </ul>
 <h4 id="setup-mfa">Setup MFA</h4>
-<p>Setup MFA Follow:
-<img src="aws-account.follow-mfa.png" alt="aws-account-follow"></p>
+<p>Setup MFA Follow:</p>
+<p><img src="aws-account.follow-mfa.png" alt="aws-account-follow"></p>
 <ul>
 <li>When you login to you account by username and password, AWS will generate a secret key and also get some additional information</li>
 <li>AWS generates a QR code from these information.</li>
 <li>User MFA authentication application to scan this QR code. It wil extract information from the QR code. and have a algorithm to generate a onetime code based on the received information.</li>
 </ul>
-<h3 id="setup-user">Setup user</h3>
+<h3 id="setup-aws-user">Setup AWS user</h3>
 <p>After create root user and setup MFA, and all the configuration, you need to setup user to use instead of using root account for some reasons:</p>
 <ul>
 <li>Can not restrict permissions of root users: include close account and manage subscriptions</li>
@@ -144,15 +144,65 @@
 </ul>
 <p>Now, let&rsquo;s create a admin user and use it instead of using root user:</p>
 <ul>
-<li>Fill username and password
-<img src="aws-account.iamadmin-1.png" alt="create-iamadmin-user"></li>
-<li>Select policy AdministratorAccess for user
-<img src="aws-account.iamadmin-2.png" alt="create-iamadmin-user"></li>
-<li>Review and create user
-<img src="aws-account.iamadmin-3.png" alt="create-iamadmin-user"></li>
+<li>
+<p>Fill username and password</p>
+<p><img src="aws-account.iamadmin-1.png" alt="create-iamadmin-user"></p>
+</li>
+<li>
+<p>Select policy AdministratorAccess for user</p>
+<p><img src="aws-account.iamadmin-2.png" alt="create-iamadmin-user"></p>
+</li>
+<li>
+<p>Review and create user</p>
+<p><img src="aws-account.iamadmin-3.png" alt="create-iamadmin-user"></p>
+</li>
 </ul>
 <p>Allow iamadmin access to billing and cost information by configuring on <em>Account-&gt;IAM user and role access to Billing information-&gt;Activate IAM Access</em></p>
 <p>And then setup MFA for your new iamadmin user.</p>
+<h2 id="aws-organization">AWS Organization</h2>
+<p>AWS Organization is a container of AWS accounts.
+For example in a company, they can setup an AWS account as the administrator of all child accounts.
+In this section, we will create a organization with following structure:</p>
+<p><img src="aws-org.structure.png" alt="aws-org-structure"></p>
+<h3 id="create-new-aws-organization">Create new AWS Organization</h3>
+<h4 id="create-dev-and-prod-accounts-inside-organization">Create dev and prod accounts inside organization</h4>
+<p>In AWS Organizations service page, click <code>Add an AWS Account</code> and fill all the information.
+Organization&rsquo;s name should have substring like <code>prod</code> or <code>dev</code> for easy to recognize.
+For me, i create <code>leonbuiaccountfly</code> for development and <code>leonbuiaccountprod</code> for production, and <code>leonbui_account</code> as the management account.</p>
+<h4 id="create-organization-unit">Create Organization Unit</h4>
+<p>In the Root of Organization, we can create Organization Unit.
+Select the Root and create two OU: <code>DEV</code>, <code>PROD</code></p>
+<p>After that, you can select <code>leonbuiaccountfly</code> and <code>leonbuiaccountprod</code> and choose <code>Move</code> to move the the corresponding OU.
+After that you can see latest result like this following image:</p>
+<p><img src="aws-org.result.png" alt="aws-org-result"></p>
+<p>You can also setup for <code>Switch Role</code> on AWS Console. Just click to <code>Switch Role</code> and setup for all new account in the organization.</p>
+<p><img src="aws-org.switch-role.png" alt="aws-org-switch-role"></p>
+<h2 id="service-control-policies">Service Control Policies</h2>
+<ul>
+<li>SCPs are account permissions boundaries. It define what an account(which attached with a SCP) can and can not do</li>
+<li>SCPs don&rsquo;t affect users or roles in the management account. They affect only the member accounts in your organization.</li>
+<li>Management account can not be effected by SCPs</li>
+</ul>
+<h3 id="make-a-scp">Make a SCP</h3>
+<p>First, you need to enable SCP. Click <code>Policies</code>-&gt;<code>Service Control Polices</code> and enable it.
+After that, create a new SCP name <code>AllowAllExceptS3</code>. It&rsquo;s mean: can do anything except s3.
+AllowAllExceptS3:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Deny&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:*&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>So after create it, new new SCP will appear in the list. But it will do not make any effect until you attach it to an account or OU.</p>
 
     </div>
 

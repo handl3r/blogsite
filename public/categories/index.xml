@@ -17,6 +17,20 @@
       <description></description>
     </item>
     <item>
+      <title>AWS Account</title>
+      <link>http://localhost:1313/categories/aws-account/</link>
+      <pubDate>Thu, 20 Jun 2024 03:34:25 +0000</pubDate>
+      <guid>http://localhost:1313/categories/aws-account/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AWS Organization</title>
+      <link>http://localhost:1313/categories/aws-organization/</link>
+      <pubDate>Thu, 20 Jun 2024 03:34:25 +0000</pubDate>
+      <guid>http://localhost:1313/categories/aws-organization/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>MFA</title>
       <link>http://localhost:1313/categories/mfa/</link>
       <pubDate>Thu, 20 Jun 2024 03:34:25 +0000</pubDate>
