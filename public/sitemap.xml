@@ -5,7 +5,13 @@
     <loc>http://localhost:1313/categories/aws/</loc>
     <lastmod>2024-06-20T03:34:25+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/aws-account/</loc>
+    <loc>http://localhost:1313/categories/aws-account/</loc>
+    <lastmod>2024-06-20T03:34:25+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aws-account-and-organization/</loc>
+    <lastmod>2024-06-20T03:34:25+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/aws-organization/</loc>
     <lastmod>2024-06-20T03:34:25+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
