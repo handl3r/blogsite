@@ -105,7 +105,7 @@ You can also setup for `Switch Role` on AWS Console. Just click to `Switch Role`
 - SCPs don't affect users or roles in the management account. They affect only the member accounts in your organization.
 - Management account can not be effected by SCPs
 
-### Make a SCP
+### Create a SCP
 
 First, you need to enable SCP. Click `Policies`->`Service Control Polices` and enable it.
 After that, create a new SCP name `AllowAllExceptS3`. It's mean: can do anything except s3.
@@ -130,3 +130,31 @@ AllowAllExceptS3:
 ```
 
 So after create it, new new SCP will appear in the list. But it will do not make any effect until you attach it to an account or OU.
+
+### Attach SCP to AWS Account and OU
+
+#### Check permission before attaching SCP
+
+As created SCP above, we will restrict s3 permissions. So we create a s3 and submit a file to it to confirm the permission before attaching SCP to `DEV` OU.
+
+![aws-scp-p1](aws-scp-p1.png)
+
+You can see that I created a bucket and upload an image to this bucket. Also have full permission with s3 services and resources inside.
+
+#### Attach SCP and check permission
+
+Select Dev OU and attach SCP above to it. Also remove FullAccess permission of this OU.
+![aws-scp-p2](aws-scp-p2.png)
+
+Then we switch role to Dev and access s3 to check the permissions and you can see a alert like `You don't have permissions to list buckets` in the list buckets screen.
+
+You can also detach SCP from Dev OU and re-check the effective permissions in Fly Account of Dev OU.
+
+Note that policies attached to the root or to OUs can be inherited by child OUs and accounts.
+
+## Bonus topic
+
+STS:
+When having a action need to Assume Role, the where STS is working.
+An example of STS can be found in following follow:
+![aws-sts-example](aws-sts.png)
